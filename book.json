@@ -1,0 +1,76 @@
+{
+  "title": "Kite Documentation",
+  "description": "Kite is building the base layer for the agentic internet. It is the first system that provides autonomous agents with cryptographic identity, programmable permissions, and native access to stablecoin payments.",
+  "author": "Kite Team",
+  "language": "en",
+  "structure": {
+    "readme": "get-started/introduction-and-mission.md",
+    "summary": "SUMMARY.md"
+  },
+  "plugins": [
+    "theme-default",
+    "highlight",
+    "search",
+    "sharing",
+    "fontsettings",
+    "livereload",
+    "copy-code-button",
+    "back-to-top-button",
+    "expandable-chapters",
+    "github",
+    "github-buttons",
+    "prism",
+    "splitter",
+    "toc"
+  ],
+  "pluginsConfig": {
+    "theme-default": {
+      "showLevel": true,
+      "styles": {
+        "website": "styles/website.css",
+        "pdf": "styles/pdf.css",
+        "epub": "styles/epub.css",
+        "mobi": "styles/mobi.css",
+        "ebook": "styles/ebook.css"
+      }
+    },
+    "github": {
+      "url": "https://github.com/gokite-ai"
+    },
+    "github-buttons": {
+      "repo": "gokite-ai/kite-docs",
+      "types": ["star", "watch", "fork"],
+      "size": "large"
+    },
+    "sharing": {
+      "facebook": true,
+      "twitter": true,
+      "google": false,
+      "weibo": false,
+      "instapaper": false,
+      "vk": false,
+      "all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+    },
+    "fontsettings": {
+      "theme": "white",
+      "family": "sans",
+      "size": 2
+    },
+    "prism": {
+      "css": [
+        "prismjs/themes/prism-tomorrow.css"
+      ]
+    },
+    "toc": {
+      "addClass": true,
+      "className": "toc"
+    }
+  },
+  "styles": {
+    "website": "styles/website.css",
+    "pdf": "styles/pdf.css",
+    "epub": "styles/epub.css",
+    "mobi": "styles/mobi.css",
+    "ebook": "styles/ebook.css"
+  }
+} 

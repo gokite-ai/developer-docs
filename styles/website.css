@@ -1,0 +1,328 @@
+/* Modern Kite Documentation Styles */
+
+/* Color Variables */
+:root {
+  --primary-bg: #ffffff;
+  --secondary-bg: #efede5;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a5568;
+  --accent-color: #3182ce;
+  --border-color: #e2e8f0;
+  --code-bg: #f7fafc;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Global Styles */
+body {
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+/* Header & Navigation */
+.book-header {
+  background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  padding: 1rem 2rem;
+}
+
+.book-header h1 {
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Logo styling - Use emoji as fallback */
+.book-header h1::before {
+  content: "🪁";
+  font-size: 1.8rem;
+  display: inline-block;
+  margin-right: 0.75rem;
+  vertical-align: middle;
+  pointer-events: none; /* Prevent clicking */
+}
+
+/* Fallback if SVG doesn't load */
+.book-header h1::before:empty {
+  content: "🪁";
+  font-size: 1.8rem;
+}
+
+/* Make the header title non-clickable */
+.book-header h1 {
+  pointer-events: none;
+}
+
+/* Allow clicking only on the text part */
+.book-header h1 span {
+  pointer-events: auto;
+}
+
+/* Alternative: Use actual logo image if available */
+.book-header h1 img.logo,
+.book-header h1 img[src*="kite-logo"] {
+  height: 40px;
+  width: auto;
+  margin-right: 0.75rem;
+  vertical-align: middle;
+}
+
+/* Alternative logo image support */
+.book-header .logo {
+  height: 40px;
+  width: auto;
+  margin-right: 0.75rem;
+}
+
+/* Sidebar */
+.book-summary {
+  background-color: var(--secondary-bg);
+  border-right: 1px solid var(--border-color);
+}
+
+.book-summary ul.summary li a {
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.book-summary ul.summary li a:hover {
+  color: var(--accent-color);
+  background-color: rgba(49, 130, 206, 0.1);
+}
+
+.book-summary ul.summary li.active > a {
+  color: var(--accent-color);
+  background-color: rgba(49, 130, 206, 0.1);
+  border-left: 3px solid var(--accent-color);
+}
+
+/* Main Content */
+.book-body {
+  background-color: var(--primary-bg);
+  padding: 2rem;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  border-bottom: 3px solid var(--accent-color);
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--accent-color);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* Links */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #2c5aa0;
+  text-decoration: underline;
+}
+
+/* Code Blocks */
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  box-shadow: var(--shadow);
+}
+
+code {
+  background-color: var(--code-bg);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+  background-color: var(--primary-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+th {
+  background-color: var(--secondary-bg);
+  color: var(--text-primary);
+  font-weight: 600;
+  padding: 1rem;
+  text-align: left;
+}
+
+td {
+  padding: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+tr:hover {
+  background-color: rgba(239, 237, 229, 0.3);
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--accent-color);
+  background-color: var(--secondary-bg);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Lists */
+ul, ol {
+  padding-left: 2rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Buttons & Badges */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--accent-color);
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #2c5aa0;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3);
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid-cols-1 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Flexbox Utilities */
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+/* Spacing */
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+/* Text Utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-gray-600 {
+  color: #4a5568;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .book-body {
+    padding: 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2c5aa0;
+}
+
+/* Print Styles */
+@media print {
+  .book-summary {
+    display: none;
+  }
+  
+  .book-body {
+    padding: 0;
+  }
+} 
