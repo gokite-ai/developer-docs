@@ -140,7 +140,7 @@ function App() {
 export default App;
 ```
 
-**Important:** Replace "YOUR\_DEPLOYED\_CONTRACT\_ADDRESS" with the actual contract address you received when deploying your contract from the previous step [Building smart contract on Kite](building-smart-contract-on-kite/README.md)
+**Important:** Replace "YOUR\_DEPLOYED\_CONTRACT\_ADDRESS" with the actual contract address you received when deploying your contract from the previous step [Developing Smart Contracts](../3-developing/README.md)
 
 **Step 3: Run the Frontend**
 
