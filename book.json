@@ -4,7 +4,7 @@
   "author": "Kite Team",
   "language": "en",
   "structure": {
-    "readme": "get-started/introduction-and-mission.md",
+    "readme": "README.md",
     "summary": "SUMMARY.md"
   },
   "plugins": [

@@ -1,22 +1,24 @@
 # Kite Documentation
 
-## Get Started (Why Kite?)
+## 🎯 Get Started (Why Kite?)
 
+- [Get Started Overview](get-started/README.md)
 - [Introduction & Mission](get-started/introduction-and-mission.md)
 - [Key Use Cases & Players](get-started/key-use-cases-and-players.md)
 - [Architecture & Design Pillars](get-started/architecture-and-design-pillars.md)
 - [Core Concepts & Terminology](get-started/core-concepts-and-terminology.md)
 - [Whitepaper References](get-started/whitepaper-references.md)
 
-## Integration Guide
+## 🔗 Integration Guide
 
+- [Integration Guide Overview](integration-guide/README.md)
 - [Workflow Overview](integration-guide/workflow-overview.md)
 - [Workflow A: Agent Builders](integration-guide/workflow-agent-builders.md)
 - [Workflow B: Merchants & Payment Providers](integration-guide/workflow-merchants-payment-providers.md)
 - [Case Study: App Store](integration-guide/case-study-app-store.md)
 - [API References](integration-guide/api-references.md)
 
-## Kite Chain
+## ⛓️ Kite Chain
 
 - [Network Information](kite-chain/network-information.md)
 - [Tools (Explorer, DeFi suites, assets)](kite-chain/tools.md)

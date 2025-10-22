@@ -1,20 +1,35 @@
 {
-  "name": "subnet-docs",
+  "name": "kite-docs",
   "version": "1.0.0",
-  "description": "--- description: >-   The purpose-built decentralized infrastructure for AI, empowering fair and   transparent collaboration across data, models, and agents with Proof of AI. ---",
-  "main": "index.js",
+  "description": "Kite Documentation - The first AI payment blockchain. Foundational infrastructure empowering autonomous agents to operate and transact with identity, payment, governance, and verification.",
+  "main": "book.json",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "gitbook serve",
+    "build": "gitbook build",
+    "install": "gitbook install",
+    "pdf": "gitbook pdf . _book/kite-docs.pdf",
+    "epub": "gitbook epub . _book/kite-docs.epub",
+    "mobi": "gitbook mobi . _book/kite-docs.mobi"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/not-so-fat/subnet-docs.git"
+    "url": "git+https://github.com/gokite-ai/kite-docs.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "kite",
+    "blockchain",
+    "ai",
+    "payments",
+    "documentation",
+    "gitbook"
+  ],
+  "author": "Kite Team",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/not-so-fat/subnet-docs/issues"
+    "url": "https://github.com/gokite-ai/kite-docs/issues"
   },
-  "homepage": "https://github.com/not-so-fat/subnet-docs#readme"
+  "homepage": "https://github.com/gokite-ai/kite-docs#readme",
+  "devDependencies": {
+    "gitbook-cli": "^2.3.2"
+  }
 }
