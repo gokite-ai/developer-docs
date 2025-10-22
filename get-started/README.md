@@ -28,9 +28,6 @@ Understand Kite's technical architecture and the design principles that guide ou
 ### [Core Concepts & Terminology](core-concepts-and-terminology.md)
 Get familiar with essential Kite concepts and terminology you'll need to understand the platform.
 
-### [Whitepaper References](whitepaper-references.md)
-Deep dive into the research and whitepapers that form the foundation of Kite's design.
-
 ## 🎯 Next Steps
 
 Once you understand the fundamentals:

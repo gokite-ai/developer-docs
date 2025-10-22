@@ -4,37 +4,49 @@ description: Key use cases and players in the agentic economy enabled by Kite's 
 
 # Key Use Cases & Players
 
-- Agentic commerce
-    - Consumers uses their own personal agents for shopping
-    - Human present and human not present cases, especially human not present use cases requires clear delegation
-    - Problems: 
-         - Consumer has risk to delegate payments, permanent payment method is too risky to pass to AI agents
-         - Merchants has risk to receive payments, since AI agent is unknown entity. AML / Fraud
-    - Kite will help
-         - Agent builders can integrate Kite Passport through SDK / MCP, which helps authenticate consumers / agents on Kite ID registry
-         - Agent builders can integrate Kite into checkout execution logic, so that it records verifiable proof of delegation on blockchain in granular scope through Kite Passport
-            - Verifiable proof on Kite chain ("Mandate" in Google AP2 concept)
-         - Merchants / payment providers can integrate Kite API with their checkout system 
-            - to kick stablecoin transfer based on consumer delegation
-            - to verify stablecoin payment
-            - to fetch the proof of delegation
-- Automatic sourcing
-    - Sourcing in manufacturing industry requires complex optimiztaion (cost, lead time, production plan, carbon emission etc.), which AI is good at
-    - Problems:
-        - Similar to agentic commerce
-        - High foreign exchange cost for international payments
-    - Kite will help
-        - Similar to agentic commerce
-        - Save FX cost by stablecoin payments
-- Portfolio management
-    - Investment timing, ... AI is good at
-    - Problems:
-        - Solid control not only prompt instruction
-    - Kite will help:
-        - Probrammable guard rail
-- Data / model / tool services for AI agents
-    - Services for AI agents
-    - Problems
-        - Micro transactions
-    - Kite will help:
-        - 
+## Agentic Commerce
+
+**What it is:** Consumers use personal AI agents for shopping, both with and without human presence.
+
+**Current Problems:**
+- **Consumer Risk:** Delegating permanent payment methods to AI agents is too risky
+- **Merchant Risk:** Receiving payments from unknown AI entities creates AML/fraud concerns
+
+**How Kite Helps:**
+- **Agent Builders:** Integrate Kite Passport SDK/MCP for consumer/agent authentication on Kite ID registry
+- **Delegation Proof:** Record verifiable proof of delegation on blockchain through Kite Passport (similar to Google AP2 "Mandate" concept)
+- **Merchants:** Integrate Kite API to initiate stablecoin transfers, verify payments, and fetch delegation proofs
+
+## Automatic Sourcing
+
+**What it is:** AI-powered sourcing optimization for manufacturing (cost, lead time, production planning, carbon emissions).
+
+**Current Problems:**
+- Same delegation risks as agentic commerce
+- High foreign exchange costs for international payments
+
+**How Kite Helps:**
+- Secure delegation mechanisms
+- Cost savings through stablecoin payments instead of traditional FX
+
+## Portfolio Management
+
+**What it is:** AI-driven investment timing and portfolio optimization.
+
+**Current Problems:**
+- Need for solid control beyond just prompt instructions
+
+**How Kite Helps:**
+- Programmable guard rails for investment constraints and risk management
+
+## AI Agent Services
+
+**What it is:** Data, model, and tool services specifically designed for AI agents.
+
+**Current Problems:**
+- Complex micro-transaction handling
+- Difficult pay-per-use integration
+
+**How Kite Helps:**
+- Enables autonomous micro-transactions through AI agents
+- Streamlines pay-per-use service integration 
