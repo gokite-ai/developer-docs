@@ -2,7 +2,6 @@
 
 ## 🎯 Get Started (Why Kite?)
 
-- [Get Started Overview](get-started/README.md)
 - [Introduction & Mission](get-started/introduction-and-mission.md)
 - [Key Use Cases & Players](get-started/key-use-cases-and-players.md)
 - [Architecture & Design Pillars](get-started/architecture-and-design-pillars.md)
@@ -11,7 +10,6 @@
 
 ## 🔗 Integration Guide
 
-- [Integration Guide Overview](integration-guide/README.md)
 - [Workflow Overview](integration-guide/workflow-overview.md)
 - [Workflow A: Agent Builders](integration-guide/workflow-agent-builders.md)
 - [Workflow B: Merchants & Payment Providers](integration-guide/workflow-merchants-payment-providers.md)
