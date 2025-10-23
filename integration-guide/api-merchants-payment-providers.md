@@ -1,10 +1,10 @@
-# Merchants & Payment Providers API
+# Merchant Integration Guide
 
-Complete API documentation for merchants to receive and verify agent-initiated payments.
+How to integrate Kite's payment verification into your checkout system to accept agent-initiated payments.
 
-## 🎯 Overview
+## 🎯 What You're Building
 
-Merchants use these APIs to integrate Kite's payment infrastructure into their checkout systems. This includes proof verification, stablecoin transfer requests, and payment confirmation.
+You're building a payment processing system that can safely receive payments from AI agents. This requires integrating proof verification, stablecoin processing, and transaction management into your checkout flow.
 
 ## 🔐 Authentication
 
