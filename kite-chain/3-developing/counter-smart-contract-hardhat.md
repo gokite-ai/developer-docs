@@ -211,4 +211,4 @@ Important - Copy and save this address on your notepad.
 	•	Keep compiler optimizations consistent across environments.
 
 If you wish to integrate this deployed contract to a front-end with a user interface, visit the below link and follow the steps:
--   https://docs.gokite.ai/blockchain-development/sample-dapps-built-on-kite/counter-dapp 
+-   [Counter dApp Tutorial](../4-building-dapps/counter-dapp.md)

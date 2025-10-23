@@ -1,8 +1,8 @@
 ---
-description: This section has a list of curated apps an dhow to build with Kite AI chain
+description: A sample counter dApp built with KITE AI testnet & React
 ---
 
-# Sample dApps built on Kite
+# Counter dApp
 
 ## Building the dApp with React
 
@@ -114,7 +114,7 @@ function App() {
 export default App;
 ```
 
-**Important:** Replace "YOUR\_DEPLOYED\_CONTRACT\_ADDRESS" with the actual contract address you received when deploying your contract from the previous step [Building smart contract on KiteAI. ](../building-smart-contract-on-kite/)
+**Important:** Replace "YOUR\_DEPLOYED\_CONTRACT\_ADDRESS" with the actual contract address you received when deploying your contract from the previous step [Developing Smart Contracts](../3-developing/README.md)
 
 **Step 3: Run the Frontend**
 
@@ -124,7 +124,7 @@ Start your React development server:
 npm start
 ```
 
-Open your browser and navigate to[ http://localhost:3000](http://localhost:3000). With MetaMask connected to the KiteAI Testnet, you should see your counter value and a button to increment it.
+Open your browser and navigate to[ http://localhost:3000](http://localhost:3000). With MetaMask connected to the KiteAI Testnet, you should see your counter value and a button to increment it. See Metamask settings for [KITE AI here. ](../kite-testnet-tools.md#kite-ai-metamask-settings)
 
 Congratulations on building your basic counter dApp on the Kite AI blockchain testnet! You’ve successfully.&#x20;
 
