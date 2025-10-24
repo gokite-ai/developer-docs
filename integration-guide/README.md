@@ -28,8 +28,8 @@ Start here to understand how agentic commerce works and the role Kite plays in e
 ### [Case Study: App Store](case-study-app-store.md)
 See how Kite enables agentic commerce in a real-world scenario with an AI-powered app store where agents can discover, purchase, and manage apps autonomously.
 
-### [API References](api-references.md)
-Complete technical documentation for all Kite APIs, SDKs, and integration tools.
+### [SDK/API Overview for Developers](api-references.md)
+High-level overview of Kite's integration approaches, target actors, and available APIs for developers building with Kite.
 
 ## 🛠️ Development Resources
 
@@ -42,7 +42,7 @@ Complete technical documentation for all Kite APIs, SDKs, and integration tools.
 
 1. **Understand the Basics**: Start with [Workflow Overview](workflow-overview.md)
 2. **Choose Your Role**: Follow either [Agent Builders](workflow-agent-builders.md) or [Merchants](workflow-merchants-payment-providers.md) workflow
-3. **Build & Test**: Use our [API References](api-references.md) and development tools
+3. **Build & Test**: Use our [SDK/API Overview](api-references.md) and development tools
 4. **Deploy**: Follow our deployment guides for production environments
 
 ---
