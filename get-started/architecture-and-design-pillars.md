@@ -1,18 +1,68 @@
----
-description: Kite's core design principles and architecture for agent-native infrastructure
----
-
 # Architecture & Design Pillars
 
 Kite is built from first principles for autonomous agents, not adapted from human-centric systems. Every architectural decision optimizes for one goal: enabling agents to operate with mathematical safety guarantees.
 
-## Core Design Principles
+## Architecture Overview
+
+### Four-Layer Architecture
+
+Kite implements a four-layer architecture that separates concerns while maintaining security and performance:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Ecosystem Layer                          │
+│  Application Marketplace • Agent Ecosystem • Reputation   │
+├─────────────────────────────────────────────────────────────┤
+│                Programmable Trust Layer                    │
+│  Kite Passport • Agent SLAs • Protocol Bridges • Reputation│
+├─────────────────────────────────────────────────────────────┤
+│                   Platform Layer                          │
+│  Identity Management • Authorization APIs • Payment APIs   │
+├─────────────────────────────────────────────────────────────┤
+│                    Base Layer                              │
+│  EVM-Compatible L1 • State Channels • Agent Transactions  │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Base Layer: EVM-Compatible L1
+Optimized specifically for agent transaction patterns:
+- **Stablecoin-native fees**: Predictable costs in USDC/pyUSD, eliminating gas token volatility
+- **State channels for micropayments**: $0.000001 per message with instant settlement
+- **Dedicated payment lanes**: Isolated blockspace preventing congestion
+- **Agent transaction types**: Not just payments, but computation requests and API calls embedded in transactions
+
+### Platform Layer: Agent-Ready APIs
+Abstracts blockchain complexity for developers:
+- **Identity management**: Hierarchical wallets with BIP-32 derivation
+- **Authorization APIs**: Session key generation and management
+- **Payment processing**: State channel opening, signing, and settlement
+- **SLA enforcement**: Automatic penalty and reward execution
+
+### Programmable Trust Layer
+Novel primitives that enable trustless agent operations:
+- **Kite Passport**: Cryptographic agent IDs with selective disclosure
+- **Agent SLAs**: Smart contract interaction templates with enforced guarantees
+- **Protocol bridges**: Compatibility with A2A, MCP, OAuth 2.1, and AP2
+- **Reputation system**: Verifiable behavioral history portable across services
+
+### Ecosystem Layer
+Two interconnected marketplaces:
+- **Application marketplace**: AI services registered once, discoverable by millions of agents
+- **Agent ecosystem**: Agents coordinate through standard protocols
+- **Service discovery**: Cryptographic capability attestations enable trustless matching
+- **Reputation networks**: Global trust scores based on verifiable performance
+
+*For detailed architectural components and terminology, see [Core Concepts & Terminology](core-concepts-and-terminology.md)*
+
+## Design Principles
 
 ### 1. Agent-First Architecture
-Traditional blockchains assume human users who can manage keys and evaluate risks. Kite breaks this assumption:
+Traditional blockchains assume human users who can manage keys and evaluate risks. Kite breaks this assumption entirely:
+
 - **Hierarchical Identity**: User → Agent → Session with cryptographic delegation
-- **Programmable Constraints**: Smart contracts enforce spending limits and operational boundaries
+- **Programmable Constraints**: Smart contracts enforce spending limits and operational boundaries that agents cannot exceed
 - **Session-Based Security**: Ephemeral keys for individual operations, not permanent credentials
+- **Agent Transaction Types**: Embedded API requests within payments, not just value transfers
 
 ### 2. Cryptographic Trust Chain
 Every action creates verifiable audit trails:
@@ -26,58 +76,26 @@ Every action creates verifiable audit trails:
 - **Best of Both**: Security of decentralization + usability of centralization
 
 ### 4. Native Protocol Compatibility
-- **A2A Protocol**: Direct agent coordination
-- **MCP Integration**: Model interoperability
-- **OAuth 2.1**: Enterprise compatibility
-- **AP2 Standard**: Agent payment protocols
+Rather than creating another isolated protocol, Kite embraces existing standards as first principles:
 
-## Four-Layer Architecture
+- **A2A Protocol**: Direct agent coordination across platforms
+- **Agent Payment Protocol (AP2)**: Kite executes AP2 intents with on-chain enforcement
+- **MCP**: Model interoperability across the entire LLM ecosystem
+- **OAuth 2.1**: Backward compatibility with existing services
+- **X402 Standard**: Agent-native payments for future developments
 
-### Base Layer: EVM-Compatible L1
-- Stablecoin-native fees
-- State channels for micropayments
-- Dedicated payment lanes
-- Agent transaction types
+### 5. Mathematical Safety Guarantees
+- **Provable Bounds**: Users know exact maximum exposure before authorizing agents
+- **Cryptographic Enforcement**: Constraints cannot be violated even with total agent compromise
+- **Automatic Expiration**: All authorizations include time-based revocation
+- **Defense in Depth**: Multiple security layers with graduated impact
 
-### Platform Layer: Agent-Ready APIs
-- Identity management
-- Authorization APIs
-- Payment processing
-- SLA enforcement
-
-### Programmable Trust Layer
-- Kite Passport (agent IDs)
-- Agent SLAs
-- Protocol bridges
-- Reputation system
-
-### Ecosystem Layer
-- Application marketplace
-- Agent ecosystem
-- Service discovery
-- Reputation networks
-
-## Security Guarantees
-
-### Bounded Loss Theorem
-Maximum extractable value under complete agent compromise:
-```
-MEV ≤ C.max_daily × D
-```
-
-### Multi-Layer Revocation
-- **Immediate**: Network propagation within seconds
-- **Cryptographic**: Signed revocation certificates
-- **Economic**: Slashing conditions and bonds
-
-## Key Innovations
-
-- **Three-Tier Identity**: Mathematical delegation hierarchy
-- **Programmable Constraints**: Code-enforced boundaries
-- **Micropayment Channels**: $0.000001 per message
-- **Universal Interoperability**: Native protocol support
-- **Cryptographic Security**: Mathematical certainty
+### 6. Economic Viability for Micropayments
+- **Sub-cent Transactions**: Enable per-message, per-token, per-request pricing
+- **Predictable Costs**: Stablecoin fees eliminate gas token volatility
+- **Instant Settlement**: Real-time value transfer without waiting periods
+- **Global Interoperability**: Borderless payments without currency conversion
 
 ---
 
-*For detailed technical specifications, see the [Kite Whitepaper](../get-started/whitepaper-references.md)*
+*For detailed concepts and terminology, see [Core Concepts & Terminology](core-concepts-and-terminology.md)*
