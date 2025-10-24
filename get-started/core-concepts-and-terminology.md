@@ -533,7 +533,3 @@ State channels have known limitations from Ethereum origins, but agent use patte
 **Sequential Processing**:
 - Agent interactions inherently turn-based: request → response → request
 - Limitation perfectly matches use case
-
----
-
-*For detailed technical specifications, flows, and use cases, see the [Kite Whitepaper](../get-started/whitepaper-references.md)*

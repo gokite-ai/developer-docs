@@ -8,21 +8,7 @@ Kite is built from first principles for autonomous agents, not adapted from huma
 
 Kite implements a four-layer architecture that separates concerns while maintaining security and performance:
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    Ecosystem Layer                          │
-│  Application Marketplace • Agent Ecosystem • Reputation   │
-├─────────────────────────────────────────────────────────────┤
-│                Programmable Trust Layer                    │
-│  Kite Passport • Agent SLAs • Protocol Bridges • Reputation│
-├─────────────────────────────────────────────────────────────┤
-│                   Platform Layer                          │
-│  Identity Management • Authorization APIs • Payment APIs   │
-├─────────────────────────────────────────────────────────────┤
-│                    Base Layer                              │
-│  EVM-Compatible L1 • State Channels • Agent Transactions  │
-└─────────────────────────────────────────────────────────────┘
-```
+![Four-Layer Architecture](images/4LayersArchitecture.png)
 
 ### Base Layer: EVM-Compatible L1
 Optimized specifically for agent transaction patterns:
