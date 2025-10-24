@@ -36,16 +36,8 @@ SDK/API overview of how to integrate with Kite's agentic payment infrastructure.
 
 ## 📊 Workflow Diagrams
 
-### Agent Payment Flow
-```
-User → Agent → Kite API → Merchant → Settlement
-  ↓      ↓        ↓         ↓         ↓
-OAuth → Session → Proof → Verify → Transfer
-```
+### Integration Workflows
 
-### Merchant Integration Flow
-```
-Agent → Merchant → Kite API → Verification → Settlement
-  ↓        ↓         ↓           ↓            ↓
-Proof → Checkout → Verify → Transfer → Confirm
-```
+For a complete overview of how agents and merchants integrate with Kite, see the [Workflow Overview](workflow-overview.md).
+
+**TODO: Add workflow diagram image here summarizing the complete integration flow**
