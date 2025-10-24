@@ -9,7 +9,7 @@ You're building an AI agent that can make payments autonomously on behalf of use
 1. **Agent API** - Register your agent and search transaction history
 2. **Agent MCP** - Enable your agent to make payments through Kite's MCP server
 
-## �� Agent API
+## 🔧 Agent API
 
 Kite uses the [Agent-to-Agent (A2A) Protocol](https://a2a-protocol.org/latest/specification/) for agent registration and discovery, enabling your agents to be discoverable and interoperable with the broader A2A ecosystem while maintaining Kite's payment capabilities.
 
@@ -269,7 +269,7 @@ Search and retrieve transaction history for your agent.
 }
 ```
 
-## �� AgentMCP 
+## 💳 Agent MCP 
 
 ### **MCP Server Connection**
 
