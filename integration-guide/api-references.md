@@ -40,4 +40,4 @@ SDK/API overview of how to integrate with Kite's agentic payment infrastructure.
 
 For a complete overview of how agents and merchants integrate with Kite, see the [Workflow Overview](workflow-overview.md).
 
-**TODO: Add workflow diagram image here summarizing the complete integration flow**
+![End User Workflow](images/EndUserWorkflow.drawio.svg)
