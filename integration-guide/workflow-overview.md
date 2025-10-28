@@ -8,6 +8,8 @@ Shoppers use AI agents to find products, monitor availability/price changes, and
 
 Kite makes these transactions safe and verifiable for both sides through cryptographic proof of delegation and stablecoin-native settlement, enabling instant, borderless, and accountable payments.
 
+The diagram below shows the workflow between end-user, agent, merchant, and Kite after implementation. The green parts indicate where Kite helps enable each actor.
+
 ![End User Workflow](images/EndUserWorkflow.svg)
 
 ### Payer (AI agent) integration
