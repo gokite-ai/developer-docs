@@ -13,7 +13,7 @@ SDK/API overview of how to integrate with Kite's agentic payment infrastructure.
 | **Agent Builders** | Register agent IDs, manage agents | **🔐 Developer API key** | Agent Management APIs |
 | **Merchants/Payment Providers** | Verify payments, process transactions | **🔐 Proof Verification** | Payment Processing APIs |
 
-![Kite Interfaces](images/EndUserWorkflow.svg)
+![Kite Interfaces](images/KiteInterfaces.svg)
 
 
 ### 🚨 Key Security Principles
