@@ -16,7 +16,7 @@ Here is the expected workflow for those consumers:
         - Allowed or blocked products / merchants / their categories
 3. Consumers communicate with your agent
 4. Consumers decide to make order and let AI agent to make payments
-    - Your agent automatically uses the KitePass to issue a proof of delegation, which specifies merchant, product, and price etc. and is cryptographically ited to the user session.
+    - Your agent automatically uses the KitePass to issue a proof of delegation, which specifies merchant, product, and price etc. and is cryptographically tied to the user session.
 5. Your agent will call checkout API 
     - When the conditions are met, your agent calls the merchant's checkout API, providing the proof of delegation to authorize payment 
 6. Your agent ends the session with successful checkout
