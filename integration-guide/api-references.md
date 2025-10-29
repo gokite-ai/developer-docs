@@ -25,7 +25,6 @@ SDK/API overview of how to integrate with Kite's agentic payment infrastructure.
 
 ### **[Agent Builder Guide](api-agent-builder-guide.md)** - Build AI Agents with Payment Capabilities
 **What you need to integrate:**
-- **Agent Registration** - Register your agent and get developer API key
 - **MCP Integration** - Connect your agent to Kite's remote MCP server
 - **OAuth Integration** - Let users authenticate and configure spending sessions
 - **Payment Processing** - Enable autonomous payments through your agent
