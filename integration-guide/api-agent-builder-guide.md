@@ -284,9 +284,13 @@ Connect to Kite's remote MCP server for payment processing:
 | Tool                  | Description                                                       |
 | --------------------- | ----------------------------------------------------------------- |
 | `check_session_config`| Check session configuration (spending rules, expiration)         |
+| `get_user_id`         | Get user ID of authenticated user                                |
+| `get_agent_id`        | Get agent ID of authenticated agent                              |
+| `get_merchant_info` | Fetch verified merchant identity and policy metadata |
 | `check_wallet_balance`| Check user wallet balance for available funds                    |
-| `generate_payment_delegation`   | Generate a payment authorization request linked to a user session |
-| `execute_payment`     | Execute a payment using verified delegation proof                 |
+| `generate_payment_delegation`   | Create a delegation request within the session’s limits |
+| `get_payment_delegation` | Retrieve the signed proof that authorizes the merchant to execute payment. |
+| `revoke_payment_delegation` | Revoke or invalidate a previously issued delegation proof |
 | `get_payment_history` | Retrieve user or agent-level payment history                      |
 | `get_payment_status`  | Check the status of a specific payment transaction               |
 | `terminate_session`   | End an active session to prevent unauthorized use                 |
@@ -306,6 +310,18 @@ Implement OAuth flow following the [MCP Authorization specification](https://mod
 - **OAuth Authentication**: All payment operations require user authentication
 - **Audit Trail**: All transactions are verifiable on Kite Chain
 - **Spending Controls**: Users can set limits and rules for agent payments
+
+
+## Two-Staged Delegation
+
+- **Authentication at MCP connection**
+  - End users authenticate and approve the agent during its connection to Kite MCP.
+  - This establishes a trusted *session*, enabling the agent to use the end-user ID and agent ID to generate future delegation proofs.
+  - Users can also define spending guardrails (e.g., budget per week, max per transaction) at this stage.
+  
+- **Signature for delegation proof**
+  - When a specific purchase is initiated (e.g., defined product IDs, merchant, amount, expiration time), agent generates a delegation proof to let end user to sign.
+  - Merchants verify this proof before executing the payment, ensuring transactions are secure, traceable, and within authorized limits.
 
 
 ## 📚 External Resources
