@@ -49,6 +49,6 @@ description: Key use cases and players in the agentic economy enabled by Kite's 
 - Existing payment systems introduce latency and manual intervention, breaking automation.
 
 **How Kite Helps:**
-- Verifiable, autonomous micro-payment infrastructure for AI agents through Kite Passport and delegation proof.
-- Streamlines pay-per-use service integration for AI agent native design
-- 
+- Verifiable, autonomous payment infrastructure for AI agents through Kite Passport and delegation proof.
+- Kite Passport to enable agent actions for easy integration.
+- Kite Chain for instant, low-latency settlement through stablecoin-based transactions.
