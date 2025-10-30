@@ -9,6 +9,17 @@ You're building an AI agent that can make payments autonomously on behalf of use
 1. **Agent API** - Register your agent and search transaction history
 2. **Agent MCP** - Enable your agent to make payments through Kite's MCP server
 
+## Two-Staged Delegation
+
+- **Authentication at MCP connection**
+  - End users authenticate and approve the agent during its connection to Kite MCP.
+  - This establishes a trusted *session*, enabling the agent to use the end-user ID and agent ID to generate future delegation proofs.
+  - Users can also define spending guardrails (e.g., budget per week, max per transaction) at this stage.
+  
+- **Signature for delegation proof**
+  - When a specific purchase is initiated (e.g., defined product IDs, merchant, amount, expiration time), agent generates a delegation proof to let end user to sign.
+  - Merchants verify this proof before executing the payment, ensuring transactions are secure, traceable, and within authorized limits.
+
 ## 🔧 Agent API
 
 Kite uses the [Agent-to-Agent (A2A) Protocol](https://a2a-protocol.org/latest/specification/) for agent registration and discovery, enabling your agents to be discoverable and interoperable with the broader A2A ecosystem while maintaining Kite's payment capabilities.
@@ -311,17 +322,6 @@ Implement OAuth flow following the [MCP Authorization specification](https://mod
 - **Audit Trail**: All transactions are verifiable on Kite Chain
 - **Spending Controls**: Users can set limits and rules for agent payments
 
-
-## Two-Staged Delegation
-
-- **Authentication at MCP connection**
-  - End users authenticate and approve the agent during its connection to Kite MCP.
-  - This establishes a trusted *session*, enabling the agent to use the end-user ID and agent ID to generate future delegation proofs.
-  - Users can also define spending guardrails (e.g., budget per week, max per transaction) at this stage.
-  
-- **Signature for delegation proof**
-  - When a specific purchase is initiated (e.g., defined product IDs, merchant, amount, expiration time), agent generates a delegation proof to let end user to sign.
-  - Merchants verify this proof before executing the payment, ensuring transactions are secure, traceable, and within authorized limits.
 
 
 ## 📚 External Resources
