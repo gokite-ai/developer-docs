@@ -23,57 +23,32 @@ Today's internet was designed only for humans, but AI agents will have even more
   * It is risky for merchants to receive payments from AI agents since there is no clear liability on those payments
 * Kite is **a foundational infrastructure empowering autonomous agents to operate and transact with identity, payment, governance, and verification.**
 
-**Why Kite?**
+## <sup><sub>Why Kite ?<sub></sup>
 
-<details>
+Kite introduces, the first infrastructure system designed from first principles for the agentic economy. We present the SPACE framework as the complete solution:
 
-<summary>3 tiers of ID for fine-grained governance</summary>
+* Stablecoin-native: Every transaction settles in stablecoins with predictable sub-cent fees
+* Programmable constraints: Spending rules enforced cryptographically, not through trust
+* Agent-first authentication: Hierarchical wallets with cryptographic principal binding
+* Compliance-ready: Immutable audit trails with privacy-preserving selective disclosure
+* Economically viable micropayments: True pay-per-request economics at global scale
 
-The user → agent → session identity hierarchy separates root authority (user), delegated authority (agent), and ephemeral authority (session). This enables precise controls like per-agent spending limits, time windows, and whitelisted providers without exposing master keys.
+**Our Core Innovations**
 
-</details>
+**Three-Layer Identity Architecture**\
+We introduce the first hierarchical identity model that separates user (root authority), agent (delegated authority), and session (ephemeral authority) identities. Each agent receives its own deterministic address derived from the user's wallet using BIP-32, while session keys are completely random and expire after use. This defense-in-depth architecture ensures graduated security: compromising a session affects only one delegation; compromising an agent remains bounded by user-imposed constraints; and user keys secured in local enclaves inaccessible to any external third parties, which are thus highly unlikely to be compromised, represent the only point of potential unbounded loss. While funds remain compartmentalized for security, reputation flows globally across the system. Every transaction and interaction contributes to a unified reputation score, establishing a cryptographic root of trust that spans users, agents, and services throughout the Kite platform.
 
-<details>
+**Programmable Governance Beyond Smart Contracts**\
+While smart contracts enable programmable money, agents require compositional rules that span multiple services. Kite implements a unified smart contract account model where users own a single on-chain account holding shared funds. Multiple verified agents operate through session keys with cryptographically enforced spending rules: "ChatGPT limit $10,000/month, Cursor limit $2,000/month, other agents limit $500/month." Rules can be temporal (e.g., increase limits over time), conditional (e.g., reduce limits if volatility spikes), and hierarchical (cascade through delegation levels). These aren't policies, but programmatically enforced boundaries.
 
-<summary>Verifiable proof of delegations</summary>
+**Agent-Native Payment Rails with State Channels**\
+Beyond stablecoins and payments-first blockchains, the real revolution goes deeper. Kite creates agent-first transaction types. Beyond simple transfers, Kite implements programmable micropayment channels optimized for agent patterns. Instead of the traditional over-complicated multi-party card rails of authenticate, request, pay, wait, and verify, payments are instantly settled during agent interaction within the same channel. Two on-chain transactions (open and close) enable thousands of off-chain signed updates, achieving sub-hundred-millisecond latency at $1 per million requests. This architectural inversion, treating per-request and streaming micropayments as first-class behaviors with sub-cent precision and instant finality, unlocks agent-native economics which were previously impossible.
 
-Every operation is cryptographically signed and anchored on-chain, producing tamper-evident audit trails. Services and auditors can verify who authorized what, when, and under which constraints—no screenshots or manual logs required.
+In the following chapters, we will detail how Kite's architecture, protocols, and implementations solve each infrastructure failure, transforming the promise of the agentic economy into operational reality.
 
-</details>
+The agentic future isn't waiting for better models. It's waiting for infrastructure that treats agents as first-class economic actors.
 
-<details>
-
-<summary>Programmable guard rails</summary>
-
-Set enforceable constraints like daily budgets, provider allowlists, rate limits, or conditional rules (e.g., “halve limits if volatility > 20%”). These compile to smart contract enforcement, so agents cannot exceed policy even if compromised.
-
-</details>
-
-<details>
-
-<summary>Native agentic protocol support</summary>
-
-Compatible with A2A, AP2, MCP, OAuth 2.1, and emerging standards in AI agent communication.
-
-</details>
-
-<details>
-
-<summary>AI agent-native stablecoin payment</summary>
-
-Streaming micropayments and pay-per-call economics via state channels and stablecoin-native settlement. Agents discover, negotiate, and pay for services instantly with predictable costs and sub-100ms latency.
-
-</details>
-
-<details>
-
-<summary>Near zero gas fee</summary>
-
-Chain is optimized for agent throughput with near-zero fees (often <$0.000001) and \~1s block times, enabling practical microtransactions and high-frequency agent interactions at scale.
-
-</details>
-
-## Quick Start
+## <sup>Quick Start</sup>
 
 ### Build AI Agents with Payment Capabilities
 
