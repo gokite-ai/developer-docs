@@ -22,10 +22,6 @@ Choose your path to get started with Kite:
 * [Architecture & Design Pillars](get-started/architecture-and-design-pillars.md)
 * [Core Concepts & Terminology](get-started/core-concepts-and-terminology.md)
 
-### [Integration Guide](integration-guide/workflow-overview/)
-
-Coming soon.
-
 ### [Kite Chain](kite-chain/1-getting-started/network-information.md)
 
 **Build on Kite** - Network information, tools, and smart contract development
@@ -34,6 +30,10 @@ Coming soon.
 * [Tools & Explorer](kite-chain/1-getting-started/tools.md)
 * [Smart Contract Development](kite-chain/3-developing/smart-contracts-list.md)
 * [Sample dApps](kite-chain/4-building-dapps/)
+
+### [Integration Guide](integration-guide/workflow-overview/)
+
+Coming soon.
 
 ## Key Features
 
