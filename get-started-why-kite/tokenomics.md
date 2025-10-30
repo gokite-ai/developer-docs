@@ -48,6 +48,16 @@ The total supply of KITE is capped at 10 billion and distributed as follows.
 
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
+**Ecosystem and Community (48%) -** Ecosystem and community tokens are dedicated to accelerating user adoption, builder and developer engagement, and ecosystem liquidity. They will fund community airdrops, liquidity programs, and growth initiatives that expand participation, reward meaningful contributions, and drive Kite’s transition from launch to broad utility.
+
+**Investors (12%) -** Investor tokens are distributed under structured vesting schedules to align investor interests with the network's long-term growth, ensuring that early financial supporters remain committed as the ecosystem expands.
+
+**Modules (20%) -** Tokens allocated to modules will be used to incentivize the development of high-quality AI services and to expand the infrastructure that enables users to interact seamlessly with the Kite ecosystem. These funds will support developer grants, performance-based rewards, and the build-out of services that enhance both the intelligence and accessibility of the network.
+
+**Team, Advisors, and Early Contributors (20%) -** Team and advisor tokens align the long-term incentives of Kite's builders with the network's sustained success. These allocations reward early contributors, developers, and strategic advisors who are building and scaling the network, with multi-year vesting schedules that promote stability and accountability as the ecosystem matures.
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
 ### The Kite Network Value Capture
 
 **Revenue-Driven Network Growth -** Kite AI implements multiple mechanisms that directly tie token value to network revenues and usage. A percentage of fees from AI service transactions is collected as commission for modules and the network. This ensures the token can benefit directly from every transaction on the network. As modules grow and generate more revenue, additional KITE is locked into their liquidity pools.&#x20;
