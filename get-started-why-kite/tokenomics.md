@@ -1,7 +1,7 @@
 ---
 description: >-
   Economic design and distribution framework of KITE token, powering the agentic
-  AI economy.
+  AI economy
 ---
 
 # Tokenomics
