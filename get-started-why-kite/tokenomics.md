@@ -54,7 +54,7 @@ The total supply of KITE is capped at 10 billion and distributed as follows.
 
 **Modules (20%) -** Tokens allocated to modules will be used to incentivize the development of high-quality AI services and to expand the infrastructure that enables users to interact seamlessly with the Kite ecosystem. These funds will support developer grants, performance-based rewards, and the build-out of services that enhance both the intelligence and accessibility of the network.
 
-**Team, Advisors, and Early Contributors (20%) -** Team and advisor tokens align the long-term incentives of Kite's builders with the network's sustained success. These allocations reward early contributors, developers, and strategic advisors who are building and scaling the network, with multi-year vesting schedules that promote stability and accountability as the ecosystem matures.
+**Team, Advisors, and Early Contributors (20%) — Tokens allocated to the team, advisors, and early contributors align the long-term incentives of Kite’s builders with the network’s sustained success. These allocations reward early contributors, developers, and strategic advisors who are building and scaling the network, with multi-year vesting schedules that promote stability and accountability as the ecosystem matures.
 
 <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
