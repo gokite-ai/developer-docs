@@ -48,6 +48,8 @@ In the following chapters, we will detail how Kite's architecture, protocols, an
 
 The agentic future isn't waiting for better models. It's waiting for infrastructure that treats agents as first-class economic actors.
 
+**Footnote:** - Kite is fully **x402-compatible**, enabling standardized agent-to-agent (A2A) intents, verifiable message passing, escrowed execution, and cross-protocol settlement. This ensures seamless interoperability across emerging agentic ecosystems and intent-based coordination protocols.
+
 ## <sup>Quick Start</sup>
 
 ### Build AI Agents with Payment Capabilities
