@@ -55,7 +55,7 @@ Before building dApps:
 After building dApps:
 
 * Explore [Advanced Features](../5-advanced/) like Account Abstraction and Multisig
-* Review [Security Best Practices](../6-reference/security.md)
+* Review [Security Best Practices](broken-reference)
 * Deploy to production and check [Node Operations](broken-reference)
 
 ***

@@ -41,6 +41,5 @@
 * [Advanced Features](kite-chain/5-advanced/README.md)
   * [Account Abstraction SDK](kite-chain/5-advanced/account-abstraction-sdk.md)
   * [Multisig Wallet](kite-chain/5-advanced/multisig-wallet.md)
-* [Reference](kite-chain/6-reference/README.md)
-  * [Security](kite-chain/6-reference/security.md)
-  * [Compliance](kite-chain/6-reference/compliance.md)
+* [Security](kite-chain/6-reference.md)
+* [MiCA Whitepaper](kite-chain/mica-whitepaper.md)
