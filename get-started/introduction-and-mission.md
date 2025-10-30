@@ -46,15 +46,14 @@ description: The first AI payment blockchain - foundational infrastructure empow
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
 
-## Execute / Receive Agentic Payments through Kite SDK / API
-- **[Let Your Agent Pay](../integration-guide/workflow-agent-builders.md)** - How agents authenticate and operate
-- **[Receive Payments from Agents](../integration-guide/workflow-agent-builders.md)** - How agents authenticate and operate
-- **[API References](../integration-guide/api-references.md)** - Technical integration details
+## Build AI Agents with Payment Capabilities
+- **[Workflow Overview](../integration-guide/workflow-overview.md)** - How agentic commerce works with Kite
+- **[Integration Overview](../integration-guide/api-references.md)** - SDK/API overview and integration approaches
 
 ## For Blockchain Developers
-- **[Kite Chain](../kite-chain/network-information.md)** - Network information and tools
-- **[Smart Contracts](../kite-chain/building-smart-contract-on-kite/README.md)** - Building on Kite
-- **[Sample dApps](../kite-chain/sample-dapps-built-on-kite/README.md)** - Example implementations
+- **[Kite Chain Getting Started](../kite-chain/1-getting-started/README.md)** - Network information and tools
+- **[Smart Contract Development](../kite-chain/3-developing/README.md)** - Building smart contracts on Kite
+- **[Sample dApps](../kite-chain/4-building-dapps/README.md)** - Example dApp implementations
 
 </div>
 

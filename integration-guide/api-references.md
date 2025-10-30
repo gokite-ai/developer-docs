@@ -13,6 +13,9 @@ SDK/API overview of how to integrate with Kite's agentic payment infrastructure.
 | **Agent Builders** | Register agent IDs, manage agents | **🔐 Developer API key** | Agent Management APIs |
 | **Merchants/Payment Providers** | Verify payments, process transactions | **🔐 Proof Verification** | Payment Processing APIs |
 
+![Kite Interfaces](images/KiteInterfaces.svg)
+
+
 ### 🚨 Key Security Principles
 - **Kite never store user passwords or financial credentials which can control your wallet, users are authenticated through trusted OAuth providers**
 - **Kite never hold user funds directly** 
@@ -22,7 +25,6 @@ SDK/API overview of how to integrate with Kite's agentic payment infrastructure.
 
 ### **[Agent Builder Guide](api-agent-builder-guide.md)** - Build AI Agents with Payment Capabilities
 **What you need to integrate:**
-- **Agent Registration** - Register your agent and get developer API key
 - **MCP Integration** - Connect your agent to Kite's remote MCP server
 - **OAuth Integration** - Let users authenticate and configure spending sessions
 - **Payment Processing** - Enable autonomous payments through your agent
@@ -36,16 +38,6 @@ SDK/API overview of how to integrate with Kite's agentic payment infrastructure.
 
 ## 📊 Workflow Diagrams
 
-### Agent Payment Flow
-```
-User → Agent → Kite API → Merchant → Settlement
-  ↓      ↓        ↓         ↓         ↓
-OAuth → Session → Proof → Verify → Transfer
-```
+For a complete overview of how agents and merchants integrate with Kite, see the [Workflow Overview](workflow-overview.md).
 
-### Merchant Integration Flow
-```
-Agent → Merchant → Kite API → Verification → Settlement
-  ↓        ↓         ↓           ↓            ↓
-Proof → Checkout → Verify → Transfer → Confirm
-```
+![End User Workflow](images/EndUserWorkflow.svg)

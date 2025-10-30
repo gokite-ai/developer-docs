@@ -1,7 +1,3 @@
----
-description: Kite's core design principles and architecture for agent-native infrastructure
----
-
 # Architecture & Design Pillars
 
 Kite is built from first principles for autonomous agents, not adapted from human-centric systems. Every architectural decision optimizes for one goal: enabling agents to operate with mathematical safety guarantees.
@@ -78,17 +74,25 @@ Rather than creating another isolated protocol, Kite embraces existing standards
 
 This standards-first approach means developers don't choose between Kite and their existing stack—they add Kite to enhance what already works.
 
-## The SPACE Framework
+### 5. Mathematical Safety Guarantees
+- **Provable Bounds**: Users know exact maximum exposure before authorizing agents
+- **Cryptographic Enforcement**: Constraints cannot be violated even with total agent compromise
+- **Automatic Expiration**: All authorizations include time-based revocation
+- **Defense in Depth**: Multiple security layers with graduated impact
 
-Kite introduces the SPACE framework as the complete end-to-end solution:
+### 6. Economic Viability for Micropayments
+- **Sub-cent Transactions**: Enable per-message, per-token, per-request pricing
+- **Predictable Costs**: Stablecoin fees eliminate gas token volatility
+- **Instant Settlement**: Real-time value transfer without waiting periods
+- **Global Interoperability**: Borderless payments without currency conversion
 
-**S**tablecoin-native: Every transaction settles in stablecoins with predictable sub-cent fees
-**P**rogrammable constraints: Spending rules enforced cryptographically, not through trust
-**A**gent-first authentication: Hierarchical wallets with cryptographic principal binding
-**C**ompliance-ready: Immutable audit trails with privacy-preserving selective disclosure
-**E**conomically viable micropayments: True pay-per-request economics at global scale
+## Architecture Overview
 
-## Four-Layer Architecture
+### Four-Layer Architecture
+
+Kite implements a four-layer architecture that separates concerns while maintaining security and performance:
+
+![Four-Layer Architecture](images/4LayersArchitecture.png)
 
 ### Base Layer: EVM-Compatible L1
 Optimized specifically for agent transaction patterns:
@@ -117,6 +121,18 @@ Two interconnected marketplaces:
 - **Agent ecosystem**: Agents coordinate through standard protocols
 - **Service discovery**: Cryptographic capability attestations enable trustless matching
 - **Reputation networks**: Global trust scores based on verifiable performance
+
+*For detailed architectural components and terminology, see [Core Concepts & Terminology](core-concepts-and-terminology.md)*
+
+## The SPACE Framework
+
+Kite introduces the SPACE framework as the complete end-to-end solution:
+
+**S**tablecoin-native: Every transaction settles in stablecoins with predictable sub-cent fees
+**P**rogrammable constraints: Spending rules enforced cryptographically, not through trust
+**A**gent-first authentication: Hierarchical wallets with cryptographic principal binding
+**C**ompliance-ready: Immutable audit trails with privacy-preserving selective disclosure
+**E**conomically viable micropayments: True pay-per-request economics at global scale
 
 ## Three Core Innovations
 
@@ -259,3 +275,4 @@ Tempo improved blockchain payments. Kite created agent-native infrastructure. Th
 ---
 
 *For detailed technical specifications and use cases, see the [Kite Whitepaper](../get-started/whitepaper-references.md)*
+*For detailed concepts and terminology, see [Core Concepts & Terminology](core-concepts-and-terminology.md)*

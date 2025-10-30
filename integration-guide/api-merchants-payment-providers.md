@@ -38,7 +38,7 @@ Ensures the proof was issued by Kite Chain, has not expired, and is within autho
 {
   "proof_id": "proof_12345",
   "signature": "0xabc123...",
-  "merchant_id": "merchant_001"
+  "recipient_wallet": "0xmerchantWallet..."
 }
 ```
 
@@ -88,5 +88,36 @@ Retrieve the current status or final receipt of a transfer.
   "confirmed_at": "2025-10-22T08:31:02Z",
   "tx_hash": "0xdef456..."
 }
+```
 
+### 3. Transaction History
+
+#### `GET /v1/payments/history`
+
+Retrieve paginated transaction history filtered by wallet addresses.
+
+**Query Parameters**
+- `from_address`: Filter payments from specific wallet (optional)
+- `to_address`: Filter payments to specific wallet (optional)
+- `limit`: Number of transactions (default: 50, max: 100)
+- `offset`: Pagination offset
+- `status`: Filter by status (pending, confirmed, failed)
+
+**Note**: Use `from_address` to see payments from specific users/agents, `to_address` to see payments to your merchant wallet, or both to find specific payment flows.
+
+**Response Example**
+```json
+{
+  "transactions": [
+    {
+      "transaction_id": "tx_789",
+      "amount": "100 USDC",
+      "status": "confirmed",
+      "created_at": "2025-10-22T08:31:02Z",
+      "agent_id": "0xdef456..."
+    }
+  ],
+  "total": 150,
+  "has_more": true
+}
 ```
