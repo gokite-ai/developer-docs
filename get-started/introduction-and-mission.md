@@ -25,13 +25,13 @@ Today's internet was designed only for humans, but AI agents will have even more
 
 ## <sup><sub>Why Kite ?<sub></sup>
 
-Kite introduces, the first infrastructure system designed from first principles for the agentic economy. We present the SPACE framework as the complete solution:
+Kite introduces, the first infrastructure system designed from first principles for the agentic economy. We present the **SPACE framework** as the complete solution:
 
-* Stablecoin-native: Every transaction settles in stablecoins with predictable sub-cent fees
-* Programmable constraints: Spending rules enforced cryptographically, not through trust
-* Agent-first authentication: Hierarchical wallets with cryptographic principal binding
-* Compliance-ready: Immutable audit trails with privacy-preserving selective disclosure
-* Economically viable micropayments: True pay-per-request economics at global scale
+* **Stablecoin-native:** Every transaction settles in stablecoins with predictable sub-cent fees
+* **Programmable constraints:** Spending rules enforced cryptographically, not through trust
+* **Agent-first authentication:** Hierarchical wallets with cryptographic principal binding
+* **Compliance-ready:** Immutable audit trails with privacy-preserving selective disclosure
+* **Economically viable micropayments:** True pay-per-request economics at global scale
 
 **Our Core Innovations**
 
@@ -52,8 +52,8 @@ The agentic future isn't waiting for better models. It's waiting for infrastruct
 
 ### Build AI Agents with Payment Capabilities
 
-* [**Workflow Overview**](../integration-guide/workflow-overview.md) - How agentic commerce works with Kite
-* [**Integration Overview**](../integration-guide/api-references.md) - SDK/API overview and integration approaches
+* [**Workflow Overview**](../integration-guide/workflow-overview/) - How agentic commerce works with Kite
+* [**Integration Overview**](../integration-guide/sdk-api-overview-for-developers/) - SDK/API overview and integration approaches
 
 ### For Blockchain Developers
 

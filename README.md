@@ -22,13 +22,13 @@ Choose your path to get started with Kite:
 * [Architecture & Design Pillars](get-started/architecture-and-design-pillars.md)
 * [Core Concepts & Terminology](get-started/core-concepts-and-terminology.md)
 
-### [Integration Guide](integration-guide/workflow-overview.md)
+### [Integration Guide](integration-guide/workflow-overview/)
 
 **How to integrate** - Complete workflows for developers and merchants
 
-* [Workflow Overview](integration-guide/workflow-overview.md)
-* [Workflow A: Agent Builders](integration-guide/workflow-agent-builders.md)
-* [Workflow B: Merchants & Payment Providers](integration-guide/workflow-merchants-payment-providers.md)
+* [Workflow Overview](integration-guide/workflow-overview/)
+* [Workflow A: Agent Builders](integration-guide/workflow-overview/workflow-a-agent-builders.md)
+* [Workflow B: Merchants & Payment Providers](integration-guide/workflow-overview/workflow-b-merchants-and-payment-providers.md)
 * [Case Study: App Store](integration-guide/case-study-app-store.md)
 
 ### [Kite Chain](kite-chain/1-getting-started/network-information.md)
@@ -57,4 +57,4 @@ Choose your path to get started with Kite:
 
 ***
 
-_Ready to build the future of agentic commerce?_ [_Start with our Introduction_](get-started/introduction-and-mission.md) _or jump directly to_ [_Integration Guides_](integration-guide/workflow-overview.md)_._
+_Ready to build the future of agentic commerce?_ [_Start with our Introduction_](get-started/introduction-and-mission.md) _or jump directly to_ [_Integration Guides_](integration-guide/workflow-overview/)_._
