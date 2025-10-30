@@ -9,7 +9,7 @@
 * [Architecture & Design Pillars](get-started/architecture-and-design-pillars.md)
 * [Core Concepts & Terminology](get-started/core-concepts-and-terminology.md)
 * [Tokenomics](get-started-why-kite/tokenomics.md)
-* [Whitepaper References](get-started/whitepaper-references.md)
+* [Whitepaper](get-started/whitepaper-references.md)
 
 ## 🔗 Integration Guide
 

@@ -46,10 +46,7 @@ Modules, validators, and delegators receive token emissions through a novel cont
 
 The total supply of KITE is capped at 10 billion and distributed as follows.
 
-\
-
-
-<figure><img src="../.gitbook/assets/unknown.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 **Ecosystem and Community (48%) -** Ecosystem and community tokens are dedicated to accelerating user adoption, builder and developer engagement, and ecosystem liquidity. They will fund community airdrops, liquidity programs, and growth initiatives that expand participation, reward meaningful contributions, and drive Kite’s transition from launch to broad utility.
 
@@ -59,7 +56,7 @@ The total supply of KITE is capped at 10 billion and distributed as follows.
 
 **Team, Advisors, and Early Contributors (20%) -** Team and advisor tokens align the long-term incentives of Kite's builders with the network's sustained success. These allocations reward early contributors, developers, and strategic advisors who are building and scaling the network, with multi-year vesting schedules that promote stability and accountability as the ecosystem matures.
 
-<figure><img src="../.gitbook/assets/unknown (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ### The Kite Network Value Capture
 

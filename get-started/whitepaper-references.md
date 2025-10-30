@@ -1,5 +1,3 @@
-## Whitepaper References
+# Whitepaper
 
-This page links out to the Kite whitepapers.
-
-
+Coming soon
