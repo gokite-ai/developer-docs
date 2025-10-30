@@ -39,6 +39,7 @@ Coming soon.
 
 * **Cryptographic Identity**: 3-tier identity system for fine-grained governance
 * **Native Stablecoin Payments**: Built-in USDC support for instant settlements
+* **x402 Compatible:** Support for agent-to-agent (A2A) intents and verifiable message passing.
 * **Agent-First Design**: Purpose-built for autonomous agent operations
 * **Verifiable Delegation**: Cryptographic proof of payment authority
 * **High Performance**: Fast, scalable blockchain infrastructure
