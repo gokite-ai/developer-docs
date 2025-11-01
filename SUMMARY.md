@@ -1,6 +1,8 @@
 # Table of contents
 
-* [README](README.md)
+## Introduction
+
+* [Quickstart](README.md)
 
 ## 🎯 Get Started (Why Kite?)
 

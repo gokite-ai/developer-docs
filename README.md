@@ -5,11 +5,9 @@ description: >-
   programmable permissions, and native access to stablecoin
 ---
 
-# README
+# Quickstart
 
 > **The first AI payment blockchain** - foundational infrastructure empowering autonomous agents to operate and transact with identity, payment, governance, and verification.
-
-## Quick Start
 
 Choose your path to get started with Kite:
 
