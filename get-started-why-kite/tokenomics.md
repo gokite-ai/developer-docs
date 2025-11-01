@@ -8,7 +8,7 @@ description: >-
 
 ### The Mission of Kite AI
 
-Kite AI is building the first blockchain for agentic payments, a foundational platform where autonomous AI agents can operate with verifiable identity, programmable governance, and seamless payments. The company's purpose-built Layer-1 blockchain and Agent Passport system enable AI agents to function as first-class economic actors, creating emergent capabilities through composable interactions. Founded by AI and data infrastructure veterans from Databricks, Uber, and UC Berkeley, Kite AI has raised $33 million from top-tier investors, including PayPal, General Catalyst, Coinbase Ventures and leading blockchain foundations.
+Kite AI is building the first blockchain for agentic payments, a foundational platform where autonomous AI agents can operate with verifiable identity, programmable governance, and seamless payments. The company's purpose-built Layer-1 blockchain and Agent Passport system enable AI agents to function as first-class economic actors, creating emergent capabilities through composable interactions. Founded by AI and data infrastructure veterans from Databricks, Uber, and UC Berkeley, Kite AI has raised $35 million from top-tier investors, including PayPal, General Catalyst, Coinbase Ventures and leading blockchain foundations.
 
 ### Kite AI Network Overview
 
@@ -16,7 +16,7 @@ The Kite AI blockchain is a Proof‑of‑Stake (PoS) EVM‑compatible Layer‑1 
 
 ### KITE Token Utilities
 
-The utility of the KITE token will be rolled out in two phases: Phase 1 utilities are introduced at the time of token generation so that early adopters can immediately participate in the Kite network, while Phase 2 utilities will be added with the launch of the Mainnet.&#x20;
+The utility of the KITE token will be rolled out in two phases: Phase 1 utilities are introduced at the time of token generation so that early adopters can immediately participate in the Kite network, while Phase 2 utilities will be added with the launch of the Mainnet.
 
 ### Phase 1 Utilities
 
@@ -60,8 +60,8 @@ The total supply of KITE is capped at 10 billion and distributed as follows.
 
 ### The Kite Network Value Capture
 
-**Revenue-Driven Network Growth -** Kite AI implements multiple mechanisms that directly tie token value to network revenues and usage. A percentage of fees from AI service transactions is collected as commission for modules and the network. This ensures the token can benefit directly from every transaction on the network. As modules grow and generate more revenue, additional KITE is locked into their liquidity pools.&#x20;
+**Revenue-Driven Network Growth -** Kite AI implements multiple mechanisms that directly tie token value to network revenues and usage. A percentage of fees from AI service transactions is collected as commission for modules and the network. This ensures the token can benefit directly from every transaction on the network. As modules grow and generate more revenue, additional KITE is locked into their liquidity pools.
 
 **Non-Inflationary Economics -** Unlike traditional PoS networks that rely on perpetual token inflation, KITE transitions rapidly from emissions-based rewards to a sustainable model powered entirely by protocol revenues. Initial emissions from a dedicated reward pool bootstrap early network participation, but the system is designed to transition to revenue-driven rewards funded by real AI service usage. This ensures token holders are never diluted by inflation–instead, rewards come directly from value created within the ecosystem.
 
-Together, these mechanisms create a tokenomic system where real AI demand directly drives token value through multiple reinforcing loops: service usage generates revenues, successful modules lock more liquidity, and high-value participants are incentivized to continue creating value capture for the Kite network. The result is a token whose value is fundamentally linked to the utility and adoption of the Kite AI network.\
+Together, these mechanisms create a tokenomic system where real AI demand directly drives token value through multiple reinforcing loops: service usage generates revenues, successful modules lock more liquidity, and high-value participants are incentivized to continue creating value capture for the Kite network. The result is a token whose value is fundamentally linked to the utility and adoption of the Kite AI network.\\
