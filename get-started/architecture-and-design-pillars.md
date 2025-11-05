@@ -8,7 +8,7 @@ Kite is built from first principles for autonomous agents, not adapted from huma
 
 Kite implements a four-layer architecture that separates concerns while maintaining security and performance:
 
-![Four-Layer Architecture](images/4LayersArchitecture.png)
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Base Layer: EVM-Compatible L1
 
