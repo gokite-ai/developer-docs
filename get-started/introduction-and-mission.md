@@ -11,9 +11,7 @@ description: >-
 
 Today's internet was designed only for humans, but AI agents will have even more significant roles in near future. Without a new approach, it will suffer from lack of identity, trust, and scalable payments.
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
-
-<p align="center"><sub>Human Centric vs Agentic Internet</sub></p>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 ## <sup><sub>Kite - The First AI Payment Blockchain<sub></sup>
 
