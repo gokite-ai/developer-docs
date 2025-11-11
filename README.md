@@ -49,6 +49,10 @@ Coming soon.
 * **Developer Tools**: Comprehensive SDK and testing framework
 * **Security Best Practices**: Guidelines for secure agent integration
 
+
+## Github : Open an issue
+For any documentation updates or corrections, please [open an issue](https://github.com/gokite-ai/developer-docs/issues/new/choose) before submitting a PR, this helps us track and review changes efficiently.
+
 ***
 
 _Ready to build the future of agentic commerce?_ [_Start with our Introduction_](get-started/introduction-and-mission.md)_._
