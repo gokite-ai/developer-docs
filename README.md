@@ -1,5 +1,5 @@
 ---
-description: >-
+Description: >-
   Kite is building the base layer for the agentic internet. It is the first
   system that provides autonomous agents with cryptographic identity,
   programmable permissions, and native access to stablecoin
