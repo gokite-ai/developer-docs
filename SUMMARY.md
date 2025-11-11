@@ -1,6 +1,8 @@
 # Table of contents
 
-* [README](README.md)
+## Introduction
+
+* [Quickstart](README.md)
 
 ## 🎯 Get Started (Why Kite?)
 
@@ -9,15 +11,17 @@
 * [Architecture & Design Pillars](get-started/architecture-and-design-pillars.md)
 * [Core Concepts & Terminology](get-started/core-concepts-and-terminology.md)
 * [Tokenomics](get-started-why-kite/tokenomics.md)
-* [Whitepaper References](get-started/whitepaper-references.md)
+* [Whitepaper](get-started/whitepaper-references.md)
 
 ## 🔗 Integration Guide
 
-* [Workflow Overview](integration-guide/workflow-overview.md)
-* [Workflow A: Agent Builders](integration-guide/workflow-agent-builders.md)
-* [Workflow B: Merchants & Payment Providers](integration-guide/workflow-merchants-payment-providers.md)
+* [Workflow Overview](integration-guide/workflow-overview/README.md)
+  * [Workflow A: Agent Builders](integration-guide/workflow-overview/workflow-a-agent-builders.md)
+  * [Workflow B: Merchants & Payment Providers](integration-guide/workflow-overview/workflow-b-merchants-and-payment-providers.md)
+* [SDK/API Overview for Developers](integration-guide/sdk-api-overview-for-developers/README.md)
+  * [Agent Builder Guide](integration-guide/sdk-api-overview-for-developers/agent-builder-guide.md)
+  * [Merchant Integration Guide](integration-guide/sdk-api-overview-for-developers/merchant-integration-guide.md)
 * [Case Study: App Store](integration-guide/case-study-app-store.md)
-* [API References](integration-guide/api-references.md)
 
 ## ⛓️ Kite Chain
 
@@ -41,6 +45,5 @@
 * [Advanced Features](kite-chain/5-advanced/README.md)
   * [Account Abstraction SDK](kite-chain/5-advanced/account-abstraction-sdk.md)
   * [Multisig Wallet](kite-chain/5-advanced/multisig-wallet.md)
-* [Reference](kite-chain/6-reference/README.md)
-  * [Security](kite-chain/6-reference/security.md)
-  * [Compliance](kite-chain/6-reference/compliance.md)
+* [Security](kite-chain/6-reference.md)
+* [MiCA Whitepaper](kite-chain/mica-whitepaper.md)

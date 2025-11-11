@@ -58,9 +58,9 @@ Before diving into advanced features:
 
 For production deployments:
 
-* Review [Security Best Practices](../6-reference/security.md)
+* Review [Security Best Practices](broken-reference)
 * Check [Governance](broken-reference) for protocol updates
-* Explore [Reference Documentation](../6-reference/) for operational details
+* Explore [Reference Documentation](../6-reference.md) for operational details
 
 ***
 

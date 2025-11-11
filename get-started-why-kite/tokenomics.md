@@ -8,15 +8,15 @@ description: >-
 
 ### The Mission of Kite AI
 
-Kite AI is building the first blockchain for agentic payments, a foundational platform where autonomous AI agents can operate with verifiable identity, programmable governance, and seamless payments. The company's purpose-built Layer-1 blockchain and Agent Passport system enable AI agents to function as first-class economic actors, creating emergent capabilities through composable interactions. Founded by AI and data infrastructure veterans from Databricks, Uber, and UC Berkeley, Kite AI has raised $33 million from top-tier investors, including PayPal, General Catalyst,Coinbase Venture and leading blockchain foundations.
+Kite AI is building the first blockchain for agentic payments, a foundational platform where autonomous AI agents can operate with verifiable identity, programmable governance, and seamless payments. The company's purpose-built Layer-1 blockchain and Agent Passport system enable AI agents to function as first-class economic actors, creating emergent capabilities through composable interactions. Founded by AI and data infrastructure veterans from Databricks, Uber, and UC Berkeley, Kite AI has raised $35 million from top-tier investors, including PayPal, General Catalyst, Coinbase Ventures and leading blockchain foundations.
 
 ### Kite AI Network Overview
 
-The Kite AI blockchain is a Proof‑of‑Stake (PoS) EVM‑compatible Layer‑1 chain that serves as a low‑cost, real‑time payment mechanism and coordination layer necessary for autonomous agents to interoperate. Alongside the L1 are a suite of modules, modular ecosystems that expose curated AI services (e.g., data, models, and agents) to users. Modules operate as semi‑independent communities that interact with the L1 for settlement and attribution, while providing specialized environments tailored to particular verticals. Together, the L1 and Modules form a tightly coupled ecosystem where users may assume distinct roles, module owners, validators, or delegators, and the native token KITE drives incentives, staking, and governance.
+The Kite AI blockchain is a Proof‑of‑Stake (PoS) EVM‑compatible Layer‑1 chain that serves as a low‑cost, real‑time payment mechanism and coordination layer necessary for autonomous agents to interoperate. Alongside the L1 is a suite of modules, modular ecosystems that expose curated AI services (e.g., data, models, and agents) to users. Modules operate as semi‑independent communities that interact with the L1 for settlement and attribution, while providing specialized environments tailored to particular verticals. Together, the L1 and Modules form a tightly coupled ecosystem where users may assume distinct roles module owners, validators, or delegators and the native token KITE drives incentives, staking, and governance.
 
 ### KITE Token Utilities
 
-The utility of the KITE token will be rolled out in two phases: Phase 1 utilities are introduced at the time of token generation so that early adopters can immediately participate in the Kite network, while Phase 2 utilities will be added with the launch of the Mainnet.&#x20;
+The utility of the KITE token will be rolled out in two phases: Phase 1 utilities are introduced at the time of token generation so that early adopters can immediately participate in the Kite network, while Phase 2 utilities will be added with the launch of the Mainnet.
 
 ### Phase 1 Utilities
 
@@ -36,7 +36,7 @@ The utility of the KITE token will be rolled out in two phases: Phase 1 utilitie
 
 ### Modules, Validators, and Delegators
 
-Kite validators secure the network by staking tokens and participating in consensus. Each validator selects a specific module to stake to so that incentives are aligned with that module’s performance. Core responsibilities include maintaining network security and consensus stability, participating in governance and voting, and advancing community collaboration and ecosystem growth.
+Kite validators secure the network by staking tokens and participating in consensus. Each validator selects a specific module to stake on, so that incentives are aligned with that module’s performance. Core responsibilities include maintaining network security and consensus stability, participating in governance and voting, and advancing community collaboration and ecosystem growth.
 
 Kite delegators stake tokens to secure the network. Each delegator must select a specific module to stake on, aligning their incentives with that module’s performance. Delegators are expected to take part in ecosystem governance and engage with the community.
 
@@ -46,10 +46,7 @@ Modules, validators, and delegators receive token emissions through a novel cont
 
 The total supply of KITE is capped at 10 billion and distributed as follows.
 
-\
-
-
-<figure><img src="../.gitbook/assets/unknown.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 **Ecosystem and Community (48%) -** Ecosystem and community tokens are dedicated to accelerating user adoption, builder and developer engagement, and ecosystem liquidity. They will fund community airdrops, liquidity programs, and growth initiatives that expand participation, reward meaningful contributions, and drive Kite’s transition from launch to broad utility.
 
@@ -57,14 +54,14 @@ The total supply of KITE is capped at 10 billion and distributed as follows.
 
 **Modules (20%) -** Tokens allocated to modules will be used to incentivize the development of high-quality AI services and to expand the infrastructure that enables users to interact seamlessly with the Kite ecosystem. These funds will support developer grants, performance-based rewards, and the build-out of services that enhance both the intelligence and accessibility of the network.
 
-**Team, Advisors, and Early Contributors (20%) -** Team and advisor tokens align the long-term incentives of Kite's builders with the network's sustained success. These allocations reward early contributors, developers, and strategic advisors who are building and scaling the network, with multi-year vesting schedules that promote stability and accountability as the ecosystem matures.
+**Team, Advisors, and Early Contributors (20%) -** Tokens allocated to the team, advisors, and early contributors align the long-term incentives of Kite’s builders with the network’s sustained success. These allocations reward early contributors, developers, and strategic advisors who are building and scaling the network, with multi-year vesting schedules that promote stability and accountability as the ecosystem matures.
 
-<figure><img src="../.gitbook/assets/unknown (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ### The Kite Network Value Capture
 
-**Revenue-Driven Network Growth -** Kite AI implements multiple mechanisms that directly tie token value to network revenues and usage. A percentage of fees from AI service transactions are collected as commission for modules and the network. This ensures the token can benefit directly from every transaction on the network. As modules grow and generate more revenue, additional KITE is locked into their liquidity pools.&#x20;
+**Revenue-Driven Network Growth -** Kite AI implements multiple mechanisms that directly tie token value to network revenues and usage. A percentage of fees from AI service transactions is collected as commission for modules and the network. This ensures the token can benefit directly from every transaction on the network. As modules grow and generate more revenue, additional KITE is locked into their liquidity pools.
 
 **Non-Inflationary Economics -** Unlike traditional PoS networks that rely on perpetual token inflation, KITE transitions rapidly from emissions-based rewards to a sustainable model powered entirely by protocol revenues. Initial emissions from a dedicated reward pool bootstrap early network participation, but the system is designed to transition to revenue-driven rewards funded by real AI service usage. This ensures token holders are never diluted by inflation–instead, rewards come directly from value created within the ecosystem.
 
-Together, these mechanisms create a tokenomic system where real AI demand directly drives token value through multiple reinforcing loops: service usage generates revenues, successful modules lock more liquidity, and high-value participants are incentivized to continue creating value capture for the Kite network. The result is a token whose value is fundamentally linked to the utility and adoption of the Kite AI network.\
+Together, these mechanisms create a tokenomic system where real AI demand directly drives token value through multiple reinforcing loops: service usage generates revenues, successful modules lock more liquidity, and high-value participants are incentivized to continue creating value capture for the Kite network. The result is a token whose value is fundamentally linked to the utility and adoption of the Kite AI network.\\
