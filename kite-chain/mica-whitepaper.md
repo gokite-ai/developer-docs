@@ -1,5 +1,6 @@
 # MiCA Whitepaper
 
-### MiCA Whitepaper <a href="#link-to-mica-whitepaper" id="link-to-mica-whitepaper"></a>
+Access Kite's MiCA whitepaper:
 
-Coming soon.
+{% file src="../.gitbook/assets/kite_micar.pdf" %}
+
