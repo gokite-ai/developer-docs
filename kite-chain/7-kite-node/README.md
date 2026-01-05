@@ -12,8 +12,8 @@ The Kite Node documentation is structured to support both **understanding the ne
 
 It is organized into two main sections:
 
-1. **Mainnet Network Information**
-2. **Mainnet Node Operations**
+1. [**Mainnet Network Information**](mainnet-network-information.md) 
+2. [**Mainnet Node Operations**](mainnet-node-operations.md) 
 
 ---
 
