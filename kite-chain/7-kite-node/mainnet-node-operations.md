@@ -43,18 +43,20 @@ First, encode the chain config:
 echo -n '{"log-level":"trace"}' | base64
 ```
 
-This will output something like `eyJsb2ctbGV2ZWwiOiJ0cmFjZSJ9`. Then create the full node config JSON and encode it:
+This will output something like `ey**********************************`. Then create the full node config JSON and encode it:
 
 ```bash
-echo -n '{"3USaEfTcoUhHxpKXvpAG916UKCUEyjrtkg2hBArBG3JyDP7my":{"Config":"eyJsb2ctbGV2ZWwiOiJ0cmFjZSJ9","Upgrade":null}}' | base64
+echo -n '{"3USaEfTcoUhHxpKXvpAG916UKCUEyjrtkg2hBArBG3JyDP7my":{"Config":"ey**********************************","Upgrade":null}}' | base64
 ```
 
-It will output `eyJDIjp7IkNvbmZpZyI6ImV5SnNiMmN0YkdWMlpXd2lPaUowY21GalpTSjkiLCJVcGdyYWRlIjpudWxsfX0=`, put this value as `AVAGO_CHAIN_CONFIG_CONTENT` env var when running docker.
+It will output `ey***************************************************************X0=`, put this value as `AVAGO_CHAIN_CONFIG_CONTENT` env var when running docker.
 
 ## Deployment
 
 ### Standard RPC Node
 Recommended Chain config:
+
+```
 {"eth-apis":["eth","eth-filter","net","web3","internal-eth","internal-blockchain","internal-transaction","internal-debug","internal-account","debug","debug-tracer"],"pruning-enabled":true,"warp-api-enabled":true}
 Node config:
 {"3USaEfTcoUhHxpKXvpAG916UKCUEyjrtkg2hBArBG3JyDP7my": {"Config": "eyJldGgtYXBpcyI6WyJldGgiLCJldGgtZmlsdGVyIiwibmV0Iiwid2ViMyIsImludGVybmFsLWV0aCIsImludGVybmFsLWJsb2NrY2hhaW4iLCJpbnRlcm5hbC10cmFuc2FjdGlvbiIsImludGVybmFsLWRlYnVnIiwiaW50ZXJuYWwtYWNjb3VudCIsImRlYnVnIiwiZGVidWctdHJhY2VyIl0sInBydW5pbmctZW5hYmxlZCI6dHJ1ZSwid2FycC1hcGktZW5hYmxlZCI6dHJ1ZX0", "Upgrade": null}}
@@ -82,9 +84,14 @@ docker run -d \
   -e AVAGO_CHAIN_CONFIG_CONTENT=<base64_node_config> \
   ghcr.io/gokite-ai/gokite-chain:v0.1.3
 
+  ```
+
 ### Archive Node
 #### Recommended Chain config:
+
+```json
 {"eth-apis":["eth","eth-filter","net","web3","internal-eth","internal-blockchain","internal-transaction","internal-debug","internal-account","debug","debug-tracer"],"pruning-enabled":false,"warp-api-enabled":true}
+```
 
 #### Node config:
 
