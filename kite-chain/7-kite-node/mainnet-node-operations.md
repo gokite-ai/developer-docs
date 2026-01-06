@@ -46,7 +46,7 @@ echo -n '{"log-level":"trace"}' | base64
 This will output something like `ey**********************************`. Then create the full node config JSON and encode it:
 
 ```bash
-echo -n '{"3USaEfTcoUhHxpKXvpAG916UKCUEyjrtkg2hBArBG3JyDP7my":{"Config":"ey**********************************","Upgrade":null}}' | base64
+echo -n '{"3USaEfTcoUhHxpKXvpAG916UKCUEyjrtkg2hBArBG3JyDP7my":{"Config":"eyJsb2ctbGV2ZWwiOiJ0cmFjZSJ9",Upgrade":null}}' | base64
 ```
 
 It will output `ey***************************************************************X0=`, put this value as `AVAGO_CHAIN_CONFIG_CONTENT` env var when running docker.
