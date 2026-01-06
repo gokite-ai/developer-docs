@@ -1,4 +1,4 @@
-# Flow and User Experience
+# Stablecoin workflow and User Experience
 
 This section describes how users interact with Kite Chain tokens under both **normal (gas-paid)** and **gasless (meta-transaction)** transfer flows, along with the backend API interface, integration scenarios, reference smart contract implementation, and security considerations.
 
@@ -50,15 +50,15 @@ Gasless transfers use **EIP-712 typed data signatures** and **EIP-3009-style aut
 
 ```json
 {
-  "from": "0x570DEDa407f5fC26F2016E19FD4B65Cb8446914F",
-  "to": "0x7f10dFC55a65fFa18Eba7231036490604aDB9cDC",
-  "value": "1000000000000000",
-  "validAfter": "1766646461",
-  "validBefore": "1766650062",
-  "nonce": "0x72285efce974ab076b9b3b055c4001fe428e5c0934dba90d01c2b2bb0d44cab8",
+  "from": "0x**********************************",
+  "to": "0x**********************************",",
+  "value": "1234567890123456",
+  "validAfter": "1234567891",
+  "validBefore": "1234567892",
+  "nonce": "0x**********************************",
   "v": 28,
-  "r": "0xeaa9912f4a88a854bd97675428760a8560d9df820dfb11b8e845101ec9604125",
-  "s": "0x51dab23b2c1669a85490864e6fb386cffc5e6fcd5010c269831202b04b15b6ee"
+  "r": "0x**********************************",
+  "s": "0x**********************************"
 }
 ```
 
@@ -66,7 +66,7 @@ Gasless transfers use **EIP-712 typed data signatures** and **EIP-3009-style aut
 
 ```json
 {
-  "txHash": "0xb280e5601c1b4b8bd055195a1f9d5209610efce5e79f6839cdeab61aa6db5bed"
+  "txHash": "0x**********************************"
 }
 ```
 
