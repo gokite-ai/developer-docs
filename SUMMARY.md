@@ -47,3 +47,8 @@
   * [Multisig Wallet](kite-chain/5-advanced/multisig-wallet.md)
 * [Security](kite-chain/6-reference.md)
 * [MiCA Whitepaper](kite-chain/mica-whitepaper.md)
+* [Kite Node](kite-chain/7-kite-node/README.md)
+  * [Mainnet Network Info](kite-chain/7-kite-node/mainnet-network-information.md)
+  * [Node operations](kite-chain/7-kite-node/mainnet-node-operations.md)
+* [Kite Stablecoin](kite-chain/8-kite-stablecoin/stablecoin-gasless-transfer.md)
+
