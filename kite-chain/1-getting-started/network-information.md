@@ -21,6 +21,7 @@ description: Chain IDs, endpoints, and environment details for Kite networks.
 ### Faucet
 
 * Testnet - [https://faucet.gokite.ai](https://faucet.gokite.ai)
+* Testnet - [ethfaucet.com](https://ethfaucet.com?utm_source=kiteai_docs&utm_medium=docs)   
 
 ## Kite network settings (mainnet)
 
