@@ -2,7 +2,7 @@
 
 This page provides practical integration instructions for using Kite's Stablecoin Gasless Transfer service. It is intended for developers who want to implement gasless token transfers using signed authorizations (EIP-3009).
 
-**Design & Architecture** - For protocol rationale, trust model, and design considerations, refer to [Stablecoin Gasless Transfer – Design Guide](kite-chain/8-kite-stablecoin/stablecoin-gasless-transfer.md) Kite Stablecoin
+**Design & Architecture** - For protocol rationale, trust model, and design considerations, refer to [Stablecoin Gasless Transfer – Design Guide](https://docs.gokite.ai/kite-chain/stablecoin-gasless-transfer) Kite Stablecoin
 
 ## Overview
 
