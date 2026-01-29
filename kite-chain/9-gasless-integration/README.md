@@ -128,4 +128,4 @@ All parameters follow the EIP-3009 specification:
 
 ## Implementation Reference
 
-For a complete TypeScript implementation example demonstrating how to generate the EIP-3009 signature and submit the request, refer to: https://gist.github.com/thor-wong/2438c0e3970e22c75f4302ac2d75ac1b
+For a complete TypeScript implementation example demonstrating how to generate the EIP-3009 signature and submit the request, refer to: [GitHub EIP-3009 example](https://gist.github.com/thor-wong/2438c0e3970e22c75f4302ac2d75ac1b)
