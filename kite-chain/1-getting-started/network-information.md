@@ -16,12 +16,26 @@ description: Chain IDs, endpoints, and environment details for Kite networks.
 ### RPC endpoint
 
 * Testnet - [https://rpc-testnet.gokite.ai/](https://rpc-testnet.gokite.ai/)
-* Mainnet - Coming soon
 
 ### Faucet
 
 * Testnet - [https://faucet.gokite.ai](https://faucet.gokite.ai)
 
+### Chainlist link
+* Testnet - https://chainlist.org/chain/2368
+
 ## Kite network settings (mainnet)
 
-Coming soon.
+* Mainnet -
+  * Chain name: KiteAI Mainnet
+  * Default RPC URL - [https://rpc.gokite.ai/](https://rpc.gokite.ai/)
+  * Chain ID: 2366
+  * Token: KITE
+  * Block Explorer URL - [https://kitescan.ai/](https://kitescan.ai/)
+
+### RPC endpoint
+
+* Mainnet - [https://rpc.gokite.ai/](https://rpc.gokite.ai/)
+
+### Chainlist link
+* Mainnet - https://chainlist.org/chain/2366
