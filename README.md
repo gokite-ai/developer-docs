@@ -24,7 +24,7 @@ Choose your path to get started with Kite:
 
 **Build on Kite** - Network information, tools, and smart contract development
 
-* [Network Information](kite-chain/1-getting-started/network-information.md)
+* [ Information](kite-chain/1-getting-started/network-information.md)
 * [Tools & Explorer](kite-chain/1-getting-started/tools.md)
 * [Smart Contract Development](kite-chain/3-developing/smart-contracts-list.md)
 * [Sample dApps](kite-chain/4-building-dapps/)
