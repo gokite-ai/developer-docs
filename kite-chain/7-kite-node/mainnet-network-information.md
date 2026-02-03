@@ -19,8 +19,8 @@ Kite Mainnet provides multiple geographically distributed RPC endpoints for reli
 It is recommended to configure **multiple RPCs** for redundancy in production environments.
 
 ### HTTPS RPCs
-- https://rpc.gokite.ai/
-- https://rpc-virginia.gokite.ai
+- [https://rpc.gokite.ai/](https://rpc.gokite.ai/)
+- [https://rpc-virginia.gokite.ai](https://rpc-virginia.gokite.ai)
 
 ### WebSocket (WSS) RPCs
 - wss://rpc.gokite.ai/ws
@@ -35,7 +35,7 @@ WebSocket endpoints are recommended for:
 
 Use the Kite block explorer to inspect transactions, blocks, contracts, and addresses:
 
-- **Explorer:** https://kitescan.ai/
+- **Explorer:** [https://kitescan.ai/](https://kitescan.ai/)
 
 ## Usage Notes
 
