@@ -1,4 +1,4 @@
-# Building on Kite Chain - Testnet tools
+# Building on Kite Chain - Network setting & tools 
 
 Before we start building smart contracts on Kite, its important to go over this section which is designed to help developers quickly set up all the critical tools required for building on the Kite blockchain. Whether you’re a beginner taking your first steps into Web3 development or an experienced EVM builder looking to dive into advanced integrations, this guide provides the tools, resources, and best practices you need to succeed. 
 Kite AI is EVM-compatible, meaning you can leverage familiar tools like MetaMask, Hardhat, and Remix while exploring novel AI use cases on Kite protocol.
@@ -14,15 +14,24 @@ Kite AI is EVM-compatible, meaning you can leverage familiar tools like MetaMask
 
 <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeN4fu4Ve47gwEUPmeUir_yHzpv_BbPlbfg6_U5J-rGIBBP1aeDYUMT6GqR5DuZismqQAXVdy_1SO9Nk5YHe-TotQ8eMkzTH9EK2q294oqzA0kpKQEY-4X6i0csYe7Nb3gX5Fcd?key=v2z4xBUdI8luD0S8ugL8vQ" alt=""><figcaption><p>Kite AI MetaMask setting</p></figcaption></figure>
 
+* Mainnet -&#x20;
+  * Chain name: KiteAI Mainnet
+  * Default RPC URL - [https://rpc.gokite.ai/](https://rpc.gokite.ai/)
+  * Chain ID: 2366
+  * Token: KITE
+  * Block Explorer URL - [https://kitescan.ai/](https://kitescan.ai/)&#x20;
+
+
 ### RPC endpoint
 
 * Testnet  - [https://rpc-testnet.gokite.ai/](https://rpc-testnet.gokite.ai/)&#x20;
-* Mainnet - Coming soon&#x20;
+* Mainnet  - [https://rpc.gokite.ai/](https://rpc.gokite.ai/)&#x20;
 
 ### Monitoring and Debugging
 
 * Kite Explorer&#x20;
-  * Testnet  - [ ](https://kite-testnet.blockscout.com/blocks)[https://testnet.kitescan.ai/](https://testnet.kitescan.ai/)&#x20;
+  * Testnet  - [https://testnet.kitescan.ai/](https://testnet.kitescan.ai/)&#x20;
+  * Mainnet  - [https://kitescan.ai/](https://kitescan.ai/)&#x20;
 
 <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfQLAZIMRAEYMvI2D-lvE5PZQjllN_P_ZdXuoARJtjy48gxxg6_9hHuui0zTIBKAHbzAXUWGs660hPkTnIAwVEsbttfB8dHEGuhOEu56RwDEpmWv4hbHVB3ScJQO9pWm0v6s9wogg?key=v2z4xBUdI8luD0S8ugL8vQ" alt=""><figcaption><p>Kite AI Explorer</p></figcaption></figure>
 
