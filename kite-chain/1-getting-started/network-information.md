@@ -21,8 +21,8 @@ description: Chain IDs, endpoints, and environment details for Kite networks.
 
 * Testnet - [https://faucet.gokite.ai](https://faucet.gokite.ai)
 
-### Chainlist link
-* Testnet - https://chainlist.org/chain/2368
+### ChainList link
+* Testnet - [https://chainlist.org/chain/2368](https://chainlist.org/chain/2368) 
 
 ## Kite network settings (mainnet)
 
@@ -37,5 +37,5 @@ description: Chain IDs, endpoints, and environment details for Kite networks.
 
 * Mainnet - [https://rpc.gokite.ai/](https://rpc.gokite.ai/)
 
-### Chainlist link
-* Mainnet - https://chainlist.org/chain/2366
+### ChainList link
+* Mainnet - [https://chainlist.org/chain/2366](https://chainlist.org/chain/2366)
