@@ -15,6 +15,16 @@ By the end of this guide, you will have:
 - The ability for your agent to make payments within your defined limits
 - Full visibility into all transactions your agent makes
 
+### How It Works with Your AI Client
+
+You're using **Mode 1: Client Agent with MCP** — the most common integration pattern. In this mode:
+- You register and manage your own Kite Passport
+- You configure the Kite MCP server into an AI client you use (like Claude Desktop or Cursor)
+- You control your own wallet and payment authorizations
+- The AI agent can make payments on your behalf within the limits you set
+
+This is different from other modes where developers might manage passports for you or pay on your behalf. In this mode, you remain in full control of your funds.
+
 ## Prerequisites
 
 Before you begin, make sure you have:
@@ -121,13 +131,15 @@ The Model Context Protocol (MCP) is how your AI client communicates with the Kit
 
 **[TODO: SCREENSHOT: Agent settings with API key display and copy button highlighted]**
 
-### Configure Claude Desktop (or other MCP client)
+### Configure Your AI Client
 
-The exact steps vary by client, but here's the general process for Claude Desktop:
+The exact steps vary by client. Here's the general process:
 
-1. Open Claude Desktop
-2. Go to **Settings** → **Developer** → **MCP Servers**
-3. Add a new MCP server with the following configuration:
+1. Open your AI client's settings
+2. Find the MCP server configuration section
+3. Add the Kite MCP server configuration from your Portal
+
+**Typical configuration format:**
 
 ```json
 {
@@ -137,26 +149,10 @@ The exact steps vary by client, but here's the general process for Claude Deskto
 }
 ```
 
-**For authenticated access** (recommended):
+**Note:** Your specific configuration (including authentication) is provided in the Kite Portal when you click "Connect to [Client]".
 
-```json
-{
-  "kite-passport": {
-    "command": "npx",
-    "args": [
-      "-y",
-      "mcp-remote",
-      "http://localhost:8000/api_key_{YOUR_API_KEY}/mcp"
-    ]
-  }
-}
-```
-
-**[TODO: Verify exact MCP configuration format and update]**
-
-4. Replace `{YOUR_API_KEY}` with the API key you copied
-5. Save the configuration
-6. Restart Claude Desktop
+4. Save the configuration
+5. Restart your AI client
 
 **[TODO: SCREENSHOT: Claude Desktop MCP configuration interface]**
 
@@ -164,17 +160,17 @@ The exact steps vary by client, but here's the general process for Claude Deskto
 
 ## Step 5: Configure Your Session (First Time)
 
-When your agent attempts its first payment, it will pause and prompt you to create a Session. A Session is a master budget with spending rules.
+A Session is a master budget with spending rules. When you first connect your AI client, you'll be prompted to create a Session.
 
-### The First Payment Flow
+### The Connection Flow
 
-Here's what happens when your agent tries to pay for something:
+Here's what happens when you connect your AI client to Kite:
 
-1. You ask your agent to do something that requires payment (e.g., "Get me the daily stock report")
-2. The agent identifies a service that can help, but requires payment
-3. The agent calls `kite.pay(...)` via the MCP Tool
-4. The Kite system checks for a valid Session and finds none
-5. The agent pauses and prompts you to create one
+1. You add the Kite MCP configuration to your AI client
+2. Your AI client connects to the Kite MCP server
+3. The system checks for a valid Session
+4. If no Session exists, you'll be prompted to create one with spending limits
+5. Once created, your agent can make payments within those limits
 
 ### Create Your Session
 
@@ -274,15 +270,13 @@ Every payment your agent makes is recorded:
 
 ## Managing Sessions
 
-### Edit a Session
+### Session Limitations
 
-You can modify an active Session's rules at any time:
-1. Go to **"Sessions"** in the Portal
-2. Click on the Session you want to modify
-3. Adjust the settings
-4. Sign the updated Session
+**Important:** Sessions are immutable once created. You cannot edit an active Session's rules. If you need different limits, you must:
+1. Revoke the current Session
+2. Create a new Session with updated rules
 
-**Note:** Reducing the budget below already-spent amounts will not reverse transactions.
+This design ensures clear audit trails and prevents confusion about authorized spending limits.
 
 ### Revoke a Session
 
@@ -294,14 +288,16 @@ To immediately stop all agent payments:
 
 The agent will need to create a new Session for future payments.
 
-### Session Types
+### Session Lifecycle
 
-| Type | Description | Best For |
-|------|-------------|----------|
-| **Long-term** | Persistent Session with higher limits | Trusted agents, frequent use |
-| **One-time** | Single-use or short-lived Session | Testing, infrequent tasks |
+| Stage | Description |
+|-------|-------------|
+| **Creation** | You create a Session with budget and time limits |
+| **Active** | Your agent can make payments within Session constraints |
+| **Expiration** | Session automatically expires after time limit |
+| **Revocation** | You can manually revoke a Session from the Portal at any time |
 
-**[TODO: Verify if both session types are currently implemented]**
+**Important:** Once created, a Session cannot be modified. To change limits, revoke the current Session and create a new one.
 
 ---
 

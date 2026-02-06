@@ -19,8 +19,18 @@ By integrating with Kite Agent Passport, your service will be able to:
 
 Before you begin, ensure you have:
 
-- [ ] A service that supports X402 and can be called via API
+- [ ] A service that can be called via API
+- [ ] Understanding of HTTP 402 Payment Required responses
 - [ ] A service wallet address on Kite L1 testnet
+
+### What You DON'T Need to Build
+
+- **Payment infrastructure** — Kite facilitators handle on-chain execution
+- **Wallet management** — End users manage their own wallets via Kite Passport
+- **Session/delegation systems** — Kite Passport handles user authorizations
+- **Redemption APIs** — Payments go directly to your wallet address
+
+Your only responsibility is implementing the x402 protocol to request and verify payments.
 
 ---
 
@@ -46,10 +56,21 @@ Before you begin, ensure you have:
 
 **Key Points:**
 1. Your service returns a 402 Payment Required response with payment details
-2. Agents obtain a signed payment authorization from the user
-3. Your service receives and verifies the payment token
-4. The facilitator executes the on-chain transfer to your payee address
-5. You deliver the service after confirming payment
+2. The agent (via Kite MCP tools) obtains a signed payment authorization from the user
+3. Your service receives the payment token (X-Payment header) from the agent
+4. You verify the payment token and call the facilitator to execute the transfer
+5. The facilitator executes the on-chain transfer to your payee address
+6. You deliver the service after confirming payment
+
+### Who Pays
+
+In the current Kite Agent Passport flow:
+- **End users** have their own Kite Passports with wallet balances
+- Users authorize payments through their AI agents
+- Users maintain their own sessions and spending rules
+- You (the service provider) receive payments directly to your wallet
+
+This is different from other models where developers might pay on behalf of users. In the Kite ecosystem, users control their own funds.
 
 ---
 
@@ -156,8 +177,20 @@ For detailed implementation guidance on the x402 protocol, refer to:
 1. **Review the x402 protocol** to understand implementation requirements
 2. **Set up your service wallet** on Kite L1 testnet
 3. **Implement x402 support** in your service
-4. **Test with Kite Agent Passport** using the Kite MCP
+4. **Test with Kite Agent Passport** — See [End User Guide](end-user-guide.md) for how users will connect and pay
 5. **Prepare for mainnet** by reviewing the [Testnet Notice](testnet-notice.md)
+
+### Testing Your Integration
+
+To test your x402 service with Kite Agent Passport:
+
+1. Set up a test user account in the [Kite Portal](https://x402-portal-eight.vercel.app/)
+2. Fund the test account with testnet tokens
+3. Create a test agent and configure MCP in an AI client (e.g., Claude Desktop)
+4. Have the AI client call your service
+5. Verify your service receives the 402 response, processes payment, and delivers the service
+
+For detailed testing steps from the user perspective, see the [End User Guide](end-user-guide.md).
 
 ***
 
