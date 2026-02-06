@@ -52,4 +52,6 @@
 * [Kite Stablecoin](kite-chain/8-kite-stablecoin/stablecoin-gasless-transfer.md)
 * [Kite Gasless Integration](kite-chain/9-gasless-integration/README.md)
 * [LayerZero-Kite AI](kite-chain/10-layerzero-kite-integration/README.md)
+* [Goldsky-Kite AI](kite-chain/11-goldsky-kite-integration/README.md)
+* [Lucid-Kite AI](kite-chain/12-lucid-kite-integration/README.md)
 
