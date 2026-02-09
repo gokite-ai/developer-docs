@@ -30,7 +30,7 @@ This is different from other modes where developers might manage passports for y
 Before you begin, make sure you have:
 
 - [ ] A web browser (Chrome, Firefox, Safari, or Edge)
-- [ ] An AI client that supports MCP (such as Claude Desktop)
+- [ ] An AI client that supports MCP (such as Claude Desktop with a Pro account, or Cursor)
 - [ ] Basic familiarity with your AI client's settings
 - [ ] 15-20 minutes to complete the setup
 

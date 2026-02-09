@@ -18,7 +18,11 @@ Welcome to the Kite Agent Passport documentation. Kite Agent Passport provides t
 
 ### For End Users
 
-1. Create an account on the [Kite Portal](https://x402-portal-eight.vercel.app/)
+{% hint style="warning" %}
+> **Important — Invitation Only:** Kite Agent Passport is currently available by invitation only during the testnet phase. If you have not received an invitation, you may not be able to complete all of the steps below. See the [Testnet Notice](testnet-notice.md) for more details.
+{% endhint %}
+
+1. Use your invitation link to access the [Kite Portal](https://x402-portal-eight.vercel.app/) and configure your account
 2. Connect your wallet and complete signature authentication
 3. On-ramp testnet tokens to your wallet
 4. Create an agent and configure its spending rules
