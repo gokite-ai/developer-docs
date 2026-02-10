@@ -8,12 +8,11 @@ Kite Agent Passport is the infrastructure layer that enables autonomous AI agent
 
 ## The Problem
 
-As AI agents become more capable and autonomous, they need to interact with paid services—from API calls to data retrieval to task completion. But giving an agent direct access to your wallet creates unacceptable risks:
+As AI agents become more capable and autonomous, they need to interact with paid services—from API calls to data retrieval to task completion. But current approaches to agent payments face three fundamental challenges:
 
-- **Unlimited spending exposure** - A compromised or confused agent could drain your wallet
-- **No spending oversight** - Users can't set clear boundaries on what agents can spend
-- **Payment complexity** - Agent developers shouldn't need to build identity, authentication, and payment systems from scratch
-- **Service integration friction** - Services have no standard way to accept agent-initiated payments
+- **Scoped payments** - Agents shouldn't have unlimited wallet access. They need permission scoped to specific tasks and spending limits, not blanket authorization to drain funds
+- **Delegated payments** - Agents need autonomy to make payments without requiring human signatures for every transaction, while users maintain control through pre-approved spending rules
+- **Identity-based payments** - Payments must have clear, verifiable identity for both the agent and the user behind it—not anonymous transactions. This enables compliance (AML, KYC), reputation systems, and accountability
 
 ## The Solution: Kite Agent Passport
 
@@ -56,13 +55,12 @@ On-chain payment processing on Kite L1:
 The complete payment flow demonstrates the power of Kite Agent Passport:
 
 1. **User connects agent** - User links their AI agent to Kite via OAuth
-2. **Agent attempts payment** - Agent calls `kite.pay(...)` when it needs to pay for a service
-3. **Session check** - System checks if a valid Session exists for this payment
-4. **Just-in-time prompting** - If no Session exists, the agent pauses and prompts the user to create and sign one
-5. **User approval** - User reviews and signs the Session with their preferred rules
-6. **Payment execution** - Agent retries the payment, which is now approved
-7. **Service redemption** - Service provider redeems the payment via the Service Payment API
-8. **User monitoring** - User can view all Sessions, Delegations, and transactions in the Portal
+2. **User approve the scope** - User reviews and signs the Session with their preferred rules
+3. **Agent attempts payment** - Agent calls `kite.pay(...)` when it needs to pay for a service
+4. **Session check** - System checks if a valid Session exists for this payment
+5. **Payment execution** - Agent retries the payment, which is now approved
+6. **Service redemption** - Service provider redeems the payment via the Service Payment API
+7. **User monitoring** - User can view all Sessions, Delegations, and transactions in the Portal
 
 ## Key Benefits
 
