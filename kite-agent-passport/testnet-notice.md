@@ -48,35 +48,34 @@ Kite Agent Passport is currently in **active development** and operating on the 
 ### For Developers
 
 **What to Expect:**
-- SDK versions may have frequent updates
-- MCP Tool interface may evolve
-- Documentation is continuously improving
-- Sample code may need updates between versions
+- **API and SDK:** In progress — coming soon for programmatic integrations
+- **Available tools:** Currently similar to end user tools — MCP tools and Sessions are ready for use
+- **Documentation:** Continuously improving as features stabilize
+- **Platform stability:** Beta phase with active development
 
 **Best Practices:**
-- Pin specific SDK versions in your dependencies
-- Test thoroughly before deploying agents
-- Join the developer community for support
-- Share your integration patterns and feedback
+- Use MCP tools and Sessions to experiment with agent capabilities
+- Join the developer community for early access to API/SDK announcements
+- Test thoroughly before deploying agents to production
+- Share your integration patterns and feedback to help shape developer tools
 
 ## Known Limitations
 
 ### Current Limitations
 
-| Feature | Limitation | Planned Resolution |
-|---------|------------|-------------------|
-| **Token support** | Testnet stablecoin only | Mainnet stablecoin integration |
-| **Wallet support** | Privy AA wallet only |  |
-| **MCP clients** | Tested on Claude Desktop, Cursor |  |
-| **Session types** | Long-term and one-time |  |
-| **Facilitator integration** | Limited to specific partners | |
+| Feature |
+|---------|
+| **Token support:** Testnet stablecoin only |
+| **Wallet support:** Privy AA wallet only |
+| **MCP clients:** Tested on Claude Desktop, Cursor |
+| **Session types:** Long-term and one-time |
+| **Facilitator integration:** Limited to specific partners |
 
 ### Technical Constraints
 
 - **Block time:** 1 second
 - **Transaction finality:** 1 second
 - **Gas costs:** Covered by testnet, mainnet costs TBD
-- **Rate limits:** [TODO: Add API rate limit information]
 
 ## Stability Expectations
 
