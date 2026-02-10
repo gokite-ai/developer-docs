@@ -134,8 +134,7 @@ Found a security vulnerability?
 
 ### Testnet Status Monitoring
 
-- **Network Status:** [https://testnet.kitescan.ai/stats-service/health](https://testnet.kitescan.ai/stats-service/healt
-)
+- **Network Status:** [https://testnet.kitescan.ai/stats-service/health](https://testnet.kitescan.ai/stats-service/health)
 - **Explorer:** [https://testnet.kitescan.ai/](https://testnet.kitescan.ai/)
 - **Faucet:** [https://faucet.gokite.ai/](https://faucet.gokite.ai/)
 
