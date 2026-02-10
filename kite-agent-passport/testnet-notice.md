@@ -97,40 +97,6 @@ The Kite L1 Testnet is maintained for development and testing purposes. While we
 
 **Important:** Always keep your testnet wallet seed phrase secure, even though it holds no real value.
 
-## Mainnet Roadmap
-
-### Phased Rollout Plan
-
-**Phase 1: Testnet Hardening** (Current)
-- Core feature completion
-- Security audits
-- Partner testing
-- Bug fixes and optimization
-
-**Phase 2: Mainnet Preparation** [TODO: Add timeline]
-- Final security audits
-- Economic parameter tuning
-- Infrastructure scaling
-- Mainnet launch planning
-
-**Phase 3: Mainnet Launch** [TODO: Add timeline]
-- Public mainnet deployment
-- Real stablecoin support
-- Production service integrations
-- Full documentation completion
-
-### Mainnet Migration
-
-When mainnet launches, testnet users will need to:
-
-1. Create a new mainnet wallet or migrate their existing wallet
-2. On-ramp real stablecoin to their mainnet wallet
-3. Re-register agents on mainnet
-4. Update MCP configuration to point to mainnet endpoints
-5. Update any hardcoded testnet addresses in integrations
-
-**Note:** Detailed migration guides will be provided before mainnet launch.
-
 ## Reporting Issues
 
 ### Bug Reports
@@ -154,7 +120,7 @@ Have an idea for improvement?
 Found a security vulnerability?
 
 - **Do NOT** create a public issue
-- **Email:** [TODO: Add security disclosure email]
+- **Email:** security@gokite.ai
 - **Include:** Detailed description, proof of concept, contact info for follow-up
 
 ## Stay Informed
