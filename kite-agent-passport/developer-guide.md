@@ -88,25 +88,7 @@ Before you begin, ensure your application has:
 
 ### Architecture Overview
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                     Your Agent Application                       │
-│  ┌─────────────────────────────────────────────────────────┐   │
-│  │              MCP Client Integration                     │   │
-│  │  • Connect to Kite MCP server (user-configured)        │   │
-│  │  • Route payment requests to MCP tools                 │   │
-│  │  • Handle OAuth authentication flow                    │   │
-│  └─────────────────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                    Kite MCP Server                              │
-│  • Exposes payment tools (get_payer_addr, approve_payment)     │
-│  • Manages user authentication and sessions                    │
-│  • Creates signed payment authorizations                       │
-└─────────────────────────────────────────────────────────────────┘
-```
+![Architecture Overview](../.gitbook/assets/architecture-overview.png)
 
 ### User Flow (Mode 1)
 
