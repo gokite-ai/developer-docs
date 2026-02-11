@@ -82,56 +82,7 @@ The complete payment flow:
 | **Payment** | On-chain value transfer on Kite L1, x402 facilitator integration, and service redemption APIs. |
 | **MCP Tool** | Integration for AI agents: Kite Payment, session/delegation handling, and user prompts for signatures. |
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                          End User                                │
-│  ┌─────────────────┐     ┌──────────────────────────────────┐  │
-│  │   Kite Portal   │     │       AI Agent (with MCP)         │  │
-│  │  (Dashboard)    │     │    ┌─────────────────────────┐   │  │
-│  │  - Create acct  │     │    │    Kite MCP Tool        │   │  │
-│  │  - Fund wallet  │     │    │  - kite.pay(...)        │   │  │
-│  │  - View Sessions│     │    │  - Auto session mgmt    │   │  │
-│  │  - Monitor txns │     │    └─────────────────────────┘   │  │
-│  └─────────────────┘     └──────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                    Kite Agent Passport                           │
-│  ┌──────────────────────────────────────────────────────────┐  │
-│  │                      Passport Layer                       │  │
-│  │  ┌──────────┐  ┌──────────┐  ┌──────────────────────┐  │  │
-│  │  │ User ID  │  │ Agent ID │  │  Session Module      │  │  │
-│  │  └──────────┘  └──────────┘  │  - Spending rules    │  │  │
-│  │                               │  - Time limits        │  │  │
-│  │  ┌──────────────────────────┐ │  - Merchant allowlist│  │  │
-│  │  │  Delegation Module       │ └──────────────────────┘  │  │
-│  │  │  - Signed intents        │                             │  │
-│  │  │  - Specific payments     │                             │  │
-│  │  └──────────────────────────┘                             │  │
-│  └──────────────────────────────────────────────────────────┘  │
-│  ┌──────────────────────────────────────────────────────────┐  │
-│  │                      Payment Layer                        │  │
-│  │  ┌──────────────┐         ┌──────────────────────────┐  │  │
-│  │  │ Payment      │         │  x402 Facilitator        │  │  │
-│  │  │ Module       │◄────────┤  Integration             │  │  │
-│  │  │ - On-chain   │         │  - Service redemption   │  │  │
-│  │  │   transfers  │         │  - Standardized flow    │  │  │
-│  │  └──────────────┘         └──────────────────────────┘  │  │
-│  └──────────────────────────────────────────────────────────┘  │
-│  ┌──────────────────────────────────────────────────────────┐  │
-│  │                      API Layer                            │  │
-│  │  - Identity API   - Session API   - Delegation API       │  │
-│  │  - Agent Payment API           - Service Payment API     │  │
-│  └──────────────────────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-                      ┌───────────────┐
-                      │  Kite L1 Test │
-                      │     net       │
-                      └───────────────┘
-```
+![Agent paassport architecture](../.gitbook/assets/passport-workflow.png)
 
 ### Core Concepts
 
