@@ -1,5 +1,5 @@
 ---
-description: Integration guide for developers building AI agent applications that support Kite Agent Passport and MCP-based payments.
+Description: Integration guide for developers building AI agent applications that support Kite Agent Passport and MCP-based payments.
 ---
 
 # Developer Guide

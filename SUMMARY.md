@@ -23,6 +23,15 @@
   * [Merchant Integration Guide](integration-guide/sdk-api-overview-for-developers/merchant-integration-guide.md)
 * [Case Study: App Store](integration-guide/case-study-app-store.md)
 
+
+## ⛓️ Kite Agent Passport
+* [Introduction](kite-agent-passport/README.md)
+* [Developer Guide](kite-agent-passport/developer-guide.md)
+* [End User Guide](kite-agent-passport/end-user-guide.md)
+* [Service Provider Guide](kite-agent-passport/service-provider-guide.md)
+* [Testnet Notice](kite-agent-passport/testnet-notice.md)
+
+
 ## ⛓️ Kite Chain
 
 * [Getting Started](kite-chain/1-getting-started/README.md)

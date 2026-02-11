@@ -166,14 +166,7 @@ Kite Agent Passport fully supports the x402 protocol and works with any x402-com
 | **Base URL** | https://facilitator.pieverse.io |
 | **Documentation** | https://facilitator.pieverse.io/ |
 
-**Supported Networks:**
-
-- BSC (BNB Smart Chain)
-- BSC Testnet
-- Base
-- Monad
-- Kite Testnet
-- Kite (mainnet)
+Kite Agent Passport payments use the **Kite chain** (Kite Testnet for testing; Kite mainnet for production). For payment facilitation with Kite, use the following:
 
 **Kite Testnet Facilitator Address:**
 
@@ -185,7 +178,6 @@ Kite Agent Passport fully supports the x402 protocol and works with any x402-com
 
 | Endpoint | Method | Description |
 |----------|--------|-------------|
-| `/v2/supported` | GET | List supported networks and assets |
 | `/v2/verify` | POST | Verify payment signature |
 | `/v2/settle` | POST | Settle payment (execute on-chain) |
 

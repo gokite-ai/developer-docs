@@ -1,5 +1,5 @@
 ---
-description: Step-by-step guide for end users to set up and use Kite Agent Passport - from account creation to executing your first agent payment.
+Description: Step-by-step guide for end users to set up and use Kite Agent Passport - from account creation to executing your first agent payment.
 ---
 
 # End User Guide
@@ -19,38 +19,31 @@ By the end of this guide, you will have:
 
 You're using **Mode 1: Client Agent with MCP** — the most common integration pattern. In this mode:
 - You register and manage your own Kite Passport
-- You configure the Kite MCP server into an AI client you use (like Claude Desktop or Cursor)
+- You configure the Kite MCP server into an AI client you use like Claude Desktop or Cursor (recommended)
 - You control your own wallet and payment authorizations
 - The AI agent can make payments on your behalf within the limits you set
 
 This is different from other modes where developers might manage passports for you or pay on your behalf. In this mode, you remain in full control of your funds.
 
-## Prerequisites
 
-Before you begin, make sure you have:
-
-- [ ] A web browser (Chrome, Firefox, Safari, or Edge)
-- [ ] An AI client that supports MCP (such as Claude Desktop with a Pro account, or Cursor)
-- [ ] Basic familiarity with your AI client's settings
-- [ ] 15-20 minutes to complete the setup
-
----
 
 ## Step 1: Create Your Kite Account
 
 The Kite Portal is your dashboard for managing your wallet, viewing transactions, and configuring spending rules.
 
+**Important — Invitation only:** Kite Agent Passport is currently available by invitation only during the testnet phase. There is no sign-up; use your invitation link to access the Portal and configure your account. If you have not received an invitation, you may not be able to complete the steps below. See the [Testnet Notice](testnet-notice.md) for more details.
+
 ### Navigate to the Portal
 
-Open your browser and go to:
+Use your **invitation link** to access the Kite Portal (do not look for a sign-up page, follow the invitation link you received):
 
 ```
 https://x402-portal-eight.vercel.app/
 ```
 
-### Create Your Account
+### Set Up Your Account
 
-1. Click the **"Get Started"** or **"Sign Up"** button
+1. Open the invitation link you received
 2. You'll be prompted to connect your wallet
 
 ### Connect Your Wallet
@@ -61,7 +54,7 @@ Kite uses Privy to provide secure, self-custodial wallets.
 2. Input your email address and click **"Continue with Email"**
 3. Complete the authentication flow
 
-**Important:** When you connect your wallet, you'll also need to complete a **signature authentication**. This is a security measure that verifies you own the wallet. You'll be prompted to sign a message in your wallet—approve this to continue.
+**Important:** When you connect your wallet, you'll also need to complete a **signature authentication**. This is a security measure that verifies you own the wallet. You'll be prompted to sign a message in your wallet, approve this to continue.
 
 ### Your New Wallet
 
@@ -88,6 +81,8 @@ Before your agent can make payments, you need to add testnet tokens to your wall
 3. Wait for the transaction to complete
 4. Your balance should update within a few seconds
 
+Alternatively, please get in touch with your Kite point fo contact to request for tokens. 
+
 ### Verify Your Balance
 
 Return to the Portal dashboard and confirm you now have a testnet token balance. The exact amount will vary, but you should receive enough to experiment with agent payments.
@@ -113,31 +108,22 @@ Example policy settings:
 - **Maximum per transaction:** $50
 - **Allowed merchants:** All or specific list
 
-**[TODO: SCREENSHOT: Agent spending policy configuration interface]**
+![Agent-level spending policy configuration in Kite Portal](../.gitbook/assets/step%203-spend_rules.png)
 
 These settings act as an additional safety net beyond the Session-level rules you'll configure later.
 
----
+## Step 4: Install agent on Cursor
 
-## Step 4: Connect MCP to Your AI Client
 
-The Model Context Protocol (MCP) is how your AI client communicates with the Kite Agent Passport system.
 
-### Get Your API Key
 
-1. In the Portal, navigate to your agents page
-2. Find the **"MCP Configuration"** button in the agent card area
-3. Copy your API key—you'll need it for the next step
 
-**[TODO: SCREENSHOT: Agent settings with API key display and copy button highlighted]**
 
-### Configure Your AI Client
 
-The exact steps vary by client. Here's the general process:
+**Note:** Your specific configuration (including authentication) is provided in the Kite Portal when you click "Connect to [Client]".
 
-1. Open your AI client's settings
-2. Find the MCP server configuration section
-3. Add the Kite MCP server configuration from your Portal
+4. Save the configuration
+5. Restart your AI client
 
 **Typical configuration format:**
 
@@ -149,16 +135,12 @@ The exact steps vary by client. Here's the general process:
 }
 ```
 
-**Note:** Your specific configuration (including authentication) is provided in the Kite Portal when you click "Connect to [Client]".
 
-4. Save the configuration
-5. Restart your AI client
-
-**[TODO: SCREENSHOT: Claude Desktop MCP configuration interface]**
+![Cursor MCP configuration in your AI client](../.gitbook/assets/step4-install-cursor.png)
 
 ---
 
-## Step 5: Configure Your Session (First Time)
+## Step 5: Configure Your Session (First Time) 
 
 A Session is a master budget with spending rules. When you first connect your AI client, you'll be prompted to create a Session.
 
@@ -172,40 +154,8 @@ Here's what happens when you connect your AI client to Kite:
 4. If no Session exists, you'll be prompted to create one with spending limits
 5. Once created, your agent can make payments within those limits
 
-### Create Your Session
 
-You'll see a prompt like this:
 
-> "The agent needs to create a payment session to interact with services.
->
-> **Session Rules:**
-> - Max $5.00 total
-> - Expires in 24 hours
->
-> Do you approve this new payment Session?"
-
-**[TODO: SCREENSHOT: Session creation prompt in Claude Desktop]**
-
-### Customize Your Session
-
-You can customize the default Session settings:
-
-| Setting | Description | Example |
-|---------|-------------|---------|
-| **Total Budget** | Maximum total spend across all payments | $5.00, $20.00, $100.00 |
-| **Time Limit** | When the Session expires | 1 hour, 24 hours, 7 days |
-| **Merchant Allowlist** | Which services can be paid | All, or specific services |
-
-**[TODO: SCREENSHOT: Session customization interface]**
-
-### Sign Your Session
-
-1. Review the Session rules
-2. Adjust if needed
-3. Click **"Approve"** or **"Sign Session"**
-4. Your wallet will prompt you to sign—approve the signature
-
-Your Session is now created and stored on-chain!
 
 ---
 
@@ -215,30 +165,41 @@ With your Session in place, your agent can now make payments.
 
 ### Make a Test Payment
 
-Try asking your agent something like:
+Use the below prompt on your Cursor's Agent to test the payment flow:
 
-> "Use the stock report service to get me today's market summary."
+```
+As a first step, check whether you can fetch data from https://x402.dev.gokite.ai/api/weather .
+This is x402 service, first try accessing it to understand what payment is reqruied. Then use Installed MCP server "kite-mcp" to make payment to get data from the service.
+1. access x402 service and understand what payment is necessary
+2. call get_payer_addr to know what wallet address you can use
+3. call approve_payment to get JSON for X-PAYMENT
+4. For x402 X-PAYMENT, wrap the JSON in Base64 use curl command to access x402 again.
+```
 
 The agent will:
 1. Identify the service and payment required
-2. Call `kite.pay(...)` with the payment details
+2. Use the Kite MCP tools **`get_payer_addr`** and **`approve_payment`** to obtain your payer address and a signed payment authorization
 3. The payment is validated against your Session rules
 4. The payment executes successfully
 5. The service delivers the result
 
-**[TODO: SCREENSHOT: Successful payment result in Claude Desktop]**
+**Note:** These two MCP tools (`get_payer_addr` and `approve_payment`) are handled by the agent automatically—you don't need to call them or worry about the details. You only approve Sessions and sign when prompted.
+
+![Successful payment result in Claude Desktop](../.gitbook/assets/payment-successful.png)
 
 ### Monitor the Payment
 
 1. Go to the **Kite Portal**
-2. Navigate to **"Transactions"** or **"Activity"**
+2. Navigate to **"Payments"** module
 3. You should see your test payment with details:
    - Amount paid
    - recipient service
    - Which Session authorized it
    - Timestamp
 
-**[TODO: SCREENSHOT: Portal transaction history showing the test payment]---
+![Portal payment history showing the test transaction](../.gitbook/assets/payment-page.png)
+
+---
 
 ## Understanding Your Dashboard
 
@@ -264,40 +225,11 @@ Every payment your agent makes is recorded:
 - Timestamp and transaction hash
 - Status (completed/pending/failed)
 
-**[TODO: SCREENSHOT: Full Portal dashboard overview]**
+![Full Kite Portal dashboard overview](../.gitbook/assets/dashboard-page.png)
 
 ---
 
-## Managing Sessions
 
-### Session Limitations
-
-**Important:** Sessions are immutable once created. You cannot edit an active Session's rules. If you need different limits, you must:
-1. Revoke the current Session
-2. Create a new Session with updated rules
-
-This design ensures clear audit trails and prevents confusion about authorized spending limits.
-
-### Revoke a Session
-
-To immediately stop all agent payments:
-1. Go to **"Sessions"** in the Portal
-2. Find the Session you want to revoke
-3. Click **"Revoke"** or **"Cancel"**
-4. Confirm the revocation
-
-The agent will need to create a new Session for future payments.
-
-### Session Lifecycle
-
-| Stage | Description |
-|-------|-------------|
-| **Creation** | You create a Session with budget and time limits |
-| **Active** | Your agent can make payments within Session constraints |
-| **Expiration** | Session automatically expires after time limit |
-| **Revocation** | You can manually revoke a Session from the Portal at any time |
-
-**Important:** Once created, a Session cannot be modified. To change limits, revoke the current Session and create a new one.
 
 ---
 
@@ -323,33 +255,6 @@ The agent will need to create a new Session for future payments.
 
 ---
 
-## Troubleshooting
-
-### Payment Failed
-
-| Problem | Solution |
-|---------|----------|
-| "Session expired" | Create a new Session with extended time |
-| "Insufficient budget" | Increase Session budget or add funds |
-| "Merchant not allowed" | Update Session allowlist |
-
-### MCP Connection Issues
-
-| Problem | Solution |
-|---------|----------|
-| "MCP server not responding" | Check your internet connection and MCP URL |
-| "Invalid API key" | Verify your API key in the Portal |
-| "Agent not found" | Confirm your Agent ID is correct |
-
-### Wallet Issues
-
-| Problem | Solution |
-|---------|----------|
-| "Signature rejected" | Ensure you're signing with the correct wallet |
-| "Insufficient funds" | Request more testnet tokens from the faucet |
-| "Transaction pending" | Wait for network confirmation—testnet can be slow |
-
----
 
 ## FAQ
 
@@ -379,13 +284,10 @@ No, blockchain transactions are final. This is why Sessions allow you to set app
 
 Now that you have Kite Agent Passport set up:
 
-- **Explore services:** Find services on the [Kite AI Agent App Store] [TODO: Add link]
-- **Configure multiple agents:** Set up specialized agents for different tasks
-- **Join the community:** Connect with other users in Discord [TODO: Add link]
+- **Build services:** BUild your own MCP & x402 service and deploy on Kite testnet. 
 - **Provide feedback:** Help us improve by sharing your experience
-
 ***
 
-*Having trouble? [Report an issue](https://github.com/gokite-ai/developer-docs/issues/new/choose) or ask for help in Discord [TODO: Add link]*
+*Having trouble? [Report an issue](https://github.com/gokite-ai/developer-docs/issues/new/choose) 
 
 *Continue to: [Service Provider Guide](service-provider-guide.md) | [Developer Guide](developer-guide.md)*

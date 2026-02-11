@@ -1,5 +1,5 @@
 ---
-description: Important information about Kite Agent Passport testnet status, known limitations, stability expectations, and future mainnet plans.
+Description: Important information about Kite Agent Passport testnet status, known limitations, stability expectations, and future mainnet plans.
 ---
 
 # Testnet Notice
@@ -22,7 +22,7 @@ Kite Agent Passport is currently in **active development** and operating on the 
 
 **What to Expect:**
 - All transactions use testnet tokens with no real-world value
-- You may need to request testnet tokens from faucets [https://faucet.gokite.ai/](https://faucet.gokite.ai/)
+- You will need to request testnet tokens
 - Network resets may occur, clearing balances and transaction history
 - UI/UX may evolve as we incorporate user feedback
 
