@@ -36,23 +36,8 @@ Your only responsibility is implementing the x402 protocol to request and verify
 
 ## Overview: The Payment Flow
 
-```
-┌─────────────┐      ┌─────────────┐      ┌──────────────┐
-│    Agent    │─────▶│   x402      │─────▶│   Your       │
-│  (via MCP)  │      │ Facilitator │      │  Service     │
-└─────────────┘      └──────────────┘      └──────────────┘
-       │                                          │
-       │ 1. Payment Required                      │
-       │    (402 response with payment details)   │
-       │◀─────────────────────────────────────────┘
-       │                                          │
-       │ 2. Payment Token                         │
-       │    (authorization + signature)           │
-       │─────────────────────────────────────────▶│
-       │                                          │
-       │ 3. Service Response                      │
-       │◀─────────────────────────────────────────┘
-```
+![Payment Flow](../.gitbook/assets/payment_flow.png)
+
 
 **Key Points:**
 1. Your service returns a 402 Payment Required response with payment details
