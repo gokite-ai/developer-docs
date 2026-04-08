@@ -72,14 +72,14 @@ The canonical and always up-to-date source for contract addresses is maintained 
 
 ### Contracts
 
-| Contract | Description |
-|----------|-------------|
-| EndpointV2 | Primary entry point into LayerZero v2. Manages message sending, receiving, and configuration for OApps. |
-| SendUln302 | Message library used for sending cross-chain messages securely. |
-| ReceiveUln302 | Message library used for receiving and verifying cross-chain messages. |
-| BlockedMessageLib | Safety library for blocking misconfigured or invalid message paths. |
-| LZ Executor | Executes verified messages on Kite AI with a defined gas limit and msg.value. |
-| LZ Dead DVN | Placeholder DVN used when default configs are inactive and manual configuration is required. |
+| Contract | Address | Description |
+|----------|---------|-------------|
+| EndpointV2 | `0x6F475642a6e85809B1c36Fa62763669b1b48DD5B` | Primary entry point into LayerZero v2. Manages message sending, receiving, and configuration for OApps. |
+| SendUln302 | `0xC39161c743D0307EB9BCc9FEF03eeb9Dc4802de7` | Message library used for sending cross-chain messages securely. |
+| ReceiveUln302 | `0xe1844c5D63a9543023008D332Bd3d2e6f1FE1043` | Message library used for receiving and verifying cross-chain messages. |
+| Blocked Message Library | `0xc1ce56b2099ca68720592583c7984cab4b6d7e7a` | Safety library for blocking misconfigured or invalid message paths. |
+| LZ Executor | `0x4208D6E27538189bB48E603D6123A94b8Abe0A0b` | Executes verified messages on Kite AI with a defined gas limit and msg.value. |
+| LZ Dead DVN | `0x6788f52439ACA6BFF597d3eeC2DC9a44B8FEE842` | Placeholder DVN used when default configs are inactive and manual configuration is required. |
 
 To check whether a destination chain is supported, use the `isSupportedEid()` method on the Endpoint contract.
 
