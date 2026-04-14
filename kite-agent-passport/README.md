@@ -92,7 +92,7 @@ Wait for the transfer to settle, then check your balance on the dashboard. Make 
 
 - [CLI Reference](cli-reference.md) — full command reference for `kpass` and `ksearch`
 - [Service Provider Guide](service-provider-guide.md) — if you operate a service that receives payments
-- [Testnet Notice](testnet-notice.md) — current environment status and limitations
+
 
 ---
 

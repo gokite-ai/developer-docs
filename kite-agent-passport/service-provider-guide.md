@@ -41,9 +41,9 @@ x402 uses HTTP 402 responses to negotiate on-chain payments between agents and s
 5. The facilitator executes the transfer to your wallet.
 6. You deliver the service response.
 
-### Sample Service: Weather API
+### Sample Service: Weather API (Testnet)
 
-**Weather Service:** https://x402.dev.gokite.ai/api/weather
+**Weather Service (Testnet):** https://x402.dev.gokite.ai/api/weather
 
 Call it without payment:
 
@@ -258,7 +258,7 @@ MPP (Machine Payments Protocol) is an open standard co-authored by Stripe and Te
 2. **Set up a service wallet** on Kite chain (for x402) or connect Stripe (for MPP).
 3. **Implement 402 responses** in your service.
 4. **Test with Passport** — follow the [Introduction](README.md) to create an agent and pay your service.
-5. **Review the [Testnet Notice](testnet-notice.md)** for current environment status.
+
 
 ---
 
