@@ -243,7 +243,7 @@ MPP (Machine Payments Protocol) is an open standard co-authored by Stripe and Te
 
 ## Testing Your Integration
 
-1. Set up a Passport account following the [Quickstart](developer-guide.md).
+1. Set up a Passport account following the [Introduction](README.md).
 2. Fund the account with testnet tokens using the faucet.
 3. Create an agent and approve a spending session.
 4. Point the agent at your service endpoint.
@@ -257,7 +257,7 @@ MPP (Machine Payments Protocol) is an open standard co-authored by Stripe and Te
 1. **Pick your protocol** — x402 for on-chain payments on Kite, or MPP for multi-method support.
 2. **Set up a service wallet** on Kite chain (for x402) or connect Stripe (for MPP).
 3. **Implement 402 responses** in your service.
-4. **Test with Passport** — follow the [Quickstart](developer-guide.md) to create an agent and pay your service.
+4. **Test with Passport** — follow the [Introduction](README.md) to create an agent and pay your service.
 5. **Review the [Testnet Notice](testnet-notice.md)** for current environment status.
 
 ---

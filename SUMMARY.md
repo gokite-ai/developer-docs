@@ -26,8 +26,7 @@
 
 ## ⛓️ Kite Agent Passport
 * [Introduction](kite-agent-passport/README.md)
-* [Quickstart](kite-agent-passport/developer-guide.md)
-* [Add Funds & Transfers](kite-agent-passport/end-user-guide.md)
+* [CLI Reference](kite-agent-passport/cli-reference.md)
 * [Service Provider Guide](kite-agent-passport/service-provider-guide.md)
 * [Testnet Notice](kite-agent-passport/testnet-notice.md)
 

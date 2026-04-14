@@ -1,83 +1,148 @@
 ---
-Description: Kite Agent Passport quickstart docs for launch, covering setup, funding, agent authorization, service discovery, and paid execution with kpass and ksearch.
+description: Get started with Kite Agent Passport — let your AI agent discover and pay for services on your behalf.
 ---
 
 # Kite Agent Passport
 
-Kite Agent Passport is the CLI-first workflow for giving an agent a funded wallet, a scoped spending session, and the ability to discover and pay for services on Kite.
+Kite Agent Passport lets your AI agent discover and pay for services on your behalf. You stay in control of what it can spend — the agent handles everything else.
 
-For launch, this section stays intentionally focused on the core path:
+## How It Works
 
-- paste a single install command into your coding agent
-- sign up or log in
-- fund the Passport wallet
-- transfer funds when needed
-- register an agent and approve a spending session
-- discover services with `ksearch`
-- execute paid requests with `kpass`
+1. You install Kite Passport into your coding agent.
+2. You create an account and set up a passkey on the dashboard.
+3. Your agent logs in and is ready to find and pay for services.
 
-## Start Here
+When your agent needs to pay for something, it creates a **session** — a spending request with a budget and time limit. You review and approve the session using your passkey. Once approved, the agent can spend within those limits without asking again.
 
-### [Quickstart](developer-guide.md)
+## 1. Install
 
-Use this if you want the fastest path from zero to a working Kite Passport setup.
+Paste this command into your coding agent (Codex, Claude Code, Cursor, or similar):
 
-It covers:
+```bash
+curl -L <URL> | bash
+```
 
-- starting from a single copy-paste install command
-- creating or logging in to a Passport
-- funding your wallet
-- creating a spending session
-- discovering a service and making a paid request
+> This placeholder will be replaced with the final install URL before launch.
 
-### [Add Funds & Transfers](end-user-guide.md)
+The agent will install `kpass` (Passport CLI) and `ksearch` (service discovery), add the Kite Passport skills, and guide you through the rest of the setup.
 
-Use this if you already have Passport set up and want the wallet-specific flows:
+## 2. Sign Up
 
-- finding your Passport wallet address
-- funding through the current on-ramp provider
-- moving USDC on Kite from another wallet
-- requesting testnet funds
-- sending funds out of Passport with `kpass wallet send`
+Ask your agent to create a Kite Passport account, or run:
 
-### [Service Provider Guide](service-provider-guide.md)
+```bash
+kpass signup init --email you@example.com
+```
 
-Use this if you are operating the service that receives payment from Passport-powered agents.
+You will receive a verification email. Click the link to confirm your account.
 
-### [Testnet Notice](testnet-notice.md)
+## 3. Generate a Passkey
 
-Use this for environment status, current limitations, and testnet expectations.
+Visit the **Kite Passport dashboard** to create your passkey:
 
-## Core Tools
+> Dashboard URL will be provided before launch.
 
-| Tool | What it does |
+A passkey is tied to your device (fingerprint, Face ID, or hardware key). When your agent requests a spending session, you approve it with your passkey. This is how you prove that **you** authorized the spending — not just the agent.
+
+You only need to do this once per device.
+
+## 4. Log In
+
+Ask your agent to log in, or run:
+
+```bash
+kpass login init --email you@example.com
+```
+
+You will receive an 8-character code by email. Complete the login:
+
+```bash
+kpass login verify --login-id <LOGIN_ID> --code <CODE>
+```
+
+## 5. Fund Your Wallet
+
+Check your wallet:
+
+```bash
+kpass wallet balance
+```
+
+Add funds through one of these paths:
+
+- **Buy USDC** through the on-ramp provider and send it to your Passport wallet address
+- **Transfer USDC** on Kite from another wallet you own
+- **Request test tokens** if you are on testnet:
+
+```bash
+kpass faucet drop --recipient <WALLET_ADDRESS> --token USDC
+```
+
+## 6. Use It
+
+Once you are set up, just tell your agent what you need:
+
+- *"Find me a weather API and get the forecast for Tokyo"*
+- *"Search for available translation services"*
+- *"Buy a code review for this pull request"*
+
+Your agent will search the service catalog, find a match, create a spending session for your approval, and execute the request.
+
+### What Happens Behind the Scenes
+
+1. Your agent searches for services using `ksearch`.
+2. It finds a match and creates a spending session with a budget.
+3. You approve the session using your passkey.
+4. The agent pays the service and returns the result to you.
+
+## Sessions: Your Spending Controls
+
+A **session** is how you stay in control of agent spending. Each session has:
+
+- **A budget** — maximum amount per transaction and total
+- **A time limit** — the session expires automatically
+- **A scope** — what the agent is allowed to do
+
+Your agent cannot spend outside an approved session. If it needs more budget or a different scope, it creates a new session for you to approve.
+
+You can check active sessions anytime:
+
+```bash
+kpass user sessions --status active
+```
+
+## Quick Reference
+
+| What you want to do | What to do |
 | --- | --- |
-| `kpass` | Authentication, wallet access, agent registration, spending sessions, and paid request execution |
-| `ksearch` | Discovery catalog search for paid services and endpoints |
-| Kite Passport skills | Teach agents how to use `kpass` and `ksearch` reliably inside Codex, Cursor, Claude Code, and similar tools |
+| Check who is logged in | `kpass me` |
+| Check your balance | `kpass wallet balance` |
+| See active sessions | `kpass user sessions --status active` |
+| Get testnet tokens | `kpass faucet drop --recipient <ADDRESS> --token USDC` |
+| Send funds to another wallet | `kpass wallet send --to <ADDRESS> --amount <N> --asset USDC` |
 
-## The Core Flow
+For the full list of commands, see the [CLI Reference](cli-reference.md).
 
-1. Paste the install command into your coding agent.
-2. Create a Kite Passport account or log in to an existing one.
-3. Check your wallet address and fund it.
-4. Register an agent identity.
-5. Create a spending session and approve it.
-6. Discover a compatible service with `ksearch`.
-7. Execute the paid request through `kpass`.
+## Troubleshooting
 
-## A Few Things To Know Up Front
+### Verification email not arriving
 
-- The launch install flow is a single command and does not require cloning Kite repos manually.
-- `kpass` stores project-local state in `.kite-passport/`.
-- Use `--output json` when an agent is driving the workflow.
-- Use `--no-interactive` for automation so the CLI never waits on stdin prompts.
-- Signup uses an email link. Login uses an 8-character code.
-- Direct wallet transfers use `kpass wallet send`. Agentic service payments use `agent:session create` plus `agent:session execute`.
+Check your spam folder. If it still doesn't arrive, retry the signup command with the same email.
 
-## Need Help?
+### Agent says "no active session"
 
-- Start with [Quickstart](developer-guide.md)
-- Use [Add Funds & Transfers](end-user-guide.md) for wallet questions
-- Review the [Testnet Notice](testnet-notice.md) before debugging environment issues
-- Open an issue at [gokite-ai/developer-docs](https://github.com/gokite-ai/developer-docs/issues/new/choose)
+The agent needs an approved session to pay for services. Ask it to create one, then approve it with your passkey on the dashboard.
+
+### Balance shows zero after funding
+
+Wait for the transfer to settle, then check again with `kpass wallet balance`. Make sure funds were sent to your Passport wallet address on Kite.
+
+## Next Steps
+
+- [CLI Reference](cli-reference.md) — full command reference for `kpass` and `ksearch`
+- [Service Provider Guide](service-provider-guide.md) — if you operate a service that receives payments
+- [Testnet Notice](testnet-notice.md) — current environment status and limitations
+
+---
+
+*Need help? [Open an issue](https://github.com/gokite-ai/developer-docs/issues/new/choose) or contact the Kite team.*
