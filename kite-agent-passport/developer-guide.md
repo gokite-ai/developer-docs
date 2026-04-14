@@ -1,311 +1,319 @@
 ---
-Description: Integration guide for developers building AI agent applications that support Kite Agent Passport and MCP-based payments.
+Description: Quickstart for setting up Kite Agent Passport with kpass, ksearch, agent skills, wallet funding, spending sessions, service discovery, and the first paid request.
 ---
 
-# Developer Guide
+# Quickstart
 
-This guide is for developers building AI agent applications who want to enable their users to make secure payments through Kite Agent Passport.
+This guide is the launch path for developers who want to use Kite Agent Passport end to end.
 
-## Developer Work Modes
+By the end, you will have:
 
-Kite Agent Passport supports three developer work modes, each with different levels of integration:
+- `kpass` installed for Passport auth, wallet, sessions, and payments
+- `ksearch` installed for service discovery
+- Kite Passport skills installed into your agent
+- a logged-in Kite Passport
+- a funded Passport wallet
+- a registered agent with an approved spending session
+- your first paid request executed through Passport
 
-### Mode 1: Client Agent with MCP (Fully Supported) ✅
+## What You Will Use
 
-You build an AI client application that supports MCP integration. End users register their own Kite Passport accounts and configure them into your application via MCP.
+| Component | Purpose |
+| --- | --- |
+| `kpass` | Sign up, log in, inspect wallet balance, send funds, register agents, create sessions, and execute paid requests |
+| `ksearch` | Search the Kite service catalog and inspect service details |
+| Kite Passport skills | Teach your coding agent how to use the Passport CLI flow without manual babysitting |
 
-**Integration Path:** MCP (Model Context Protocol) + OAuth
+## Before You Start
 
-**Sample Agents:** Cursor (IDE), Claude Desktop
+At launch, the public setup flow should start with a single copy-paste install command in your coding agent. You should not need to manually clone Kite repositories as part of the public quickstart.
 
----
+You will need:
 
-### Mode 2: Developer as End User (Coming Soon) 🚧
+- a supported coding agent such as Codex, Claude Code, or Cursor
+- permission for that agent to install the required Kite tooling
+- access to the Passport environment your team is launching
 
-You create a client agent and register your own Kite Passport. Your customers use x402 services **without needing their own Kite Passport**. You pay for services on behalf of customers and charge them through your own billing (e.g., subscription fees).
+Kite Passport CLI state is stored per project in `.kite-passport/`, so it is best to run the setup inside the workspace where your agent will operate.
 
-**Key Point:** This is the only mode where end users do NOT need a Kite Passport. You (the developer) are the sole Kite Passport holder and pay for all customer usage.
+## 1. Paste The Install Command Into Your Coding Agent
 
-**Integration Path:** SDK/API (in development)
+Use this placeholder install command for now:
 
-**Sample Use Cases:** Aggregator apps, SaaS platforms where you want to bundle service costs into your pricing
-
----
-
-### Mode 3: Deep Platform Integration (Coming Soon) 🚧
-
-You build a full-featured application that manages the complete Kite Passport lifecycle programmatically for your customers. Unlike Mode 1 where users self-serve through the Portal, you control the entire setup via APIs.
-
-**How It Works:**
-1. **Create Client Agent via API** — You programmatically create an agent for the user
-2. **Create Session via API** — You set up a session with spending rules via API
-3. **Register Session On-Chain via SDK** — The session is registered on the blockchain using a blockchain SDK
-4. **Connect to MCP + OAuth** — After setup, users connect via MCP with OAuth authentication
-5. **Configuration Complete** — Users can now make payments through your managed infrastructure
-
-**Key Points:**
-- End users still need to register their own Kite Passport accounts and maintain wallet balance
-- You manage the technical infrastructure (agent creation, session setup, on-chain registration)
-- Users benefit from a seamless, configured experience without manual Portal setup
-- You don't pay on behalf of users — they control their own funds
-
-**Integration Path:** Complete REST API + Blockchain SDK (in development)
-
-**Sample Use Cases:** Enterprise platforms, white-label agent marketplaces, apps requiring programmatic session management, managed service providers
-
----
-
-## What You're Building (Mode 1)
-
-As an agent developer building in Mode 1, you are creating an AI application that:
-
-- Supports MCP (Model Context Protocol) connections
-- Allows users to configure external MCP servers (like Kite)
-- Routes payment requests to MCP tools provided by Kite
-- Handles OAuth authentication when connecting MCP servers
-
-**User responsibilities in Mode 1:**
-- Register their own Kite Passport account
-- Create an Agent in the Kite Portal (self-service UI)
-- Configure the MCP connection in your application
-- Authorize payment sessions with their own wallet
-
-**Contrast with Mode 3:** In Mode 1, users self-serve through the Kite Portal. In Mode 3, you would programmatically create agents and sessions via APIs, handle on-chain registration via SDK, and provide a more managed experience.
-
----
-
-## Prerequisites
-
-Before you begin, ensure your application has:
-
-- [ ] MCP client support
-- [ ] OAuth handling capability for MCP connections
-- [ ] UI for users to add/manage MCP server configurations
-
----
-
-## How It Works
-
-### Architecture Overview
-
-![Architecture Overview](../.gitbook/assets/architecture-overview.png)
-
-### User Flow (Mode 1)
-
-1. **Setup Phase:**
-   - User visits Kite Portal and creates a Kite Passport
-   - User creates an **Agent** in the portal (gets Agent ID)
-   - User copies MCP configuration from portal
-
-2. **Configuration Phase:**
-   - User adds Kite MCP configuration to your application
-   - User authenticates via OAuth when prompted
-   - If no session exists, user creates one with spending limits
-
-3. **Payment Phase:**
-   - Your agent calls x402 service that requires payment
-   - Service returns HTTP 402 Payment Required
-   - Your agent calls Kite MCP tools to get payment authorization
-   - Payment is executed within user's authorized session
-
-**Note:** This is the Mode 1 (self-serve) flow. In Mode 3, you would handle agent creation, session setup, and on-chain registration via APIs/SDK before the user connects via MCP.
-
----
-
-## MCP Server Configuration
-
-Users will configure the Kite MCP server in your application with:
-
-```json
-{
-  "kite-passport-mcp": {
-    "url": "https://neo.dev.gokite.ai/v1/mcp"
-  }
-}
+```bash
+curl -L <URL> | bash
 ```
 
-**Note:** The MCP URL may include an Agent ID or authentication token, which the user obtains from the Kite Portal.
+Paste that into your coding agent and let the agent complete the install and setup flow.
 
----
+This placeholder should be replaced with the final production URL when the public installer is ready.
 
-## MCP Tools Reference
+After the install finishes, the coding agent should be able to guide the user through:
 
-The Kite MCP server provides two primary tools for payment operations.
+- verifying `kpass` and `ksearch`
+- signing up or logging in
+- funding the Passport wallet
+- authorizing an agent session
+- discovering services and making a first paid request
 
-### Tool: `get_payer_addr`
+## 2. Verify The Tools Were Installed
 
-Retrieves the user's Account Abstraction (AA) wallet address.
-
-**Input:** None
-
-**Output:**
-| Field | Type | Description |
-|-------|------|-------------|
-| `payer_addr` | string | User's AA wallet address |
-
-**Example:**
-```javascript
-const result = await mcpClient.callTool('get_payer_addr', {});
-// Returns: { "payer_addr": "0x742d35Cc..." }
+```bash
+kpass --version
+ksearch --version
 ```
 
----
+At this point, users should already have the Passport tools installed by the one-line install flow.
 
-### Tool: `approve_payment`
+## 3. Verify Connectivity
 
-Creates a signed X-Payment payload for the X402 protocol.
+Run the basic health checks:
 
-**Input:**
-
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `payer_addr` | string | Yes | User's AA wallet address |
-| `payee_addr` | string | Yes | Service provider's wallet address |
-| `amount` | string | Yes | Payment amount in token units |
-| `token_type` | string | Yes | Token identifier (e.g., "USDC") |
-| `merchant_name` | string | No | Optional merchant name |
-
-**Output:** Signed payload for the `X-Payment` HTTP header.
-
-**Example:**
-```javascript
-const result = await mcpClient.callTool('approve_payment', {
-  payer_addr: "0x742d35Cc...",
-  payee_addr: "0x209693Bc...",
-  amount: "100",
-  token_type: "USDC"
-});
-
-// Returns authorization object with x_payment field for header
+```bash
+kpass health --output json
+ksearch health --output json
 ```
 
----
+If your team gave you a custom backend, pass it explicitly with `--base-url` or set the matching environment variable.
 
-### Complete Payment Flow Example
+`kpass` also has a helpful overall status command:
 
-```javascript
-async function callX402Service(serviceUrl, requestData) {
-  // 1. Call service (may return 402 Payment Required)
-  let response = await fetch(serviceUrl, {
-    method: 'POST',
-    body: JSON.stringify(requestData)
-  });
-
-  // 2. Handle 402 response
-  if (response.status === 402) {
-    const paymentInfo = await response.json();
-    
-    // 3. Get payer address
-    const payer = await mcpClient.callTool('get_payer_addr', {});
-    
-    // 4. Approve payment
-    const auth = await mcpClient.callTool('approve_payment', {
-      payer_addr: payer.payer_addr,
-      payee_addr: paymentInfo.payee_addr,
-      amount: paymentInfo.amount,
-      token_type: paymentInfo.token_type
-    });
-
-    // 5. Retry with payment header
-    response = await fetch(serviceUrl, {
-      method: 'POST',
-      headers: { 'X-Payment': auth.x_payment },
-      body: JSON.stringify(requestData)
-    });
-  }
-
-  return await response.json();
-}
+```bash
+kpass status
 ```
 
----
+## 4. Confirm The Kite Passport Skills Are Available
 
-## Session Management
+The install flow should also add the official Kite Passport skills to the coding agent. The core launch set includes:
 
-### Key Concepts
+- `authenticate-user`
+- `kite-discovery`
+- `request-session`
+- `x402-execute`
+- `wallet-send`
+- `manage-agents`
 
-| Concept | Description |
-|---------|-------------|
-| **Agent ID** | Unique identifier created in Kite Portal |
-| **Session** | Time-bounded authorization with spending limits |
-| **OAuth** | Authentication for MCP server connection |
+If you need to inspect the package contents directly:
 
-### Session Behavior
+```bash
+npx --yes skills add gokite-ai/passport-skills --list
+```
 
-- Each agent can have **at most one active session** at a time
-- Sessions have budget limits and expiration times
-- When a session expires, users must re-authenticate and create a new one
-- Users can invalidate sessions from the Kite Portal
+## 5. Create Or Log In To A Passport
 
-### Error Handling
+### New User Flow
 
-| Error | Cause | Solution |
-|-------|-------|----------|
-| `session_creation_required` | No valid session exists | User must complete OAuth flow and create session |
-| `SessionExpired` | Session time limit reached | Re-authenticate and create new session |
-| `InsufficientBudget` | Payment exceeds session limits | Create new session with higher limits |
-| `Unauthorized` | OAuth token expired | Re-initiate OAuth flow |
+Use signup if this is your first Passport account:
 
----
+```bash
+kpass signup init --email you@example.com --output json
+```
 
-## Security Best Practices
+Then:
 
-1. **Store MCP configurations securely** - Never log API keys or tokens
-2. **Validate OAuth state parameter** - Prevent CSRF attacks
-3. **Handle session expiration gracefully** - Prompt users to re-authenticate
-4. **Don't cache sensitive data** - Payer addresses and auth data should be fetched fresh
+1. Click the verification link in the email.
+2. Poll until the signup is verified.
+3. Exchange the verified signup for a JWT.
 
----
+```bash
+kpass signup poll --signup-id <SIGNUP_ID> --wait --output json
+kpass signup exchange --signup-id <SIGNUP_ID> --exchange-token <EXCHANGE_TOKEN> --output json
+```
 
-## Testing Your Integration
+### Returning User Flow
 
-### Testnet Setup
+Use login if you already have a Passport:
 
-1. Create test account at Kite Portal (testnet instance)
-2. Get test tokens from faucet
-3. Create test agent in portal
-4. Configure test MCP in your application
+```bash
+kpass login init --email you@example.com --output json
+```
 
-### Test Scenarios
+Login sends an 8-character code to the email address on the account. Complete the flow with:
 
-| Scenario | Expected Behavior |
-|----------|-------------------|
-| First-time connection | OAuth flow → Session creation → Tools available |
-| Payment with valid session | Payment executes successfully |
-| Payment without session | Error returned, user prompted to authenticate |
-| Session expiration | Re-authentication required |
+```bash
+kpass login verify --login-id <LOGIN_ID> --code <OTP_CODE> --output json
+```
 
----
+Use this to confirm the JWT is saved and working:
+
+```bash
+kpass me --output json
+```
+
+## 6. Check Your Wallet And Add Funds
+
+Get your Passport wallet details:
+
+```bash
+kpass wallet balance --output json
+```
+
+Use the returned `wallet_address` as the destination for funding.
+
+For the launch flow, there are three common funding paths:
+
+- use the current on-ramp provider if you are starting from fiat
+- transfer or bridge USDC on Kite from another wallet
+- request test tokens if you are working in testnet
+
+If you need the wallet-specific flow, jump to [Add Funds & Transfers](end-user-guide.md). For testnet, the faucet flow is:
+
+```bash
+kpass faucet drop --recipient <WALLET_ADDRESS> --token USDC --output json
+```
+
+Then verify the updated balance:
+
+```bash
+kpass wallet balance --output json
+```
+
+## 7. Register Your Agent
+
+Register the agent identity that will spend on the user's behalf:
+
+```bash
+kpass agent:register --type coding-assistant --output json
+```
+
+Common examples for `--type` include `coding-assistant`, `research-agent`, or a label that matches your product surface.
+
+## 8. Create A Spending Session
+
+Sessions are how users approve a budget and scope for agent spending.
+
+Create a session request:
+
+```bash
+kpass agent:session create \
+  --task-summary "Discover paid services and execute one approved API call" \
+  --max-amount-per-tx 2 \
+  --max-total-amount 10 \
+  --ttl 24h \
+  --assets USDC \
+  --payment-approach x402_http \
+  --output json
+```
+
+The command returns an approval URL. Show that URL to the user, then wait for approval:
+
+```bash
+kpass agent:session status --request-id <REQUEST_ID> --wait --output json
+```
+
+After approval, the session is saved as the current session for the project.
+
+You can inspect or switch sessions later with:
+
+```bash
+kpass agent:session list --status active --output json
+kpass agent:session use --session-id <SESSION_ID> --output json
+```
+
+## 9. Discover A Service With `ksearch`
+
+Search the catalog for Passport-compatible services:
+
+```bash
+ksearch services list \
+  --query weather \
+  --payment-approach x402_http \
+  --asset USDC \
+  --limit 10 \
+  --output json
+```
+
+Then inspect a result more closely:
+
+```bash
+ksearch services get --service-id <SERVICE_ID> --output json
+```
+
+Useful discovery patterns:
+
+- add `--query <topic>` to narrow by use case
+- add `--payment-approach x402_http` when you want Passport-compatible results first
+- add `--asset USDC` when you want the common Passport funding path
+
+If you want a local markdown snapshot for your agent workflow:
+
+```bash
+ksearch export markdown --output-dir ./.kite/catalog
+```
+
+## 10. Execute Your First Paid Request
+
+Once you have an approved session, execute the request through `kpass`.
+
+Example using the public weather demo:
+
+```bash
+kpass agent:session execute \
+  --url "https://x402.dev.gokite.ai/api/weather?location=San%20Francisco" \
+  --method GET \
+  --output json
+```
+
+For JSON POST requests, include headers and a body:
+
+```bash
+kpass agent:session execute \
+  --url https://api.example.com/paid-endpoint \
+  --method POST \
+  --headers '{"Content-Type":"application/json"}' \
+  --body '{"query":"hello"}' \
+  --output json
+```
+
+`kpass` uses the approved session, negotiates the x402 payment with the backend, and returns both usage information and the service response.
+
+## Commands You Will Reuse Often
+
+| Command | Why you use it |
+| --- | --- |
+| `kpass status` | Fast read on backend, auth, agent, and session state |
+| `kpass me --output json` | Confirm who is logged in |
+| `kpass wallet balance --output json` | Read wallet address and balances |
+| `kpass wallet send --to <ADDRESS> --amount <N> --asset USDC --output json` | Direct wallet-to-wallet transfers |
+| `kpass user agents --output json` | List agents owned by the logged-in user |
+| `kpass user sessions --status active --output json` | List active sessions across agents |
+| `ksearch services list --output json` | Search the discovery catalog |
+| `ksearch services get --service-id <ID> --output json` | Inspect a service before paying |
+
+## How The Pieces Fit Together
+
+- `kpass` is the Passport control plane: auth, wallet, agent identity, sessions, and paid execution.
+- `ksearch` is the service discovery layer: search first, inspect second, pay after you know the endpoint.
+- Passport skills let an agent follow this workflow autonomously by reading structured CLI output and the suggested `next_command`.
+- The public install experience should begin with `curl -L <URL> | bash`, not manual repo cloning.
 
 ## Troubleshooting
 
-| Issue | Solution |
-|-------|----------|
-| "Agent not found" | Verify Agent ID in Kite Portal |
-| "Session creation required" | Complete OAuth flow in your app |
-| "Unauthorized" | Re-connect the MCP server |
-| "Payment failed" | Verify service supports x402 protocol |
+### Backend unreachable
 
----
+If `kpass health` or `kpass status` cannot reach the backend, verify your network or use the environment-specific base URL your team provided.
 
-## Next Steps
+### Signup vs login confusion
 
-1. Review the [MCP Protocol specification](https://modelcontextprotocol.io/)
-2. Set up a test agent in the [Kite Portal](https://x402-portal-eight.vercel.app/)
-3. Test the MCP connection and payment flow
-4. Review [Service Provider Guide](service-provider-guide.md) to understand the other side
+- `signup` sends an email link.
+- `login` sends an 8-character code.
 
----
+If you already have an account, prefer the login flow.
 
-## Additional Resources
+### No active session
 
-- **Kite Portal:** https://x402-portal-eight.vercel.app/
-- **MCP Protocol:** https://modelcontextprotocol.io/
-- **x402 Demo Facilitators:** https://github.com/gokite-ai/x402
-- **Testnet Notice:** [testnet-notice.md](testnet-notice.md)
+If execution fails because there is no active session, create one with `agent:session create` and wait for approval with `agent:session status --wait`.
 
-***
+### Insufficient funds
 
-*Need help? [Open an issue](https://github.com/gokite-ai/developer-docs/issues/new/choose) or contact the Kite team.*
+If the request is approved but the wallet is empty, fund the Passport wallet first, then retry. See [Add Funds & Transfers](end-user-guide.md).
 
-*Continue to: [End User Guide](end-user-guide.md) | [Service Provider Guide](service-provider-guide.md)*
+### Automation tip
+
+When an agent is driving the CLI, prefer:
+
+```bash
+kpass <command> --output json --no-interactive
+```
+
+That keeps the workflow machine-readable and prevents unexpected prompts.

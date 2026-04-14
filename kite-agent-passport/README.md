@@ -1,142 +1,83 @@
 ---
-Description: Kite Agent Passport enables autonomous AI agents to make secure payments on behalf of users. Learn how to use, integrate, or build with Kite Agent Passport.
+Description: Kite Agent Passport quickstart docs for launch, covering setup, funding, agent authorization, service discovery, and paid execution with kpass and ksearch.
 ---
 
 # Kite Agent Passport
 
-Kite Agent Passport is the infrastructure layer that enables autonomous AI agents to make secure, delegated payments on behalf of users. It solves the fundamental problem of how AI agents can transact value in a safe, controlled, and user-approved manner—combining identity, authentication, delegation, and on-chain payment processing in one system.
+Kite Agent Passport is the CLI-first workflow for giving an agent a funded wallet, a scoped spending session, and the ability to discover and pay for services on Kite.
 
-## The Problem
+For launch, this section stays intentionally focused on the core path:
 
-As AI agents become more capable and autonomous, they need to interact with paid services—from API calls to data retrieval to task completion. Current approaches to agent payments face three fundamental challenges:
+- paste a single install command into your coding agent
+- sign up or log in
+- fund the Passport wallet
+- transfer funds when needed
+- register an agent and approve a spending session
+- discover services with `ksearch`
+- execute paid requests with `kpass`
 
-- **Scoped payments** — Agents shouldn't have unlimited wallet access. They need permission scoped to specific tasks and spending limits, not blanket authorization to drain funds.
-- **Delegated payments** — Agents need autonomy to make payments without requiring human signatures for every transaction, while users maintain control through pre-approved spending rules.
-- **Identity-based payments** — Payments must have clear, verifiable identity for both the agent and the user behind it—not anonymous transactions. This enables compliance (AML, KYC), reputation systems, and accountability.
+## Start Here
 
-## The Solution
+### [Quickstart](developer-guide.md)
 
-Kite Agent Passport provides a complete infrastructure for agentic payments with three core capabilities:
+Use this if you want the fastest path from zero to a working Kite Passport setup.
 
-### 1. Identity and Authentication
+It covers:
 
-Every participant in the system has a verifiable identity:
+- starting from a single copy-paste install command
+- creating or logging in to a Passport
+- funding your wallet
+- creating a spending session
+- discovering a service and making a paid request
 
-| Identity Type | Description |
-|---------------|-------------|
-| **User ID** | Represents the human user who owns the funds |
-| **Agent ID** | Represents the AI agent acting on behalf of a user |
-| **Service ID** | Represents a service provider that accepts payments |
+### [Add Funds & Transfers](end-user-guide.md)
 
-### 2. Delegated Authority
+Use this if you already have Passport set up and want the wallet-specific flows:
 
-Users maintain full control through a two-layer delegation system:
+- finding your Passport wallet address
+- funding through the current on-ramp provider
+- moving USDC on Kite from another wallet
+- requesting testnet funds
+- sending funds out of Passport with `kpass wallet send`
 
-- **Sessions** — Master budgets that define overall spending rules: maximum total spend (e.g., $5.00), time limits (e.g., 24 hours), and target merchant restrictions.
-- **Delegations** — Specific, signed intents for individual payments: linked to a parent Session, specify exact payment amount and recipient, and require user signature for authorization.
+### [Service Provider Guide](service-provider-guide.md)
 
-### 3. Secure Payments
+Use this if you are operating the service that receives payment from Passport-powered agents.
 
-On-chain payment processing on Kite L1: all transactions recorded transparently, spending rules enforced automatically, x402 facilitator integration for service providers, and testnet stablecoin for safe experimentation.
+### [Testnet Notice](testnet-notice.md)
 
-## How It Works
+Use this for environment status, current limitations, and testnet expectations.
 
-The complete payment flow:
+## Core Tools
 
-1. **User connects agent** — User links their AI agent to Kite via OAuth.
-2. **User approves the scope** — User reviews and signs the Session with their preferred rules.
-3. **Agent attempts payment** — Agent calls `kite.pay(...)` when it needs to pay for a service.
-4. **Session check** — System checks if a valid Session exists for this payment.
-5. **Payment execution** — Agent retries the payment, which is now approved.
-6. **Service redemption** — Service provider redeems the payment via the Service Payment API.
-7. **User monitoring** — User can view all Sessions, Delegations, and transactions in the Portal.
+| Tool | What it does |
+| --- | --- |
+| `kpass` | Authentication, wallet access, agent registration, spending sessions, and paid request execution |
+| `ksearch` | Discovery catalog search for paid services and endpoints |
+| Kite Passport skills | Teach agents how to use `kpass` and `ksearch` reliably inside Codex, Cursor, Claude Code, and similar tools |
 
-## Key Benefits
+## The Core Flow
 
-### For End Users
+1. Paste the install command into your coding agent.
+2. Create a Kite Passport account or log in to an existing one.
+3. Check your wallet address and fund it.
+4. Register an agent identity.
+5. Create a spending session and approve it.
+6. Discover a compatible service with `ksearch`.
+7. Execute the paid request through `kpass`.
 
-- **Controlled spending** — Set clear limits on what your agent can spend.
-- **Transparency** — See every transaction your agent makes.
-- **Just-in-time approval** — Approve spending rules exactly when your agent needs them.
-- **Flexibility** — Adjust or revoke Sessions at any time.
+## A Few Things To Know Up Front
 
-### For Agent Developers
-
-- **Simple integration** — Enable payments with just `kite.pay(...)`.
-- **No payment infrastructure** — Don't build identity, auth, or payment systems from scratch.
-- **Automatic UX** — The Kite MCP Tool handles pausing, user prompting, and retries.
-- **MCP compatible** — Works with any agent framework that supports Model Context Protocol.
-
-### For Service Providers
-
-- **Standardized payments** — Accept agent payments via x402 facilitators.
-- **Guaranteed funds** — Payments are pre-authorized and enforceable.
-- **Easy integration** — Simple Service Payment API for redemption.
-- **New customer segment** — Access the growing market of agentic applications.
-
-## Architecture Overview
-
-| Layer | Purpose |
-|-------|---------|
-| **Passport** | Identity, auth, and delegation: User/Agent IDs, Sessions (budgets + spending rules), Delegations (signed payment intents). |
-| **Payment** | On-chain value transfer on Kite L1, x402 facilitator integration, and service redemption APIs. |
-| **MCP Tool** | Integration for AI agents: Kite Payment, session/delegation handling, and user prompts for signatures. |
-
-![Agent paassport architecture](../.gitbook/assets/passport-workflow.png)
-
-### Core Concepts
-
-| Concept | Description |
-|---------|-------------|
-| **Session** | A master budget with spending rules, time limits, and merchant restrictions. Created by user signature. |
-| **Delegation** | A specific, signed intent for a payment (or set of payments) linked to a parent Session. |
-| **MCP Tool** | The Model Context Protocol integration that gives agents access to Kite payment functionality. |
-| **x402** | A payment protocol and facilitator system that enables standardized agent-to-service payments. |
-| **Facilitator** | A service that validates payment authorizations and executes on-chain transfers on behalf of services. |
-
-## Quick Start
-
-### For End Users
-
-**Invitation only:** Kite Agent Passport is currently invitation-only during testnet. If you don't have an invitation, you may not be able to complete all steps. See the [Testnet Notice](testnet-notice.md) for details.
-
-1. Use your invitation link to open the [Kite Portal](https://x402-portal-eight.vercel.app/) and configure your account.
-2. Connect your wallet and complete signature authentication.
-3. On-ramp testnet tokens to your wallet.
-4. Create an agent and set its spending rules.
-5. Connect the MCP server to your AI client.
-
-### For Service Providers
-
-1. Read the [Service Provider Guide](service-provider-guide.md).
-2. Set up your x402 facilitator integration.
-3. Configure the Kite Service Payment API.
-4. Test payments on the Kite L1 testnet.
-
-### For Developers
-
-1. Start with the [Developer Guide](developer-guide.md).
-2. Register your agent ID via the Kite API.
-3. Integrate the Kite MCP Tool into your agent framework.
-4. Use Kite Payment flow in your agent logic.
-
-## The Kite Vision
-
-Kite Agent Passport is part of the broader Kite mission: **building the agentic internet.** Just as HTTPS and OAuth became foundational infrastructure for the web, Kite Agent Passport provides the foundational infrastructure for agentic commerce and value exchange. As AI agents become primary interfaces for digital interactions, they need secure, standardized ways to transact value—Kite Agent Passport is that infrastructure.
-
-## Next Steps
-
-- **New to Kite?** → [Introduction](introduction.md) (deeper dive)
-- **Ready to use it?** → [End User Guide](end-user-guide.md)
-- **Integrating as a service or app?** → [Service Provider Guide](service-provider-guide.md) or [Developer Guide](developer-guide.md)
-- **Testnet details** → [Testnet Notice](testnet-notice.md)
+- The launch install flow is a single command and does not require cloning Kite repos manually.
+- `kpass` stores project-local state in `.kite-passport/`.
+- Use `--output json` when an agent is driving the workflow.
+- Use `--no-interactive` for automation so the CLI never waits on stdin prompts.
+- Signup uses an email link. Login uses an 8-character code.
+- Direct wallet transfers use `kpass wallet send`. Agentic service payments use `agent:session create` plus `agent:session execute`.
 
 ## Need Help?
 
-- [Testnet Notice](testnet-notice.md) — Status and known issues
-- [Kite Portal](https://x402-portal-eight.vercel.app/) — Dashboard and transactions
-- [Report an issue](https://github.com/gokite-ai/developer-docs/issues/new/choose) — Bugs or feedback
-
----
-
-*Part of the Kite blockchain documentation. For Kite's architecture and core concepts, see [Get Started](../get-started/).*
+- Start with [Quickstart](developer-guide.md)
+- Use [Add Funds & Transfers](end-user-guide.md) for wallet questions
+- Review the [Testnet Notice](testnet-notice.md) before debugging environment issues
+- Open an issue at [gokite-ai/developer-docs](https://github.com/gokite-ai/developer-docs/issues/new/choose)

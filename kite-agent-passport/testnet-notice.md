@@ -166,4 +166,4 @@ By using Kite Agent Passport on testnet, you acknowledge that:
 
 ***
 
-*Ready to proceed? See the guide for your use case: [End User Guide](end-user-guide.md) | [Service Provider Guide](service-provider-guide.md) | [Developer Guide](developer-guide.md)*
+*Ready to proceed? See the guide for your use case: [Quickstart](developer-guide.md) | [Add Funds & Transfers](end-user-guide.md) | [Service Provider Guide](service-provider-guide.md)*

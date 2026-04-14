@@ -26,8 +26,8 @@
 
 ## ⛓️ Kite Agent Passport
 * [Introduction](kite-agent-passport/README.md)
-* [Developer Guide](kite-agent-passport/developer-guide.md)
-* [End User Guide](kite-agent-passport/end-user-guide.md)
+* [Quickstart](kite-agent-passport/developer-guide.md)
+* [Add Funds & Transfers](kite-agent-passport/end-user-guide.md)
 * [Service Provider Guide](kite-agent-passport/service-provider-guide.md)
 * [Testnet Notice](kite-agent-passport/testnet-notice.md)
 
@@ -63,4 +63,3 @@
 * [LayerZero-Kite AI](kite-chain/10-layerzero-kite-integration/README.md)
 * [Goldsky-Kite AI](kite-chain/11-goldsky-kite-integration/README.md)
 * [Lucid-Kite AI](kite-chain/12-lucid-kite-integration/README.md)
-
