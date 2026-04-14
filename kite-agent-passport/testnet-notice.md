@@ -49,12 +49,12 @@ Kite Agent Passport is currently in **active development** and operating on the 
 
 **What to Expect:**
 - **API and SDK:** In progress — coming soon for programmatic integrations
-- **Available tools:** Currently similar to end user tools — MCP tools and Sessions are ready for use
+- **Available tools:** `kpass` and `ksearch` CLI tools and spending sessions are ready for use
 - **Documentation:** Continuously improving as features stabilize
 - **Platform stability:** Beta phase with active development
 
 **Best Practices:**
-- Use MCP tools and Sessions to experiment with agent capabilities
+- Use `kpass` and `ksearch` to experiment with agent capabilities
 - Join the developer community for early access to API/SDK announcements
 - Test thoroughly before deploying agents to production
 - Share your integration patterns and feedback to help shape developer tools
@@ -67,7 +67,7 @@ Kite Agent Passport is currently in **active development** and operating on the 
 |---------|
 | **Token support:** Testnet stablecoin only |
 | **Wallet support:** Privy AA wallet only |
-| **MCP clients:** Tested on Claude Desktop, Cursor |
+| **Supported agents:** Tested with Codex, Claude Code, Cursor |
 | **Session types:** Long-term and one-time |
 | **Facilitator integration:** Limited to specific partners |
 

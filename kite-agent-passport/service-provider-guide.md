@@ -1,76 +1,58 @@
 ---
-description: Service provider guide for accepting Kite Agent Passport payments via x402 facilitators.
+description: Guide for service providers to accept payments from Kite Agent Passport agents via x402 or MPP.
 ---
 
 # Service Provider Guide
 
-This guide explains how to integrate with Kite Agent Passport as a service provider. Kite fully supports the x402 payment protocol through our facilitator partners.
+Kite Agent Passport can pay any service that implements one of two open payment protocols:
 
-## What You're Building
+- **x402** — HTTP 402-based payment protocol with on-chain settlement
+- **MPP (Machine Payments Protocol)** — an open standard by Stripe and Tempo for machine-to-machine payments ([mpp.dev](https://mpp.dev/))
 
-By integrating with Kite Agent Passport, your service will be able to:
+If your service already speaks either protocol, Passport agents can pay you today. If you are starting fresh, this guide walks through both options.
 
-- Accept payments from AI agents on behalf of users
-- Receive guaranteed, pre-authorized payments via x402 protocol
-- Access the growing market of agentic applications
-- Work seamlessly with any x402-compatible facilitator
-
-## Prerequisites
-
-Before you begin, ensure you have:
-
-- [ ] A service that can be called via API
-- [ ] Understanding of HTTP 402 Payment Required responses
-- [ ] A service wallet address on Kite L1 testnet
-
-### What You DON'T Need to Build
-
-- **Payment infrastructure** — Kite facilitators handle on-chain execution
-- **Wallet management** — End users manage their own wallets via Kite Passport
-- **Session/delegation systems** — Kite Passport handles user authorizations
-- **Redemption APIs** — Payments go directly to your wallet address
-
-Your only responsibility is implementing the x402 protocol to request and verify payments.
+We encourage deploying on **Kite chain** for the fastest settlement and tightest integration with Passport.
 
 ---
 
-## Overview: The Payment Flow
+## How Passport Pays Your Service
+
+1. An agent calls your service endpoint.
+2. Your service returns **402 Payment Required** with payment terms.
+3. The Passport agent resolves payment using the user's approved spending session.
+4. Your service receives proof of payment, verifies it, and delivers the response.
+
+The specifics of step 2–4 depend on which protocol you implement.
+
+---
+
+## Option 1: Accept Payments via x402
+
+x402 uses HTTP 402 responses to negotiate on-chain payments between agents and services.
+
+### Payment Flow
 
 ![Payment Flow](../.gitbook/assets/payment_flow.png)
 
+1. Your service returns a **402 Payment Required** response with payment details.
+2. The Passport agent obtains a signed payment authorization from the user's session.
+3. The agent resends the request with the `X-Payment` header.
+4. You verify the payment token and call a facilitator to settle on-chain.
+5. The facilitator executes the transfer to your wallet.
+6. You deliver the service response.
 
-**Key Points:**
-1. Your service returns a 402 Payment Required response with payment details
-2. The agent (via Kite MCP tools) obtains a signed payment authorization from the user
-3. Your service receives the payment token (X-Payment header) from the agent
-4. You verify the payment token and call the facilitator to execute the transfer
-5. The facilitator executes the on-chain transfer to your payee address
-6. You deliver the service after confirming payment
-
-### Who Pays
-
-In the current Kite Agent Passport flow:
-- **End users** have their own Kite Passports with wallet balances
-- Users authorize payments through their AI agents
-- Users maintain their own sessions and spending rules
-- You (the service provider) receive payments directly to your wallet
-
-This is different from other models where developers might pay on behalf of users. In the Kite ecosystem, users control their own funds.
-
----
-
-## Sample Service: Weather API
-
-To understand how to implement x402, let's look at a sample service:
+### Sample Service: Weather API
 
 **Weather Service:** https://x402.dev.gokite.ai/api/weather
 
-Try calling it without payment:
+Call it without payment:
+
 ```bash
 curl https://x402.dev.gokite.ai/api/weather?location=San%20Francisco
 ```
 
 **Response (402 Payment Required):**
+
 ```json
 {
   "error": "X-PAYMENT header is required",
@@ -113,9 +95,9 @@ curl https://x402.dev.gokite.ai/api/weather?location=San%20Francisco
 
 **Key Response Fields:**
 
-| Field | Description | Example Value |
-|-------|-------------|---------------|
-| `scheme` | Payment scheme to use | `gokite-aa` |
+| Field | Description | Example |
+|-------|-------------|---------|
+| `scheme` | Payment scheme | `gokite-aa` |
 | `network` | Target network | `kite-testnet` |
 | `maxAmountRequired` | Maximum payment amount (in wei) | `1000000000000000000` (1 token) |
 | `asset` | Token contract address | `0x0fF5393387ad2f9f691FD6Fd28e07E3969e27e63` |
@@ -124,34 +106,24 @@ curl https://x402.dev.gokite.ai/api/weather?location=San%20Francisco
 | `merchantName` | Your service name | `Weather Service` |
 | `outputSchema` | API input/output specification | (see above) |
 
----
+### Kite Testnet Payment Token
 
-## Kite Testnet Payment Token
-
-For services to support Kite Testnet, you must use the same payment token as the weather service:
+For testnet services on Kite, use this token:
 
 **Token Address:** `0x0fF5393387ad2f9f691FD6Fd28e07E3969e27e63`
 
 **Token Details:** https://testnet.kitescan.ai/token/0x0fF5393387ad2f9f691FD6Fd28e07E3969e27e63
 
-This is the testnet stablecoin (Test USDT) used for payments on Kite L1 Testnet.
+### Kite Facilitator
 
----
-
-## Kite Facilitator Support
-
-Kite Agent Passport fully supports the x402 protocol and works with any x402-compatible facilitator. We recommend using:
-
-### x402 Pieverse Facilitator
+Kite works with any x402-compatible facilitator. The recommended facilitator for Kite chain:
 
 | Property | Value |
 |----------|-------|
-| **Service** | x402 Pieverse Facilitator |
+| **Service** | Pieverse Facilitator |
 | **Version** | 2.0.0 |
 | **Base URL** | https://facilitator.pieverse.io |
 | **Documentation** | https://facilitator.pieverse.io/ |
-
-Kite Agent Passport payments use the **Kite chain** (Kite Testnet for testing; Kite mainnet for production). For payment facilitation with Kite, use the following:
 
 **Kite Testnet Facilitator Address:**
 
@@ -166,29 +138,13 @@ Kite Agent Passport payments use the **Kite chain** (Kite Testnet for testing; K
 | `/v2/verify` | POST | Verify payment signature |
 | `/v2/settle` | POST | Settle payment (execute on-chain) |
 
-The facilitator handles the on-chain execution of payments. Once a payment is authorized, the facilitator executes the `transferWithAuthorization` call and transfers funds directly to your specified payee address.
+The facilitator handles on-chain execution. Once payment is authorized, it calls `transferWithAuthorization` and transfers funds directly to your payee address.
 
-### Demo Facilitators
+### Implementing x402 in Your Service
 
-We provide demo facilitators to clarify what is needed to support Kite payment. These reference implementations demonstrate how to enable x402 facilitation with Kite:
+**Step 1: Return 402 Payment Required**
 
-**Repository:** https://github.com/gokite-ai/x402
-
-Service providers can open their service to AI agents through these facilitators. Use these demos as a reference for understanding the facilitator requirements and integration patterns.
-
----
-
-## Implementing x402 Support
-
-Kite provides facilitator support for x402 payments. **Implementing the x402 protocol on your service is your responsibility.** This includes:
-
-- Returning 402 Payment Required responses with the correct JSON format
-- Verifying payment tokens when received from agents
-- Managing your service wallet and received funds
-
-### Step 1: Return 402 Payment Required Response
-
-When your service receives a request without a valid payment, return a 402 status with payment details:
+When a request arrives without valid payment, return a 402 with your payment terms:
 
 ```json
 {
@@ -227,21 +183,16 @@ When your service receives a request without a valid payment, return a 402 statu
 }
 ```
 
-### Step 2: Receive and Verify Payment Token
+**Step 2: Receive and Verify the Payment Token**
 
-When the agent resends the request with the `X-PAYMENT` header, extract and verify it:
+The agent resends the request with an `X-Payment` header containing a base64-encoded authorization:
 
 ```bash
-# Example request with payment
 curl -H "X-PAYMENT: eyJhdXRob3JpemF0aW9uIjp7..." \
   https://your-service.com/api/endpoint
 ```
 
-The `X-PAYMENT` header contains a base64-encoded JSON object with the payment authorization and signature.
-
-### Step 3: Settle Payment via Facilitator
-
-Call the facilitator's `/v2/settle` endpoint to execute the on-chain transfer:
+**Step 3: Settle via Facilitator**
 
 ```bash
 curl -X POST https://facilitator.pieverse.io/v2/settle \
@@ -253,47 +204,62 @@ curl -X POST https://facilitator.pieverse.io/v2/settle \
   }'
 ```
 
-### Step 4: Deliver Your Service
+**Step 4:** After confirming settlement, deliver your service response.
 
-After confirming payment settlement, return your service's actual response to the agent.
+### x402 Resources
 
-### Payment Settlement
+- **x402 Protocol Specification:** https://docs.x402.org/introduction
+- **Pieverse Facilitator Docs:** https://facilitator.pieverse.io/
+- **Kite x402 Reference Implementation:** https://github.com/gokite-ai/x402
 
-Payments are executed on-chain by the facilitator directly to your payee address. Since you control this wallet address, you can transfer received tokens to any target address at any time.
+---
 
-### Resources for Implementation
+## Option 2: Accept Payments via MPP
 
-For detailed implementation guidance on the x402 protocol, refer to:
+MPP (Machine Payments Protocol) is an open standard co-authored by Stripe and Tempo. It extends the HTTP 402 pattern with support for multiple payment methods, session-based billing, and IETF standardization.
 
-- **x402 Protocol Specification** - https://docs.x402.org/introduction
-- **Pieverse Facilitator Docs** - https://facilitator.pieverse.io/
-- **x402 Reference Implementation** - https://github.com/gokite-ai/x402
+### Payment Flow
+
+1. Agent requests a resource from your service.
+2. Your service responds with a **402 challenge** containing payment terms.
+3. The agent submits a **credential** (proof of payment).
+4. Your service verifies the credential, returns a **receipt**, and delivers the resource.
+
+### Key Differences from x402
+
+| | x402 | MPP |
+|---|---|---|
+| **Payment methods** | On-chain stablecoins | Stablecoins, fiat (Stripe), and more |
+| **Settlement** | Via facilitator on-chain | Via Stripe or supported payment networks |
+| **Transport** | HTTP headers (`X-Payment`) | HTTP, JSON-RPC, WebSocket |
+| **Session support** | Via Passport spending sessions | Built-in payment channels |
+
+### Getting Started with MPP
+
+- **MPP Specification:** [mpp.dev](https://mpp.dev/)
+- **Stripe MPP Blog:** [stripe.com/blog/machine-payments-protocol](https://stripe.com/blog/machine-payments-protocol)
+
+---
+
+## Testing Your Integration
+
+1. Set up a Passport account following the [Quickstart](developer-guide.md).
+2. Fund the account with testnet tokens using the faucet.
+3. Create an agent and approve a spending session.
+4. Point the agent at your service endpoint.
+5. Verify your service returns the correct 402 response.
+6. Confirm payment is processed and your service delivers the response.
 
 ---
 
 ## Next Steps
 
-1. **Review the x402 protocol** to understand implementation requirements
-2. **Set up your service wallet** on Kite L1 testnet
-3. **Implement x402 support** in your service using the weather service as a reference
-4. **Test with Kite Agent Passport** — See [End User Guide](end-user-guide.md) for how users will connect and pay
-5. **Prepare for mainnet** by reviewing the [Testnet Notice](testnet-notice.md)
+1. **Pick your protocol** — x402 for on-chain payments on Kite, or MPP for multi-method support.
+2. **Set up a service wallet** on Kite chain (for x402) or connect Stripe (for MPP).
+3. **Implement 402 responses** in your service.
+4. **Test with Passport** — follow the [Quickstart](developer-guide.md) to create an agent and pay your service.
+5. **Review the [Testnet Notice](testnet-notice.md)** for current environment status.
 
-### Testing Your Integration
-
-To test your x402 service with Kite Agent Passport:
-
-1. Set up a test user account in the [Kite Portal](https://x402-portal-eight.vercel.app/)
-2. Fund the test account with testnet tokens from the [faucet](https://faucet.gokite.ai/)
-3. Create a test agent and configure MCP in an AI client (e.g., Claude Desktop)
-4. Have the AI client call your service
-5. Verify your service returns the correct 402 response format
-6. Confirm payment is processed and your service delivers the response
-
-For detailed testing steps from the user perspective, see the [End User Guide](end-user-guide.md).
-
-***
+---
 
 *Need help? [Open an issue](https://github.com/gokite-ai/developer-docs/issues/new/choose) or contact the Kite team.*
-
-*Continue to: [Developer Guide](developer-guide.md)*
