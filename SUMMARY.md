@@ -26,6 +26,7 @@
 
 ## ⛓️ Kite Agent Passport
 * [Introduction](kite-agent-passport/README.md)
+* [Funding Your Wallet](kite-agent-passport/funding.md)
 * [CLI Reference](kite-agent-passport/cli-reference.md)
 * [Service Provider Guide](kite-agent-passport/service-provider-guide.md)
 * [Testnet Notice](kite-agent-passport/testnet-notice.md)
