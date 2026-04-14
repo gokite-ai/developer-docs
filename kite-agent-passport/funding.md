@@ -18,21 +18,13 @@ There are three ways to get funds into your Passport wallet:
 
 The simplest path if you are starting from zero. Purchase USDC directly into your Passport wallet using fiat currency.
 
-**Supported payment methods:**
-
-- Debit card
-- Credit card
-- Bank account
-
 **Steps:**
 
-1. Open the Passport dashboard.
-2. Go to the funding section.
-3. Select **Buy USDC**.
-4. Choose your payment method and amount.
-5. Set your Passport wallet as the destination — the dashboard pre-fills this for you.
-6. Complete the purchase.
-7. Wait for settlement — your balance will update automatically on the dashboard.
+1. Open the Passport dashboard and click **Buy**.
+2. Enter the amount you want to purchase.
+3. Click **Continue to Banxa** — you will be redirected to our on-ramp provider. Your Passport wallet address is filled in automatically.
+4. Follow the steps on Banxa to complete the purchase.
+5. Once the purchase settles, your balance will update on the Passport dashboard.
 
 ## Option 2: Bridge Directly to the Passport Wallet
 
