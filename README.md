@@ -1,58 +1,40 @@
 ---
-Description: >-
-  Kite is building the base layer for the agentic internet. It is the first
-  system that provides autonomous agents with cryptographic identity,
-  programmable permissions, and native access to stablecoin
+description: >-
+  Kite is building the base layer for the agentic internet — identity,
+  payments, and infrastructure for autonomous AI agents.
 ---
 
-# Quickstart
+# Kite Developer Docs
 
-> **The first AI payment blockchain** - foundational infrastructure empowering autonomous agents to operate and transact with identity, payment, governance, and verification.
+> **The first AI payment blockchain** — foundational infrastructure empowering autonomous agents to operate and transact with identity, payment, and verification.
 
-Choose your path to get started with Kite:
+## [Get Started](get-started/introduction-and-mission.md)
 
-### [Get Started](get-started/introduction-and-mission.md)
-
-**Why Kite?** - Learn about our mission, use cases, and core concepts
+Learn about Kite's mission, architecture, and core concepts.
 
 * [Introduction & Mission](get-started/introduction-and-mission.md)
 * [Key Use Cases & Players](get-started/key-use-cases-and-players.md)
 * [Architecture & Design Pillars](get-started/architecture-and-design-pillars.md)
 * [Core Concepts & Terminology](get-started/core-concepts-and-terminology.md)
 
-### [Kite Chain](kite-chain/1-getting-started/network-information.md)
+## [Kite Agent Passport](kite-agent-passport/README.md)
 
-**Build on Kite** - Network information, tools, and smart contract development
+Let your AI agent discover and pay for services on your behalf. Passport gives agents a funded wallet, scoped spending sessions, and service discovery — while you stay in control.
 
-* [ Information](kite-chain/1-getting-started/network-information.md)
+* [Getting Started](kite-agent-passport/README.md)
+* [Funding Your Wallet](kite-agent-passport/funding.md)
+* [CLI Reference](kite-agent-passport/cli-reference.md)
+* [Service Provider Guide](kite-agent-passport/service-provider-guide.md)
+
+## [Kite Chain](kite-chain/1-getting-started/network-information.md)
+
+Build on Kite — network information, tools, and smart contract development.
+
+* [Network Information](kite-chain/1-getting-started/network-information.md)
 * [Tools & Explorer](kite-chain/1-getting-started/tools.md)
 * [Smart Contract Development](kite-chain/3-developing/smart-contracts-list.md)
 * [Sample dApps](kite-chain/4-building-dapps/)
 
-### [Integration Guide](integration-guide/workflow-overview/)
+---
 
-Coming soon.
-
-## Key Features
-
-* **Cryptographic Identity**: 3-tier identity system for fine-grained governance
-* **Native Stablecoin Payments**: Built-in USDC support for instant settlements
-* **x402 Compatible:** Support for agent-to-agent (A2A) intents and verifiable message passing.
-* **Agent-First Design**: Purpose-built for autonomous agent operations
-* **Verifiable Delegation**: Cryptographic proof of payment authority
-* **High Performance**: Fast, scalable blockchain infrastructure
-
-## What's New
-
-* **Agentic Commerce**: Complete workflows for AI-powered shopping
-* **Smart Contract Templates**: Ready-to-use contracts for common use cases
-* **Developer Tools**: Comprehensive SDK and testing framework
-* **Security Best Practices**: Guidelines for secure agent integration
-
-
-## Github : Open an issue
-For any documentation updates or corrections, please [open an issue](https://github.com/gokite-ai/developer-docs/issues/new/choose) before submitting a PR, this helps us track and review changes efficiently.
-
-***
-
-_Ready to build the future of agentic commerce?_ [_Start with our Introduction_](get-started/introduction-and-mission.md)_._
+For any documentation updates or corrections, please [open an issue](https://github.com/gokite-ai/developer-docs/issues/new/choose).
