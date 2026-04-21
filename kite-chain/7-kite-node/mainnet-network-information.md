@@ -19,12 +19,16 @@ Kite Mainnet provides multiple geographically distributed RPC endpoints for reli
 It is recommended to configure **multiple RPCs** for redundancy in production environments.
 
 ### HTTPS RPCs
-- [https://rpc.gokite.ai/](https://rpc.gokite.ai/)
-- [https://rpc-virginia.gokite.ai](https://rpc-virginia.gokite.ai)
+- Global - [https://rpc.gokite.ai/](https://rpc.gokite.ai/)
+- Virginia - [https://rpc-virginia.gokite.ai](https://rpc-virginia.gokite.ai)
+- Tokyo - [https://rpc-tokyo.gokite.ai](https://rpc-tokyo.gokite.ai)
+- Ireland - [https://rpc-ireland.gokite.ai](https://rpc-ireland.gokite.ai)
 
 ### WebSocket (WSS) RPCs
-- [wss://rpc.gokite.ai/ws](wss://rpc.gokite.ai/ws)
-- [wss://rpc-virginia.gokite.ai/ws](wss://rpc-virginia.gokite.ai/ws)
+- Global - [wss://rpc.gokite.ai/ws](wss://rpc.gokite.ai/ws)
+- Virginia - [wss://rpc-virginia.gokite.ai/ws](wss://rpc-virginia.gokite.ai/ws)
+- Tokyo - [wss://rpc-tokyo.gokite.ai/ws](wss://rpc-tokyo.gokite.ai/ws)
+- Ireland - [wss://rpc-ireland.gokite.ai/ws](wss://rpc-ireland.gokite.ai/ws)
 
 WebSocket endpoints are recommended for:
 - Real-time event subscriptions

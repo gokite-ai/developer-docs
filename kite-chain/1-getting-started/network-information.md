@@ -33,9 +33,18 @@ description: Chain IDs, endpoints, and environment details for Kite networks.
   * Token: KITE
   * Block Explorer URL - [https://kitescan.ai/](https://kitescan.ai/)
 
-### RPC endpoint
+### RPC endpoints
 
-* Mainnet - [https://rpc.gokite.ai/](https://rpc.gokite.ai/)
+* Mainnet HTTPS RPCs
+  * Global - [https://rpc.gokite.ai/](https://rpc.gokite.ai/)
+  * Virginia - [https://rpc-virginia.gokite.ai](https://rpc-virginia.gokite.ai)
+  * Tokyo - [https://rpc-tokyo.gokite.ai](https://rpc-tokyo.gokite.ai)
+  * Ireland - [https://rpc-ireland.gokite.ai](https://rpc-ireland.gokite.ai)
+* Mainnet WSS RPCs
+  * Global - [wss://rpc.gokite.ai/ws](wss://rpc.gokite.ai/ws)
+  * Virginia - [wss://rpc-virginia.gokite.ai/ws](wss://rpc-virginia.gokite.ai/ws)
+  * Tokyo - [wss://rpc-tokyo.gokite.ai/ws](wss://rpc-tokyo.gokite.ai/ws)
+  * Ireland - [wss://rpc-ireland.gokite.ai/ws](wss://rpc-ireland.gokite.ai/ws)
 
 ### ChainList link
 * Mainnet - [https://chainlist.org/chain/2366](https://chainlist.org/chain/2366)
