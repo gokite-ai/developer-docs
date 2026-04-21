@@ -24,6 +24,17 @@ Network selection is done via the request path:
 
 **Service endpoint** - `https://gasless.gokite.ai`
 
+## Testnet Token Claim
+
+For testnet integration and end-to-end testing, developers can mint testnet `PYUSD` themselves before submitting gasless transfer requests.
+
+The `PYUSD` token on Kite Testnet includes built-in `claim` and `claimTo` functions. The contract has been verified on Testnet Kitescan, so builders can:
+
+- Use the Kitescan contract page to call the write methods directly
+- Create and send `claim` or `claimTo` transactions from their own scripts or wallets
+
+**Testnet PYUSD contract:** [`0x8E04D099b1a8Dd20E6caD4b2Ab2B405B98242ec9`](https://testnet.kitescan.ai/address/0x8E04D099b1a8Dd20E6caD4b2Ab2B405B98242ec9?tab=read_write_contract)
+
 ## API Reference
 
 ### List Supported Tokens
