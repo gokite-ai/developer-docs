@@ -16,7 +16,9 @@
 
 ## ⛓️ Kite Agent Passport
 * [Introduction](kite-agent-passport/README.md)
+* [Full Installation Walkthrough](kite-agent-passport/beginner-setup.md)
 * [Funding Your Wallet](kite-agent-passport/funding.md)
+  * [Add Kite Tokens to an External Wallet](kite-agent-passport/add-kite-tokens-external-wallet.md)
 * [CLI Reference](kite-agent-passport/cli-reference.md)
 * [Service Provider Guide](kite-agent-passport/service-provider-guide.md)
 
