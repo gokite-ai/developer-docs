@@ -51,6 +51,14 @@ echo -n '{"3USaEfTcoUhHxpKXvpAG916UKCUEyjrtkg2hBArBG3JyDP7my":{"Config":"eyJsb2c
 
 It will output `ey***************************************************************X0=`, put this value as `AVAGO_CHAIN_CONFIG_CONTENT` env var when running docker.
 
+## Bootstrap from Snapshot
+
+Kite publishes public mainnet chain-data snapshots so you can bootstrap a new node in minutes instead of waiting for a full cold sync (~40 minutes). Each snapshot is a verified archive of `data/db` and `data/chainData`; on first start the node still generates its own identity under `data/staking/`.
+
+Download the latest snapshot, verify its checksum, extract it into your `data/` directory, then continue with the deployment steps below (mount the same `data/` volume in your `docker run` command).
+
+For the full download, verify, extract, upgrade, and troubleshooting flow, see the [kite-snapshots](https://github.com/gokite-ai/kite-snapshots) repository. Snapshots are served from `https://snapshots.gokite.ai/mainnet/`.
+
 ## Deployment
 
 ### Standard RPC Node
