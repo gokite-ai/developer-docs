@@ -51,6 +51,14 @@ echo -n '{"3USaEfTcoUhHxpKXvpAG916UKCUEyjrtkg2hBArBG3JyDP7my":{"Config":"eyJsb2c
 
 It will output `ey***************************************************************X0=`, put this value as `AVAGO_CHAIN_CONFIG_CONTENT` env var when running docker.
 
+## Bootstrap from Snapshot
+
+Kite publishes public mainnet chain-data snapshots so you can bootstrap a new node in minutes instead of waiting for a full cold sync (~40 minutes). Each snapshot is a verified archive of `data/db` and `data/chainData`; on first start the node still generates its own identity under `data/staking/`.
+
+Download the latest snapshot, verify its checksum, extract it into your `data/` directory, then continue with the deployment steps below (mount the same `data/` volume in your `docker run` command).
+
+For the full download, verify, extract, upgrade, and troubleshooting flow, see the [kite-snapshots](https://github.com/gokite-ai/kite-snapshots) repository. Snapshots are served from `https://snapshots.gokite.ai/mainnet/`.
+
 ## Deployment
 
 ### Standard RPC Node
@@ -58,11 +66,21 @@ Recommended Chain config:
 
 ```
 {"eth-apis":["eth","eth-filter","net","web3","internal-eth","internal-blockchain","internal-transaction","internal-debug","internal-account","debug","debug-tracer"],"pruning-enabled":true,"warp-api-enabled":true}
+```
+
 Node config:
+
+```
 {"3USaEfTcoUhHxpKXvpAG916UKCUEyjrtkg2hBArBG3JyDP7my": {"Config": "eyJldGgtYXBpcyI6WyJldGgiLCJldGgtZmlsdGVyIiwibmV0Iiwid2ViMyIsImludGVybmFsLWV0aCIsImludGVybmFsLWJsb2NrY2hhaW4iLCJpbnRlcm5hbC10cmFuc2FjdGlvbiIsImludGVybmFsLWRlYnVnIiwiaW50ZXJuYWwtYWNjb3VudCIsImRlYnVnIiwiZGVidWctdHJhY2VyIl0sInBydW5pbmctZW5hYmxlZCI6dHJ1ZSwid2FycC1hcGktZW5hYmxlZCI6dHJ1ZX0", "Upgrade": null}}
+
 <base64_node_config>:
+
 eyIzVVNhRWZUY29VaEh4cEtYdnBBRzkxNlVLQ1VFeWpydGtnMmhCQXJCRzNKeURQN215IjogeyJDb25maWciOiAiZXlKbGRHZ3RZWEJwY3lJNld5SmxkR2dpTENKbGRHZ3RabWxzZEdWeUlpd2libVYwSWl3aWQyVmlNeUlzSW1sdWRHVnlibUZzTFdWMGFDSXNJbWx1ZEdWeWJtRnNMV0pzYjJOclkyaGhhVzRpTENKcGJuUmxjbTVoYkMxMGNtRnVjMkZqZEdsdmJpSXNJbWx1ZEdWeWJtRnNMV1JsWW5Wbklpd2lhVzUwWlhKdVlXd3RZV05qYjNWdWRDSXNJbVJsWW5Wbklpd2laR1ZpZFdjdGRISmhZMlZ5SWwwc0luQnlkVzVwYm1jdFpXNWhZbXhsWkNJNmRISjFaU3dpZDJGeWNDMWhjR2t0Wlc1aFlteGxaQ0k2ZEhKMVpYMCIsICJVcGdyYWRlIjogbnVsbH19
-Run a standard RPC node using v0.1.3 tag in the gokite-chain's Github Container Registry with:
+```
+
+Run a standard RPC node using latest tag in the gokite-chain's Github Container Registry with:
+
+```
 docker run -d \
   --name gokite-chain-rpc-node \
   --restart unless-stopped \
@@ -82,7 +100,7 @@ docker run -d \
   -e PLUGIN_ID=pJhES6xZkqZxjxMqHiucbpBTTnB97EjL5aTYSynmWBoF26v9e \
   -e KITE_CHAIN_ID=3USaEfTcoUhHxpKXvpAG916UKCUEyjrtkg2hBArBG3JyDP7my \
   -e AVAGO_CHAIN_CONFIG_CONTENT=<base64_node_config> \
-  ghcr.io/gokite-ai/gokite-chain:v0.1.3
+  ghcr.io/gokite-ai/gokite-chain:latest
 
   ```
 
@@ -110,7 +128,7 @@ docker run -d \
 eyIzVVNhRWZUY29VaEh4cEtYdnBBRzkxNlVLQ1VFeWpydGtnMmhCQXJCRzNKeURQN215IjogeyJDb25maWciOiAiZXlKbGRHZ3RZWEJwY3lJNld5SmxkR2dpTENKbGRHZ3RabWxzZEdWeUlpd2libVYwSWl3aWQyVmlNeUlzSW1sdWRHVnlibUZzTFdWMGFDSXNJbWx1ZEdWeWJtRnNMV0pzYjJOclkyaGhhVzRpTENKcGJuUmxjbTVoYkMxMGNtRnVjMkZqZEdsdmJpSXNJbWx1ZEdWeWJtRnNMV1JsWW5Wbklpd2lhVzUwWlhKdVlXd3RZV05qYjNWdWRDSXNJbVJsWW5Wbklpd2laR1ZpZFdjdGRISmhZMlZ5SWwwc0luQnlkVzVwYm1jdFpXNWhZbXhsWkNJNlptRnNjMlVzSW5kaGNuQXRZWEJwTFdWdVlXSnNaV1FpT25SeWRXVjkiLCAiVXBncmFkZSI6IG51bGx9fQ==
 ```
 
-Run an archive node using v0.1.3 tag in the gokite-chain's Github Container Registry with:
+Run an archive node using latest tag in the gokite-chain's Github Container Registry with:
 
 ```
 docker run -d \
@@ -132,8 +150,7 @@ docker run -d \
   -e PLUGIN_ID=pJhES6xZkqZxjxMqHiucbpBTTnB97EjL5aTYSynmWBoF26v9e \
   -e KITE_CHAIN_ID=3USaEfTcoUhHxpKXvpAG916UKCUEyjrtkg2hBArBG3JyDP7my \
   -e AVAGO_CHAIN_CONFIG_CONTENT=<base64_node_config>
-  ghcr.io/gokite-ai/gokite-chain:v0.1.3
-
+  ghcr.io/gokite-ai/gokite-chain:latest
 ```
 
 ## API Endpoints
