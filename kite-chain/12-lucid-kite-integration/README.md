@@ -99,7 +99,7 @@ Each Kite asset has a dedicated lock contract that holds native USDC on a select
 
 #### USDC
 
-* **Controller:** `0x92E2391d0836e10b9e5EAB5d56BfC286Fadec25b`
+* **Controller:** `0x7144ADe61f4BEcD513658db3441a0CE286aE90fd`
 * **Deployed Chains:** Avalanche, KiteAI
 * **Activated bridge adapters:** LayerZero
 * **Token on Avalanche:** `0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e`
@@ -107,7 +107,7 @@ Each Kite asset has a dedicated lock contract that holds native USDC on a select
 
 #### WETH
 
-* **Controller:** `0x638d1c70c7b047b192eB88657B411F84fAc74681`
+* **Controller:** `0x1324Be9339e1618387d2405C6f4CE660447cB582`
 * **Deployed Chains:** Avalanche, KiteAI
 * **Activated bridge adapters:** LayerZero
 * **Token on Avalanche:** `0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB`
@@ -115,9 +115,10 @@ Each Kite asset has a dedicated lock contract that holds native USDC on a select
 
 #### USDT
 
-* **Controller:** `0x80bA7204f060Fd321BFE8d4F3aB2E2bF4e6fCe49`
+* **Controller:** `0xc620C68Cb63EA35e9930e240051A6A7C02D568A1`
 * **Deployed Chains:** Celo, KiteAI
 * **Activated bridge adapters:** LayerZero
+* **Token on Celo:** `0x48065fbBE25f71C9282ddf5e1cD6D6A887483D5e`
 * **Token on KiteAI:** `0x3Fdd283C4c43A60398bf93CA01a8a8BD773a755b`
 
 For technical details, please visit [Lucid Labs documentation](https://docs.lucidlabs.fi/developer-reference/deployed-contracts/controller-contracts#kiteai-chain-id-2366).
