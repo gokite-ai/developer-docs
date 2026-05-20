@@ -1,0 +1,115 @@
+name: Changelog reviewer commands
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  dispatch:
+    if: |
+      github.event.issue.pull_request != null &&
+      startsWith(github.event.issue.title, 'Changelog:') &&
+      (startsWith(github.event.comment.body, '/regenerate') ||
+       startsWith(github.event.comment.body, '/skip'))
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: write
+    steps:
+      - name: Acknowledge
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.reactions.createForIssueComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              comment_id: context.payload.comment.id,
+              content: 'eyes'
+            });
+
+      - name: Parse PR metadata
+        id: meta
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.issue.number,
+            });
+            const branch = pr.data.head.ref;
+            // The PR body carries a machine-parseable line written by
+            // the changelog action:
+            //   <!-- changelog-action: component=<c> tag=<t> -->
+            // We read component and tag from there rather than reverse-
+            // engineering from the branch name, because date-style tags
+            // (e.g. 2026-05-20) cannot round-trip from the dash-encoded
+            // branch.
+            const body = pr.data.body || '';
+            const m = body.match(/<!--\s*changelog-action:\s*component=([a-z]+)\s+tag=(\S+)\s*-->/);
+            if (!m) throw new Error('PR body is missing the changelog-action metadata comment');
+            const component = m[1];
+            const tag = m[2];
+            // Explicit component -> repo mapping. Names don't all follow
+            // passport-<component>.
+            const REPO_MAP = {
+              backend: 'passport',
+              web: 'passport-web',
+              cli: 'passport-cli',
+              skills: 'passport-skills',
+            };
+            const componentRepo = REPO_MAP[component];
+            if (!componentRepo) throw new Error(`Unknown component: ${component}`);
+            core.setOutput('branch', branch);
+            core.setOutput('component', component);
+            core.setOutput('tag', tag);
+            core.setOutput('component_repo', componentRepo);
+
+      - name: Checkout component repo for /regenerate
+        if: startsWith(github.event.comment.body, '/regenerate')
+        uses: actions/checkout@v4
+        with:
+          repository: gokite-ai/${{ steps.meta.outputs.component_repo }}
+          token: ${{ secrets.CHANGELOG_BOT_TOKEN }}
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Run changelog action for /regenerate
+        if: startsWith(github.event.comment.body, '/regenerate')
+        uses: gokite-ai/gha-actions/changelog@main
+        with:
+          component: ${{ steps.meta.outputs.component }}
+          tag: ${{ steps.meta.outputs.tag }}
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.CHANGELOG_BOT_TOKEN }}
+
+      - name: Replace file with placeholder for /skip
+        if: startsWith(github.event.comment.body, '/skip')
+        uses: actions/github-script@v7
+        env:
+          BRANCH: ${{ steps.meta.outputs.branch }}
+        with:
+          script: |
+            const { BRANCH } = process.env;
+            const files = await github.rest.pulls.listFiles({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.issue.number,
+            });
+            const target = files.data.find(f => f.filename.startsWith('changelog/') && f.filename.endsWith('.md'));
+            if (!target) throw new Error('No changelog file in this PR');
+            const existing = await github.rest.repos.getContent({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              path: target.filename,
+              ref: BRANCH,
+            });
+            const fm = `---\ndate: ${new Date().toISOString().slice(0,10)}\ncomponent: placeholder\nversion: skipped\ntag: skipped\nrepo: gokite-ai/unknown\nrelease_url: https://github.com\ntitle: "Internal maintenance release"\nsummary: "No user-facing changes."\nai_generated: true\ngenerated_at: ${new Date().toISOString()}\ncorrected_at: null\n---\n\n## What changed\n\nInternal maintenance release with no user-facing changes.\n\n<details>\n<summary>Included changes</summary>\n\n<!-- BEGIN auto-generated; do not hand-edit -->\n_Skipped via /skip command._\n<!-- END auto-generated -->\n\n</details>\n`;
+            await github.rest.repos.createOrUpdateFileContents({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              path: target.filename,
+              message: 'Skip via reviewer command',
+              content: Buffer.from(fm, 'utf8').toString('base64'),
+              branch: BRANCH,
+              sha: existing.data.sha,
+            });

@@ -9,7 +9,9 @@
     "install": "gitbook install",
     "pdf": "gitbook pdf . _book/kite-docs.pdf",
     "epub": "gitbook epub . _book/kite-docs.epub",
-    "mobi": "gitbook mobi . _book/kite-docs.mobi"
+    "mobi": "gitbook mobi . _book/kite-docs.mobi",
+    "build:changelog": "node scripts/build-changelog.mjs",
+    "test:changelog": "vitest run scripts/build-changelog.test.mjs"
   },
   "repository": {
     "type": "git",
@@ -30,6 +32,13 @@
   },
   "homepage": "https://github.com/gokite-ai/kite-docs#readme",
   "devDependencies": {
-    "gitbook-cli": "^2.3.2"
+    "ajv": "^8.12.0",
+    "ajv-formats": "^2.1.1",
+    "gitbook-cli": "^2.3.2",
+    "gray-matter": "^4.0.3",
+    "vitest": "^1.4.0"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.1"
   }
 }

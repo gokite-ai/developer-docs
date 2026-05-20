@@ -1,0 +1,4 @@
+# Changelog entries are reviewed by the changelog-reviewers team.
+# The changelog-action bot opens PRs; humans approve.
+/changelog/      @gokite-ai/changelog-reviewers
+/changelog/**    @gokite-ai/changelog-reviewers

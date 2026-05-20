@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-05-20T09:00:20.829Z",
+  "entries": [
+    {
+      "date": "2026-05-19",
+      "component": "backend",
+      "version": "v1.1.0",
+      "slug": "2026-05-19-backend-v1-1-0",
+      "title": "Session preflight now returns merchant fee estimates",
+      "summary": "The preflight endpoint includes an estimated_fees field so agents can show users a realistic total spend cap before they approve a session.",
+      "corrected_at": null
+    },
+    {
+      "date": "2026-05-19",
+      "component": "cli",
+      "version": "v1.3.4",
+      "slug": "2026-05-19-cli-v1-3-4",
+      "title": "Activity command now filters by date range and merchant",
+      "summary": "kpass activity supports --since, --until, and --merchant flags so agents can answer 'what did I spend on X last week?' without fetching the full history.",
+      "corrected_at": null
+    },
+    {
+      "date": "2026-05-19",
+      "component": "skills",
+      "version": "v0.9.1",
+      "slug": "2026-05-19-skills-v0-9-1",
+      "title": "request-session skill now retries preflight on transient catalog errors",
+      "summary": "Sessions targeting catalog services no longer fail immediately when the catalog returns a 503 — the skill retries with backoff before surfacing the error.",
+      "corrected_at": null
+    },
+    {
+      "date": "2026-05-19",
+      "component": "web",
+      "version": "v1.2.0",
+      "slug": "2026-05-19-web-v1-2-0",
+      "title": "Session approval page shows estimated fees alongside budget cap",
+      "summary": "Users approving a new session see an itemized 'up to ~$X' estimate next to the raw budget cap, matching the new backend preflight data.",
+      "corrected_at": null
+    }
+  ]
+}
