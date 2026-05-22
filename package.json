@@ -6,7 +6,7 @@
   "scripts": {
     "serve": "gitbook serve",
     "build": "gitbook build",
-    "install": "gitbook install",
+    "gitbook:install": "gitbook install",
     "pdf": "gitbook pdf . _book/kite-docs.pdf",
     "epub": "gitbook epub . _book/kite-docs.epub",
     "mobi": "gitbook mobi . _book/kite-docs.mobi",
