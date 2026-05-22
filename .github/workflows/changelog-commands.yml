@@ -79,7 +79,13 @@ jobs:
         with:
           component: ${{ steps.meta.outputs.component }}
           tag: ${{ steps.meta.outputs.tag }}
+          # Pass all three keys; the action selects in priority order
+          # (anthropic > openai > deepseek) based on which are set.
+          # Configure the keys you have as org-level secrets; unset
+          # ones simply resolve to empty strings and are skipped.
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          openai_api_key: ${{ secrets.OPENAI_API_KEY }}
+          deepseek_api_key: ${{ secrets.DEEPSEEK_API_KEY }}
           github_token: ${{ secrets.CHANGELOG_BOT_TOKEN }}
 
       - name: Replace file with placeholder for /skip
