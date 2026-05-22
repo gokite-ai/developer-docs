@@ -1,0 +1,24 @@
+components:
+  backend:
+    name: Backend
+    description: |
+      The Kite Passport HTTP API and worker fleet. Handles delegations, session
+      lifecycle, x402 payment negotiation, agent registration, and order
+      orchestration.
+  web:
+    name: Web
+    description: |
+      The Passport dashboard and approval UI at passport.gokite.ai. Where users
+      review and approve agent spending sessions with a passkey.
+  cli:
+    name: CLI
+    description: |
+      The kpass CLI — the primary surface agents use to drive Passport.
+      Provides commands for auth, agents, sessions, payments, wallet, shopping,
+      activity, and self-upgrade.
+  skills:
+    name: Skills
+    description: |
+      The passport-skills SKILL.md bundle that teaches client AI agents
+      (Claude Code, Cursor, Cline, Codex, Windsurf) exactly how to drive
+      kpass and ksearch.

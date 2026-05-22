@@ -55,3 +55,15 @@
 * [LayerZero-Kite AI](kite-chain/10-layerzero-kite-integration/README.md)
 * [Goldsky-Kite AI](kite-chain/11-goldsky-kite-integration/README.md)
 * [Lucid-Kite AI](kite-chain/12-lucid-kite-integration/README.md)
+
+
+## 📜 Changelog
+
+* [All changes](changelog/README.md)
+<!-- changelog-entries-start -->
+* [Backend v1.1.0 — Session preflight now returns merchant fee estimates](changelog/2026/2026-05-19-backend-v1-1-0.md)
+* [CLI v1.3.4 — Activity command now filters by date range and merchant](changelog/2026/2026-05-19-cli-v1-3-4.md)
+* [Skills v0.9.1 — request-session skill now retries preflight on transient catalog errors](changelog/2026/2026-05-19-skills-v0-9-1.md)
+* [Web v1.2.0 — Session approval page shows estimated fees alongside budget cap](changelog/2026/2026-05-19-web-v1-2-0.md)
+<!-- changelog-entries-end -->
+
