@@ -1,6 +1,6 @@
 # Changelog
 
-Public delivery timeline for Kite Passport — see each component's recent releases below.
+Public delivery timeline for Kite Passport — see each component's recent releases below. Please be noticed this Changelog feature is still being processed and may change.
 
 <!-- changelog-index-start -->
 ## May 19, 2026
