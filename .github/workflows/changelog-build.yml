@@ -31,7 +31,11 @@ jobs:
             git config user.name 'changelog-bot'
             git config user.email 'changelog-bot@users.noreply.github.com'
             git add changelog/README.md SUMMARY.md public/changelog/index.json
-            git commit -S -m "chore(changelog): regenerate index"
+            # Unsigned: hosted runners have no GPG secret key. If org
+            # policy ever requires signed commits on this path, switch
+            # to the GitHub Contents API (auto-signed by web-flow key).
+            # See gha-actions/docs/change-logs/changelog-bot-token-setup.md.
+            git commit -m "chore(changelog): regenerate index"
             git push
           else
             echo "Nothing to regenerate."
