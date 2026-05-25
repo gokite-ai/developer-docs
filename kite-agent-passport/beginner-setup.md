@@ -2,6 +2,12 @@
 description: Full installation walkthrough for choosing an agent, installing Kite Agent Passport, creating your Passport account, and approving your first session.
 ---
 
+<!-- DEPRECATION-BANNER:START -->
+{% hint style="warning" %}
+**⚠️ These docs are moving to a new home.** Preview the new site at [docs-preview.gokite.ai](https://docs-preview.gokite.ai). At cutover, this site will redirect there automatically. File issues against [gokite-ai/kite-docs](https://github.com/gokite-ai/kite-docs).
+{% endhint %}
+<!-- DEPRECATION-BANNER:END -->
+
 # Full Installation Walkthrough
 
 This guide is for users who are new to coding agents or Kite Agent Passport. You will set up an agent that can run commands, install Passport, create your Passport account, set up your passkey, and approve your first spending session.

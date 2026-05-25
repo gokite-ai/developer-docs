@@ -1,3 +1,9 @@
+<!-- DEPRECATION-BANNER:START -->
+{% hint style="warning" %}
+**⚠️ These docs are moving to a new home.** Preview the new site at [docs-preview.gokite.ai](https://docs-preview.gokite.ai). At cutover, this site will redirect there automatically. File issues against [gokite-ai/kite-docs](https://github.com/gokite-ai/kite-docs).
+{% endhint %}
+<!-- DEPRECATION-BANNER:END -->
+
 # LayerZero Integration on Kite AI
 
 LayerZero is natively supported on Kite AI Mainnet, enabling secure omnichain messaging, asset transfers, and cross-chain application composition. This page provides architectural context and operational guidance for developers building cross-chain applications on Kite AI using LayerZero v2.

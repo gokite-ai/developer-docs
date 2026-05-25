@@ -2,6 +2,12 @@
 description: Kite Integration with Lucid - Native yield-generating USDC liquidity for the Kite ecosystem
 ---
 
+<!-- DEPRECATION-BANNER:START -->
+{% hint style="warning" %}
+**⚠️ These docs are moving to a new home.** Preview the new site at [docs-preview.gokite.ai](https://docs-preview.gokite.ai). At cutover, this site will redirect there automatically. File issues against [gokite-ai/kite-docs](https://github.com/gokite-ai/kite-docs).
+{% endhint %}
+<!-- DEPRECATION-BANNER:END -->
+
 # Kite Integration with Lucid
 
 Lucid has integrated with Kite to bring native yield-generating stablecoin liquidity (USDC) to the Kite ecosystem. This integration enables developers, apps, and ecosystem partners to use canonical, cross-chain stablecoins that automatically generate yield while remaining fully redeemable across supported networks.

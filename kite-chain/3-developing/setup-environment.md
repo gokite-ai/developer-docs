@@ -1,3 +1,9 @@
+<!-- DEPRECATION-BANNER:START -->
+{% hint style="warning" %}
+**⚠️ These docs are moving to a new home.** Preview the new site at [docs-preview.gokite.ai](https://docs-preview.gokite.ai). At cutover, this site will redirect there automatically. File issues against [gokite-ai/kite-docs](https://github.com/gokite-ai/kite-docs).
+{% endhint %}
+<!-- DEPRECATION-BANNER:END -->
+
 # Building on Kite Chain - Network setting & tools 
 
 Before we start building smart contracts on Kite, its important to go over this section which is designed to help developers quickly set up all the critical tools required for building on the Kite blockchain. Whether you’re a beginner taking your first steps into Web3 development or an experienced EVM builder looking to dive into advanced integrations, this guide provides the tools, resources, and best practices you need to succeed. 

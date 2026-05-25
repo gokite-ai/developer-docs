@@ -2,6 +2,12 @@
 description: Complete integration guide for Kite - learn how to build AI agents that make payments and integrate Kite's payment infrastructure into your applications.
 ---
 
+<!-- DEPRECATION-BANNER:START -->
+{% hint style="warning" %}
+**⚠️ These docs are moving to a new home.** Preview the new site at [docs-preview.gokite.ai](https://docs-preview.gokite.ai). At cutover, this site will redirect there automatically. File issues against [gokite-ai/kite-docs](https://github.com/gokite-ai/kite-docs).
+{% endhint %}
+<!-- DEPRECATION-BANNER:END -->
+
 # 🔗 Integration Guide
 
 This section provides workflows for integrating with Kite with example, whether you're building AI agents that make payments or services that receive payments from agents.
