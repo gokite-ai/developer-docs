@@ -2,6 +2,12 @@
 description: Step-by-step instructions for adding KITE tokens to your external wallet.
 ---
 
+<!-- DEPRECATION-BANNER:START -->
+{% hint style="warning" %}
+**⚠️ This version of the docs is deprecated.** The Kite documentation has moved to [docs.gokite.ai](https://docs.gokite.ai), which now replaces this site. Please use the new docs, and file issues against [gokite-ai/kite-docs](https://github.com/gokite-ai/kite-docs).
+{% endhint %}
+<!-- DEPRECATION-BANNER:END -->
+
 # Add Kite Tokens to an External Wallet
 
 If you need to access KITE tokens or USDC.e in your external wallet (e.g., MetaMask), you will need to add Kite Network information to your wallet.

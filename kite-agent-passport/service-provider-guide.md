@@ -2,6 +2,12 @@
 description: Guide for service providers to accept payments from Kite Agent Passport agents via x402 or MPP.
 ---
 
+<!-- DEPRECATION-BANNER:START -->
+{% hint style="warning" %}
+**⚠️ This version of the docs is deprecated.** The Kite documentation has moved to [docs.gokite.ai](https://docs.gokite.ai), which now replaces this site. Please use the new docs, and file issues against [gokite-ai/kite-docs](https://github.com/gokite-ai/kite-docs).
+{% endhint %}
+<!-- DEPRECATION-BANNER:END -->
+
 # Service Provider Guide
 
 Kite Agent Passport can pay any service that implements one of two open payment protocols:

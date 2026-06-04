@@ -2,6 +2,12 @@
 description: Get started with Kite - learn about our mission, use cases, architecture, and core concepts that make Kite the first AI payment blockchain.
 ---
 
+<!-- DEPRECATION-BANNER:START -->
+{% hint style="warning" %}
+**⚠️ This version of the docs is deprecated.** The Kite documentation has moved to [docs.gokite.ai](https://docs.gokite.ai), which now replaces this site. Please use the new docs, and file issues against [gokite-ai/kite-docs](https://github.com/gokite-ai/kite-docs).
+{% endhint %}
+<!-- DEPRECATION-BANNER:END -->
+
 # 🎯 Get Started with Kite
 
 Welcome to Kite - the first AI payment blockchain. This section will help you understand why Kite exists, what problems it solves, and how it works.

@@ -1,3 +1,9 @@
+<!-- DEPRECATION-BANNER:START -->
+{% hint style="warning" %}
+**⚠️ This version of the docs is deprecated.** The Kite documentation has moved to [docs.gokite.ai](https://docs.gokite.ai), which now replaces this site. Please use the new docs, and file issues against [gokite-ai/kite-docs](https://github.com/gokite-ai/kite-docs).
+{% endhint %}
+<!-- DEPRECATION-BANNER:END -->
+
 # Stablecoin Gasless Transfer: Integration Guide
 
 This page provides practical integration instructions for using Kite's Stablecoin Gasless Transfer service. It is intended for developers who want to implement gasless token transfers using signed authorizations (EIP-3009).

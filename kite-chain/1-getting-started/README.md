@@ -1,3 +1,9 @@
+<!-- DEPRECATION-BANNER:START -->
+{% hint style="warning" %}
+**⚠️ This version of the docs is deprecated.** The Kite documentation has moved to [docs.gokite.ai](https://docs.gokite.ai), which now replaces this site. Please use the new docs, and file issues against [gokite-ai/kite-docs](https://github.com/gokite-ai/kite-docs).
+{% endhint %}
+<!-- DEPRECATION-BANNER:END -->
+
 # Getting Started with Kite Chain
 
 Welcome to Kite Chain! This section provides everything you need to start building on Kite's blockchain network.

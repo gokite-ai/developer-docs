@@ -1,3 +1,9 @@
+<!-- DEPRECATION-BANNER:START -->
+{% hint style="warning" %}
+**⚠️ This version of the docs is deprecated.** The Kite documentation has moved to [docs.gokite.ai](https://docs.gokite.ai), which now replaces this site. Please use the new docs, and file issues against [gokite-ai/kite-docs](https://github.com/gokite-ai/kite-docs).
+{% endhint %}
+<!-- DEPRECATION-BANNER:END -->
+
 # GoKite Account Abstraction SDK – Developer Guide
 
 The GoKite Account Abstraction (AA) SDK enables developers to build smart contract wallets, manage transactions, and implement rule-based agent spending on the Kite AI Layer 1 chain using ERC-4337 Account Abstraction principles. 

@@ -2,6 +2,12 @@
 description: How to fund your Kite Agent Passport wallet — buy USDC with fiat, bridge directly, or transfer from another wallet.
 ---
 
+<!-- DEPRECATION-BANNER:START -->
+{% hint style="warning" %}
+**⚠️ This version of the docs is deprecated.** The Kite documentation has moved to [docs.gokite.ai](https://docs.gokite.ai), which now replaces this site. Please use the new docs, and file issues against [gokite-ai/kite-docs](https://github.com/gokite-ai/kite-docs).
+{% endhint %}
+<!-- DEPRECATION-BANNER:END -->
+
 # Funding Your Wallet
 
 To use Kite Agent Passport, you need **USDC on Kite chain** in your Passport wallet. All funding is managed through the **Passport dashboard**.
