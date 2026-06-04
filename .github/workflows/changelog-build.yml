@@ -1,13 +1,7 @@
 name: Rebuild changelog index
 
 on:
-  pull_request:
-    paths:
-      - "changelog/**"
-  push:
-    branches: [main]
-    paths:
-      - "changelog/**"
+  workflow_dispatch:
 
 jobs:
   rebuild:
